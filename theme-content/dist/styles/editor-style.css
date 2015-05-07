@@ -10399,7 +10399,7 @@ th.hide-for-touch {
 .fa-medium:before {
   content: "\f23a"; }
 
-/* line 3, /Users/danielsitek/Sites/Projekty/WP/Themes/foundation-press/assets/styles/source/main */
+/* line 3, /Users/danielsitek/Sites/Projekty/WP/Themes/fitrazdva-theme/assets/styles/source/main */
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
@@ -10413,36 +10413,36 @@ html {
   clear: both; }
 
 @media only screen and (max-width: 40em) {
-  /* line 4, /Users/danielsitek/Sites/Projekty/WP/Themes/foundation-press/assets/styles/source/tools/hidden */
+  /* line 4, /Users/danielsitek/Sites/Projekty/WP/Themes/fitrazdva-theme/assets/styles/source/tools/hidden */
   .small-hide {
     display: none; }
  }
 
 @media only screen and (min-width:40.0625em) and (max-width:64em) {
-  /* line 10, /Users/danielsitek/Sites/Projekty/WP/Themes/foundation-press/assets/styles/source/tools/hidden */
+  /* line 10, /Users/danielsitek/Sites/Projekty/WP/Themes/fitrazdva-theme/assets/styles/source/tools/hidden */
   .medium-hide {
     display: none; }
  }
 
 @media only screen and (min-width:64.0625em) and (max-width:90em) {
-  /* line 16, /Users/danielsitek/Sites/Projekty/WP/Themes/foundation-press/assets/styles/source/tools/hidden */
+  /* line 16, /Users/danielsitek/Sites/Projekty/WP/Themes/fitrazdva-theme/assets/styles/source/tools/hidden */
   .large-hide {
     display: none; }
  }
 
 @media only screen and (min-width:90.0625em) and (max-width:120em) {
-  /* line 22, /Users/danielsitek/Sites/Projekty/WP/Themes/foundation-press/assets/styles/source/tools/hidden */
+  /* line 22, /Users/danielsitek/Sites/Projekty/WP/Themes/fitrazdva-theme/assets/styles/source/tools/hidden */
   .xlarge-hide {
     display: none; }
  }
 
 @media only screen and (min-width:120.0625em) and (max-width:99999999em) {
-  /* line 28, /Users/danielsitek/Sites/Projekty/WP/Themes/foundation-press/assets/styles/source/tools/hidden */
+  /* line 28, /Users/danielsitek/Sites/Projekty/WP/Themes/fitrazdva-theme/assets/styles/source/tools/hidden */
   .xxlarge-hide {
     display: none; }
  }
 
-/* line 3, /Users/danielsitek/Sites/Projekty/WP/Themes/foundation-press/assets/styles/editor-style.scss */
+/* line 3, /Users/danielsitek/Sites/Projekty/WP/Themes/fitrazdva-theme/assets/styles/editor-style.scss */
 body {
   margin: 12px !important; }
 /*# sourceMappingURL=editor-style.css.map */
