@@ -1,0 +1,6 @@
+
+
+@mixin appearance($arg) {
+    -webkit-appearance: $arg;
+    -moz-appearance: $arg;
+}

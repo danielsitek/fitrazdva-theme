@@ -1,0 +1,10 @@
+
+
+@mixin opacity($args) {
+    filter: unquote('aplha(opacity=' + ($args * 100) + ')');
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=' + ($args * 100) + ')';
+    filter: unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + ($args * 100) + ')');
+    -moz-opacity: $args;
+    -khtml-opacity: $args;
+    opacity: $args;
+}

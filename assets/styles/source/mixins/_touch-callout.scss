@@ -1,0 +1,12 @@
+
+/**
+ * Po podržení prstu na odkazu zabrání vyskakovacímu popup menu na iOS zařízení
+ * http://phonegap-tips.com/articles/essential-phonegap-css-webkit-touch-callout.html
+ *
+ * Documentation:
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-touch-callout
+ */
+
+@mixin touch-callout($args) {
+    -webkit-touch-callout: $args;
+}
