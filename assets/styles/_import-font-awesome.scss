@@ -1,0 +1,22 @@
+@charset "UTF-8";
+// FontAwesome
+
+// Reset some variables
+  $fa-font-path: "../fonts";
+
+// Import whole FontAwesome scss files, without modifications
+  @import "font-awesome/scss/font-awesome";
+
+// Or import only the necessary parts
+  // @import "font-awesome/scss/variables";
+  // @import "font-awesome/scss/mixins";
+  // @import "font-awesome/scss/path";
+  // @import "font-awesome/scss/core";
+  // @import "font-awesome/scss/larger";
+  // @import "font-awesome/scss/fixed-width";
+  // @import "font-awesome/scss/list";
+  // @import "font-awesome/scss/bordered-pulled";
+  // @import "font-awesome/scss/spinning";
+  // @import "font-awesome/scss/rotated-flipped";
+  // @import "font-awesome/scss/stacked";
+  // @import "font-awesome/scss/icons";

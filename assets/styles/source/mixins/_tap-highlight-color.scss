@@ -1,0 +1,9 @@
+
+/**
+ * Overrides the highlight color shown when the user taps a link or
+ * a JavaScript clickable element in Safari on iPhone.
+ */
+
+@mixin tap-highlight-color($args...) {
+    -webkit-tap-highlight-color: $args;
+}

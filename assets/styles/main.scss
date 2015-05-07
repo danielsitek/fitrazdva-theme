@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// Own custom mixins and functions
+  @import "source/functions/index";
+  @import "source/mixins/index";
+
+// Behold, here are all the Foundation components.
+  @import "settings-foundation";
+  @import "import-foundation";
+
+// Import Font Awesome scss.
+  @import "import-font-awesome";
+
+// Our own project settings
+  @import "settings-main";
+
+// And here shall be our own components.
+  @import "source/main";
+  @import "source/tools/index";
