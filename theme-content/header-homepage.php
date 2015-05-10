@@ -40,9 +40,7 @@
 
 <?php get_template_part( 'parts/off-canvas-menu' ); ?>
 
-<?php // get_template_part( 'parts/top-bar' ); ?>
-
-<?php get_template_part( 'parts/page-header' ); ?>
+<?php get_template_part( 'parts/page-header-homepage' ); ?>
 
 <section class="container page-main" role="document">
 <div class="row">

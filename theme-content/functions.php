@@ -4,6 +4,9 @@ Author: Ole Fredrik Lie
 URL: http://olefredrik.com
 */
 
+if ( !defined('WP_DEVELOP') )
+    define('WP_DEVELOP', false);
+
 
 // Various clean up functions
 require_once('library/cleanup.php');
@@ -15,6 +18,7 @@ require_once('library/foundation.php');
 require_once('library/navigation.php');
 
 // Add menu walkers
+require_once('library/main-nav-walker.php');
 require_once('library/menu-walker.php');
 require_once('library/offcanvas-walker.php');
 
@@ -32,5 +36,8 @@ require_once('library/theme-support.php');
 
 // Add Header image
 require_once('library/custom-header.php');
+
+// Customized gallery
+require_once('library/custom-gallery.php');
 
 ?>

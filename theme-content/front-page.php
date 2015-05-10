@@ -1,8 +1,8 @@
 <?php
 
-$layout['template'] = 'page.php';
+$layout['template'] = 'front-page.php';
 
-get_header();
+get_header('homepage');
 
 do_action( 'foundationpress_before_content' );
 
