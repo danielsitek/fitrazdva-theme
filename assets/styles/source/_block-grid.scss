@@ -1,0 +1,125 @@
+
+
+$mapValueToNumber: (1: one, 2: two, 3: three, 4: four, 5: five);
+
+.block-grid {
+    display: block;
+    margin: ($base-line-height-rem * 2) (-($base-line-height-rem / 2));
+    padding: 0;
+    list-style: none;
+    @include clearfix();
+
+    > .block-grid-item {
+        display: block;
+        float: left;
+        width: auto;
+        height: auto;
+        padding: 0 ($base-line-height-rem / 2);
+        margin: 0;
+        margin-bottom: $base-line-height-rem;
+    }
+
+    img {
+        display: block;
+        margin: 0;
+    }
+}
+
+
+// @media $small-up
+.block-grid {
+
+    @each $key, $value in $mapValueToNumber {
+        &.small-#{$value}-up > .block-grid-item {
+            width: (100% / $key);
+
+            &:nth-of-type(1n) {
+                clear: none;
+            }
+
+            &:nth-of-type(#{$key}n + 1) {
+                clear: both;
+            }
+        }
+    }
+}
+
+@media #{$medium-up} {
+
+    .block-grid {
+
+        @each $key, $value in $mapValueToNumber {
+            &.medium-#{$value}-up > .block-grid-item {
+                width: (100% / $key);
+
+                &:nth-of-type(1n) {
+                    clear: none;
+                }
+
+                &:nth-of-type(#{$key}n + 1) {
+                    clear: both;
+                }
+            }
+        }
+    }
+}
+
+@media #{$large-up} {
+
+    .block-grid {
+
+        @each $key, $value in $mapValueToNumber {
+            &.large-#{$value}-up > .block-grid-item {
+                width: (100% / $key);
+
+                &:nth-of-type(1n) {
+                    clear: none;
+                }
+
+                &:nth-of-type(#{$key}n + 1) {
+                    clear: both;
+                }
+            }
+        }
+    }
+}
+
+@media #{$xlarge-up} {
+
+    .block-grid {
+
+        @each $key, $value in $mapValueToNumber {
+            &.xlarge-#{$value}-up > .block-grid-item {
+                width: (100% / $key);
+
+                &:nth-of-type(1n) {
+                    clear: none;
+                }
+
+                &:nth-of-type(#{$key}n + 1) {
+                    clear: both;
+                }
+            }
+        }
+    }
+}
+
+@media #{$xxlarge-up} {
+
+    .block-grid {
+
+        @each $key, $value in $mapValueToNumber {
+            &.xxlarge-#{$value}-up > .block-grid-item {
+                width: (100% / $key);
+
+                &:nth-of-type(1n) {
+                    clear: none;
+                }
+
+                &:nth-of-type(#{$key}n + 1) {
+                    clear: both;
+                }
+            }
+        }
+    }
+}

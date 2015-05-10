@@ -1,0 +1,32 @@
+
+
+.gallery-item {
+
+    .gallery-icon {
+
+        a {
+            display: block;
+            padding: 5px !important;
+            background: #f4f4f4;
+            transition: all .15s;
+            border-radius: 5px;
+
+            img {
+                display: block;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                text-decoration: none;
+                border-radius: 2px;
+            }
+
+            &:hover {
+                background: #dcdcdc;
+            }
+        }
+    }
+
+    .gallery-caption {
+
+    }
+}
