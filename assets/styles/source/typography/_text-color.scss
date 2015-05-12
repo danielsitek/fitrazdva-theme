@@ -1,0 +1,41 @@
+
+
+.color-black {
+    color: $black;
+}
+
+.color-gray {
+    color: $monsoon;
+}
+
+.color-white {
+    color: $white;
+}
+
+.color-primary {
+    color: $primary-color;
+}
+
+.color-secondary {
+    color: $secondary-color;
+}
+
+.color-white a,
+a.color-white {
+    color: $white;
+    border-bottom-color: $white;
+
+    &:hover {
+        color: scale-color($white, $lightness: -10%);
+        border-bottom-color: scale-color($white, $lightness: -10%);
+    }
+}
+
+.color-white h1, h1.color-white,
+.color-white h2, h2.color-white,
+.color-white h3, h3.color-white,
+.color-white h4, h4.color-white,
+.color-white h5, h5.color-white,
+.color-white h6, h6.color-white {
+    color: $white;
+}

@@ -12,13 +12,23 @@ function foundationpress_sidebar_widgets() {
 	));
 
 	register_sidebar(array(
-	  'id' => 'footer-widgets',
-	  'name' => __( 'Footer widgets', 'foundationpress' ),
+	  'id' => 'footer-widgets-left',
+	  'name' => __( 'Footer widgets left', 'foundationpress' ),
 	  'description' => __( 'Drag widgets to this footer container', 'foundationpress' ),
-	  'before_widget' => '<article id="%1$s" class="large-4 columns widget %2$s">',
+	  'before_widget' => '<article id="%1$s" class="widget %2$s">',
 	  'after_widget' => '</article>',
-	  'before_title' => '<h6>',
-	  'after_title' => '</h6>',
+	  'before_title' => '<header class="footer-header"><strong class="h4">',
+	  'after_title' => '</strong></header>',
+	));
+
+	register_sidebar(array(
+	  'id' => 'footer-widgets-right',
+	  'name' => __( 'Footer widgets right', 'foundationpress' ),
+	  'description' => __( 'Drag widgets to this footer container', 'foundationpress' ),
+	  'before_widget' => '<article id="%1$s" class="widget %2$s">',
+	  'after_widget' => '</article>',
+	  'before_title' => '<header class="footer-header"><strong class="h4">',
+	  'after_title' => '</strong></header>',
 	));
 }
 

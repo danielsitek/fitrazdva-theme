@@ -5,53 +5,29 @@
  * http://codex.wordpress.org/Function_Reference/register_nav_menus#Examples
  */
 register_nav_menus(array(
-	'top-bar-l' => 'Left Top Bar', // registers the menu in the WordPress admin menu editor
-	'top-bar-r' => 'Right Top Bar',
+	'main-nav-bar' => 'Main Nav',
 	'mobile-off-canvas' => 'Mobile',
 ));
 
 
 /**
- * Left top bar
- * http://codex.wordpress.org/Function_Reference/wp_nav_menu
+ * Main menu
  */
-if ( ! function_exists( 'foundationpress_top_bar_l' ) ) {
-	function foundationpress_top_bar_l() {
+if ( ! function_exists( 'fitrazdvatheme_main_nav_bar' ) ) {
+	function fitrazdvatheme_main_nav_bar() {
 	    wp_nav_menu(array(
 	        'container' => false,                           // remove nav container
 	        'container_class' => '',                        // class of container
 	        'menu' => '',                                   // menu name
-	        'menu_class' => 'top-bar-menu left',            // adding custom nav class
-	        'theme_location' => 'top-bar-l',                // where it's located in the theme
+	        'menu_class' => 'nav nav-main',           		// adding custom nav class
+	        'theme_location' => 'main-nav-bar',             // where it's located in the theme
 	        'before' => '',                                 // before each link <a>
 	        'after' => '',                                  // after each link </a>
 	        'link_before' => '',                            // before each link text
 	        'link_after' => '',                             // after each link text
-	        'depth' => 5,                                   // limit the depth of the nav
+	        'depth' => 4,                                   // limit the depth of the nav
 	        'fallback_cb' => false,                         // fallback function (see below)
-	        'walker' => new Foundationpress_Top_Bar_Walker()
-	    ));
-	}
-}
-
-/**
- * Right top bar
- */
-if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
-	function foundationpress_top_bar_r() {
-	    wp_nav_menu(array(
-	        'container' => false,                           // remove nav container
-	        'container_class' => '',                        // class of container
-	        'menu' => '',                                   // menu name
-	        'menu_class' => 'top-bar-menu right',           // adding custom nav class
-	        'theme_location' => 'top-bar-r',                // where it's located in the theme
-	        'before' => '',                                 // before each link <a>
-	        'after' => '',                                  // after each link </a>
-	        'link_before' => '',                            // before each link text
-	        'link_after' => '',                             // after each link text
-	        'depth' => 5,                                   // limit the depth of the nav
-	        'fallback_cb' => false,                         // fallback function (see below)
-	        'walker' => new Foundationpress_Top_Bar_Walker()
+	        'walker' => new FitrazdvaTheme_main_nav_walker()
 	    ));
 	}
 }
@@ -95,4 +71,17 @@ if ( ! function_exists( 'foundationpress_add_menuclass' ) ) {
 	add_filter( 'wp_nav_menu','foundationpress_add_menuclass' );
 }
 
-?>
+
+/**
+ * Prida classy `first` a `last` itemum v menu
+ */
+function custom_first_and_last_menu_class($items) {
+    $items[1]->classes[] = 'first'; // add first class
+
+    $cnt = count($items);
+    while($items[$cnt--]->post_parent != 0); // find last li item
+    $items[$cnt+1]->classes[] = 'last'; // last item class
+    return $items;
+}
+add_filter('wp_nav_menu_objects', 'custom_first_and_last_menu_class'); //filter to iterate each menu
+

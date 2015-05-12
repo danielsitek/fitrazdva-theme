@@ -1,0 +1,57 @@
+
+
+/**
+ * Map Pobocky
+ */
+.map-pobocky {
+    display: none;
+}
+
+@media #{$medium-up} {
+
+    .map-pobocky {
+        position: absolute;
+        top: rem-calc(20);
+        right: rem-calc(20);
+        left: auto;
+        bottom: auto;
+        display: block;
+        width: rem-calc(214);
+        height: rem-calc(122);
+        margin: 0;
+        padding: 0;
+        background: transparent url('../images/theme/footer-mapka.png') 0 0 no-repeat;
+        background-size: 214px 122px;
+
+        .map-pobocky-pin {
+            position: absolute;
+            right: auto;
+            bottom: auto;
+            display: block;
+            width: rem-calc(18);
+            height: rem-calc(27);
+            background: transparent url('../images/theme/map-pin-small.png') 0 0 no-repeat;
+            background-size: 18px 27px;
+            padding: 0;
+            margin: 0;
+            border: 0 none;
+            text-decoration: none;
+            outline: 0 none;
+
+            &.pin-praha {
+                top: 19.5%;
+                left: 30.8%;
+            }
+
+            &.pin-brno {
+                top: 29.4%;
+                left: 87.1%;
+            }
+
+            &.pin-ostrava {
+                top: 54%;
+                left: 64%;
+            }
+        }
+    }
+}
