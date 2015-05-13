@@ -1,11 +1,11 @@
 <?php
 
-$no_menu_selected = __( 'No menu', $this->translate_domain );
+$no_menu_selected = __( 'No menu', self::TRANSLATION_DOMAIN );
 
  ?>
 <p>
     <label for="set_page_submenu">
-        <strong><?php echo __( 'Choose existing menu:', $this->translate_domain ); ?></strong>
+        <strong><?php echo __( 'Choose existing menu:', self::TRANSLATION_DOMAIN ); ?></strong>
     </label>
 </p>
 <select name="set_page_submenu" id="set_page_submenu" style="width: 100%;">
