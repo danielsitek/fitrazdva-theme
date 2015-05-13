@@ -13,8 +13,9 @@ use FitRazDva;
 class SetPageCustomMenuAdmin
 {
 
-    private $post_type = 'page';
-    private $translate_domain = 'fitrazdva_set_page_submenu';
+    const POST_TYPE             = 'page';
+    const TRANSLATION_DOMAIN    = 'fitrazdva_set_page_submenu';
+
     private $post_id;
 
 
@@ -43,7 +44,7 @@ class SetPageCustomMenuAdmin
     */
     function register_meta_boxes()
     {
-        add_meta_box( 'pase-custom-submenu', 'Set Page Submenu', array( $this, 'output_meta_box' ), $this->post_type, 'side', 'low' );
+        add_meta_box( 'pase-custom-submenu', 'Set Page Submenu', array( $this, 'output_meta_box' ), self::POST_TYPE, 'side', 'low' );
     }
 
 
@@ -65,7 +66,8 @@ class SetPageCustomMenuAdmin
 
         require_once( __DIR__ . '/view/meta-box-custom-menus.php');
 
-        dump($menus);
+        dump( $menus );
+
     }
 
 
@@ -91,7 +93,7 @@ class SetPageCustomMenuAdmin
         }
 
         // Check this is the Contact Custom Post Type
-        if ( $this->post_type != $_POST['post_type'] ) {
+        if ( self::POST_TYPE != $_POST['post_type'] ) {
             return $post_id;
         }
 

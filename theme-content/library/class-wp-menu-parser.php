@@ -92,10 +92,24 @@ class WPMenuParser
 
         $parsedDOM = $this->parseDomToArray( $this->generated_wp_menu );
 
-        $items = $this->parseListItems( $parsedDOM['ul']['li'] );
+        $items['name'] = $this->getMenuDetails()->name;
+        $items['slug'] = $this->getMenuDetails()->slug;
+        $items['id'] = $this->getMenuDetails()->term_id;
+
+        $items['items'] = $this->parseListItems( $parsedDOM['ul']['li'] );
 
         return $items;
 
+    }
+
+
+    private function getMenuDetails()
+    {
+
+        $menus = wp_get_nav_menus(array('slug' => $this->menu_identificator));
+        $menus = $menus[0];
+
+        return $menus;
     }
 
 
