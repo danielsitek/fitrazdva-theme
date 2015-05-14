@@ -3,7 +3,7 @@
 <html
     class="old-ie no-js"
     xml:lang="cs"
-    lang="cs"
+    <?php language_attributes(); ?>
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:og="http://ogp.me/ns#"
 >
@@ -38,14 +38,17 @@
 	</section>
 </nav>
 
-<?php get_template_part( 'parts/off-canvas-menu' ); ?>
+<?php
 
-<?php // get_template_part( 'parts/top-bar' ); ?>
+get_template_part( 'parts/off-canvas-menu' );
+get_template_part( 'parts/page-header' );
 
-<?php get_template_part( 'parts/page-header' ); ?>
+?>
 
 <section class="container page-main" role="document">
 <div class="row">
 <div class="column small-12">
-<div class="page-main-content">
-<?php do_action( 'foundationpress_after_header' );
+<?php
+
+get_template_part('parts/page-main-content-top');
+do_action( 'foundationpress_after_header' );

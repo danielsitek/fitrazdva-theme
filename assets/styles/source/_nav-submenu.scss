@@ -2,6 +2,8 @@
 
 .nav-submenu {
     display: block;
+    margin: 0 (-($column-gutter/2));
+    margin-top: (-$base-line-height-rem);
 
     ul {
         display: block;
@@ -45,6 +47,23 @@
                 }
             }
         }
+    }
+}
+
+
+@media #{$medium-up} {
+
+    .nav-submenu {
+        margin-top: (-($base-line-height-rem * 2));
+    }
+}
+
+
+@media #{$large-up} {
+
+    .nav-submenu {
+        margin: 0 (-(rem-calc(40)));
+        margin-top: (-(rem-calc(40)));
     }
 }
 
