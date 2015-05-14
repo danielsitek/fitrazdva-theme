@@ -63,6 +63,7 @@ figure {
 
 img {
     margin: 0 0 $base-line-height-rem 0;
+    border-radius: $global-radius;
 }
 
 @media #{$medium-up} {
@@ -70,11 +71,13 @@ img {
     img {
         margin: 0 0 $base-line-height-rem 0;
 
-        &.float-left {
+        &.float-left,
+        &.alignleft {
             margin-right: $base-line-height-rem;
         }
 
-        &.float-right {
+        &.float-right,
+        &.alignright {
             margin-left: $base-line-height-rem;
         }
     }
@@ -127,6 +130,8 @@ hr {
     font-style: italic;
     color: $primary-color;
 }
+
+
 
 
 
