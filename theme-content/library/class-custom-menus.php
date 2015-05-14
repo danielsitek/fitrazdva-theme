@@ -13,9 +13,6 @@ use FitRazDva;
 class SetPageSubmenu
 {
 
-
-    private $post_type = 'page';
-    private $translate_domain = 'fitrazdva_set_page_submenu';
     private $post_id;
     private $menu_slug;
     private $generated_menu;
@@ -29,7 +26,6 @@ class SetPageSubmenu
      * Constructor
      *
      * @param string $post_id   Get post id
-     *
      */
     public function __construct( $post_id )
     {
@@ -46,8 +42,13 @@ class SetPageSubmenu
     }
 
 
+    /**
+     * init()
+     *
+     */
     private function init()
     {
+
         if ($this->hasMenu) {
 
             $this->menu_parser = new WPMenuParser();
@@ -60,11 +61,12 @@ class SetPageSubmenu
 
 
     /**
+     * getMenu()
+     *
      * Render custom set menu for page
      *
-     * @param int $post_id Post ID
      */
-    function getMenu()
+    public function getMenu()
     {
 
         if ($this->hasMenu) {
@@ -75,26 +77,24 @@ class SetPageSubmenu
 
 
     /**
+     * getMenuDetails()
+     *
      * Render custom set menu for page
      *
-     * @param int $post_id Post ID
      * @return array Array with navigation menu
      */
     function getMenuDetails()
     {
 
-        $menus = wp_get_nav_menus(array('slug' => $this->menu_slug));
-        $menus = $menus[0];
-
-        return $menus;
-
+        return $this->generated_menu;
     }
 
 
     /**
+     * getMenuName()
+     *
      * Render custom set menu for page
      *
-     * @param   int     $post_id Post ID
      * @return  string  Navigation menu name
      */
     function getMenuName()

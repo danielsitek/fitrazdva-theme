@@ -95,6 +95,7 @@ class WPMenuParser
         $items['name'] = $this->getMenuDetails()->name;
         $items['slug'] = $this->getMenuDetails()->slug;
         $items['id'] = $this->getMenuDetails()->term_id;
+        $items['description'] = $this->getMenuDetails()->description;
 
         $items['items'] = $this->parseListItems( $parsedDOM['ul']['li'] );
 

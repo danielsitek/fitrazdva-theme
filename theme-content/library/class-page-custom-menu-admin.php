@@ -6,7 +6,7 @@ use FitRazDva;
 
 /**
  * Set Page Submenu
- * Add custom meta bog to page where editors can choose if he want to add menu.
+ * Add custom meta box to admin page where editors can choose if he want to add menu.
  *
  * @author      Daniel Sitek
  */
@@ -44,7 +44,9 @@ class SetPageCustomMenuAdmin
     */
     function register_meta_boxes()
     {
+
         add_meta_box( 'pase-custom-submenu', 'Set Page Submenu', array( $this, 'output_meta_box' ), self::POST_TYPE, 'side', 'low' );
+
     }
 
 
@@ -65,8 +67,6 @@ class SetPageCustomMenuAdmin
         wp_nonce_field( 'save_page_menu', 'page_menu_nonce' );
 
         require_once( __DIR__ . '/view/meta-box-custom-menus.php');
-
-        dump( $menus );
 
     }
 
