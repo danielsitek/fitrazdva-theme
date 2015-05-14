@@ -5350,14 +5350,17 @@ figure {
   margin: 0; }
 
 img {
-  margin: 0 0 1.5rem 0; }
+  margin: 0 0 1.5rem 0;
+  border-radius: 3px; }
 
 @media only screen and (min-width: 40.0625em) {
   img {
     margin: 0 0 1.5rem 0; }
-    img.float-left {
+    img.float-left,
+    img.alignleft {
       margin-right: 1.5rem; }
-    img.float-right {
+    img.float-right,
+    img.alignright {
       margin-left: 1.5rem; } }
 
 .radius {
@@ -5434,12 +5437,15 @@ hr {
   font-style: italic;
   font-weight: normal; }
 
+.alignleft,
 .float-left {
   float: left !important; }
 
+.alignright,
 .float-right {
   float: right !important; }
 
+.aligncenter,
 .float-center {
   float: none !important;
   margin-left: auto;
@@ -6275,4 +6281,23 @@ a.color-white {
       .map-pobocky .map-pobocky-pin.pin-ostrava {
         top: 54%;
         left: 64%; } }
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+@media only screen and (max-width: 40em) {
+  .small-hide {
+    display: none; } }
+
+@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+  .medium-hide {
+    display: none; } }
+
+@media only screen and (min-width: 64.0625em) and (max-width: 90em) {
+  .large-hide {
+    display: none; } }
 /*# sourceMappingURL=main.css.map */
