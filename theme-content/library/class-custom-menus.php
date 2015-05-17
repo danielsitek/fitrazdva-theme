@@ -30,9 +30,10 @@ class SetPageSubmenu
     public function __construct( $post_id )
     {
 
-        $menu_slug = get_post_meta($post_id, '_set_page_submenu', true);
+        $menu_slug = get_post_meta( $post_id, '_set_page_submenu', true );
 
-        if (strlen($menu_slug) > 0) {
+        if ( strlen( $menu_slug ) > 0 && $menu_slug != "0") {
+
             $this->hasMenu = true;
             $this->post_id = $post_id;
             $this->menu_slug = $menu_slug;
@@ -49,7 +50,7 @@ class SetPageSubmenu
     private function init()
     {
 
-        if ($this->hasMenu) {
+        if ( $this->hasMenu ) {
 
             $this->menu_parser = new WPMenuParser();
 
@@ -69,39 +70,10 @@ class SetPageSubmenu
     public function getMenu()
     {
 
-        if ($this->hasMenu) {
+        if ( $this->hasMenu ) {
 
             echo $this->generated_menu_dom;
         }
-    }
-
-
-    /**
-     * getMenuDetails()
-     *
-     * Render custom set menu for page
-     *
-     * @return array Array with navigation menu
-     */
-    function getMenuDetails()
-    {
-
-        return $this->generated_menu;
-    }
-
-
-    /**
-     * getMenuName()
-     *
-     * Render custom set menu for page
-     *
-     * @return  string  Navigation menu name
-     */
-    function getMenuName()
-    {
-
-        return $this->getMenuDetails()->name;
-
     }
 
 
@@ -110,6 +82,7 @@ class SetPageSubmenu
 
         $templated_menu;
         $menu = $menu_object;
+        $active_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
         ob_start();
 
