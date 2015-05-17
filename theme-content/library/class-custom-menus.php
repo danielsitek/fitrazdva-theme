@@ -70,39 +70,10 @@ class SetPageSubmenu
     public function getMenu()
     {
 
-        if ($this->hasMenu) {
+        if ( $this->hasMenu ) {
 
             echo $this->generated_menu_dom;
         }
-    }
-
-
-    /**
-     * getMenuDetails()
-     *
-     * Render custom set menu for page
-     *
-     * @return array Array with navigation menu
-     */
-    function getMenuDetails()
-    {
-
-        return $this->generated_menu;
-    }
-
-
-    /**
-     * getMenuName()
-     *
-     * Render custom set menu for page
-     *
-     * @return  string  Navigation menu name
-     */
-    function getMenuName()
-    {
-
-        return $this->getMenuDetails()->name;
-
     }
 
 
