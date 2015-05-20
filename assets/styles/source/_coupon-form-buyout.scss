@@ -1,0 +1,16 @@
+
+
+.coupon-form-buyout {
+    display: block;
+    border: 1px solid $silver;
+    border-radius: $global-radius;
+    margin: 0;
+    padding: 0;
+    @include clearfix();
+}
+
+.coupon-form-buyout-content {
+    display: block;
+    padding: 0;
+    margin: 1em;
+}

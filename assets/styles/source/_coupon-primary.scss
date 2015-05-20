@@ -1,0 +1,61 @@
+
+
+
+
+.coupon-primary-body,
+.coupon-primary-footer {
+    display: block;
+    margin: $base-line-height-rem 0;
+}
+
+.coupon-primary-footer {
+    margin-bottom: ($base-line-height-rem * 2);
+}
+
+.coupon-primary-body-image {
+
+    img {
+        display: block;
+        margin: 0 auto;
+        border-radius: $global-radius;
+    }
+}
+
+
+.coupon-primary-body-content {
+    display: block;
+    padding: 0;
+    margin: $base-line-height-rem 0;
+}
+
+.coupon-primary-perex {
+    height: ($base-line-height-rem * 4);
+    overflow: hidden;
+    margin: 0 0 $base-line-height-rem 0;
+    padding: 0;
+    position: relative;
+}
+
+
+.coupon-primary-footer-column {
+    vertical-align: middle;
+    padding-top: ($base-line-height-rem * .33);
+    padding-bottom: ($base-line-height-rem * .33);
+
+    &.column-validity {
+        width: 23%;
+    }
+
+    &.column-value {
+        width: 50%;
+    }
+
+    &.column-cta {
+        text-align: right;
+    }
+}
+
+
+.coupon-primary-footer-column + .coupon-primary-footer-column {
+    border-left: 2px solid $silver;
+}
