@@ -57,3 +57,45 @@ $(document).foundation();
     };
 
 }(window));
+
+( function( $ ) {
+    'use strict';
+
+    var options = {
+        mainClass: '.js-input-select',
+        valueClass: '.js-input-select-value'
+    };
+
+    // init Select class
+    if ($(options.mainClass).length > 0) {
+        $(options.mainClass).each(function() {
+            var el = this;
+            return new Select(el, options);
+        });
+    }
+
+
+}( jQuery ) );
+
+( function( $, window ) {
+    'use strict';
+
+
+    var options = {
+        priceEl: '#couponBuyout_value_per_piece',
+        selectEl: '#couponBuyout_quantity'
+    };
+
+
+    // init PriceCounter class
+    if ( $( options.priceEl ).length > 0 && $( options.selectEl ).length > 0) {
+        var price = new PriceCounter( options );
+
+        price.on( 'price-updated', function() {
+            var self = this;
+            $( '.js-return-counted-prize' ).text( window.formatNumberBy3( price.getPrice(), ",", ' ' ) );
+        });
+    }
+
+
+}( jQuery, window ) );

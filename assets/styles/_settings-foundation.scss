@@ -142,7 +142,7 @@ $font-smoothing: antialiased;
 // $last-child-float: $opposite-direction;
 
 // We use these to make sure border radius matches unless we want it different.
-$global-radius: 3px;
+$global-radius: 5px;
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -1281,7 +1281,7 @@ $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 // 30. Tables
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-table-classes: $include-html-classes;
+$include-html-table-classes: false;
 
 // These control the background color for the table and even rows
 // $table-bg: $white;
