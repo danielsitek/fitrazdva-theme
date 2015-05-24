@@ -12,8 +12,6 @@ if ( !defined('WP_DEVELOP') ) {
 require __DIR__ . '/library/class-page-custom-menu-admin.php';
 require __DIR__ . '/library/class-wp-menu-parser.php';
 require __DIR__ . '/library/class-custom-menus.php';
-require __DIR__ . '/library/class-coupon-item.php';
-require __DIR__ . '/library/class-coupon-grid-item.php';
 
 
 // Various clean up functions

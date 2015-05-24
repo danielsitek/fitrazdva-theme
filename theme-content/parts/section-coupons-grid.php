@@ -12,7 +12,7 @@
 
 <?php
 
-use FitRazDva\CouponGridItem;
+use FitRazDvaCoupons\Front\CouponItem;
 
 $args = array(
     'post_type' => 'coupon'
@@ -30,13 +30,9 @@ if ( $coupons_grid->have_posts() ) {
 
         $coupons_grid->the_post();
 
-        $coupon_object = new CouponGridItem;
+        $coupon_item = new CouponItem;
 
-        $coupon = $coupon_object->get_metadata();
-
-        dump( $coupon );
-
-        if ( get_field( 'offer_is_active', $coupon['id'] ) ) {
+        if ( $coupon_item->is_active() ) {
 
             include __DIR__ . '/section-coupons-grid-item.php';
         }
