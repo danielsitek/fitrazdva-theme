@@ -152,7 +152,8 @@ module.exports = function(grunt) {
                 reporter: require('jshint-stylish')
             },
             all: [
-                '<%= options.folders.dev %>scripts/*.js',
+                '<%= options.folders.dev %>scripts/main.js',
+                '<%= options.folders.dev %>scripts/concat/**.js',
                 'Gruntfile.js',
                 'bower.json',
                 'package.json'
@@ -160,7 +161,10 @@ module.exports = function(grunt) {
         },
 
         jscs: {
-            src: '<%= options.folders.dev %>scripts/*.js',
+            src: [
+                '<%= options.folders.dev %>scripts/main.js',
+                '<%= options.folders.dev %>scripts/concat/**.js'
+            ],
             options: {
                 config: ".jscsrc"
             }
@@ -193,31 +197,33 @@ module.exports = function(grunt) {
 				'<%= options.folders.bower %>modernizr/modernizr.js',
 				'<%= options.folders.bower %>jquery/dist/jquery.js',
                 '<%= options.folders.bower %>jquery-placeholder/jquery.placeholder.js',
+                '<%= options.folders.dev %>scripts/lib/*.js',
 
-				// Foundation core
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.js',
+                // Foundation core
+                '<%= options.folders.bower %>foundation/js/foundation/foundation.js',
 
-				// Pick the componenets you need in your project
-				// '<%= options.folders.bower %>foundation/js/foundation/foundation.abide.js',
-				// '<%= options.folders.bower %>foundation/js/foundation/foundation.accordion.js',
-				// '<%= options.folders.bower %>foundation/js/foundation/foundation.alert.js',
-				// '<%= options.folders.bower %>foundation/js/foundation/foundation.clearing.js',
-				// '<%= options.folders.bower %>foundation/js/foundation/foundation.dropdown.js',
-				// '<%= options.folders.bower %>foundation/js/foundation/foundation.equalizer.js',
-				// '<%= options.folders.bower %>foundation/js/foundation/foundation.interchange.js',
-				// '<%= options.folders.bower %>foundation/js/foundation/foundation.joyride.js',
-				// '<%= options.folders.bower %>foundation/js/foundation/foundation.magellan.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.offcanvas.js',
-				// '<%= options.folders.bower %>foundation/js/foundation/foundation.orbit.js',
-				// '<%= options.folders.bower %>foundation/js/foundation/foundation.reveal.js',
-				// '<%= options.folders.bower %>foundation/js/foundation/foundation.slider.js',
-				// '<%= options.folders.bower %>foundation/js/foundation/foundation.tab.js',
-				// '<%= options.folders.bower %>foundation/js/foundation/foundation.tooltip.js',
+                // Pick the componenets you need in your project
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.abide.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.accordion.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.alert.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.clearing.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.dropdown.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.equalizer.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.interchange.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.joyride.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.magellan.js',
+                '<%= options.folders.bower %>foundation/js/foundation/foundation.offcanvas.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.orbit.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.reveal.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.slider.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.tab.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.tooltip.js',
                 '<%= options.folders.bower %>foundation/js/foundation/foundation.topbar.js',
 
                 '<%= options.folders.bower %>salvattore/dist/salvattore.js',
 
-				// Include your own custom scripts (located in the custom folder)
+                // Include your own custom scripts (located in the custom folder)
+                '<%= options.folders.dev %>scripts/concat/*.js',
 				'<%= options.folders.dev %>scripts/main.js'
 
 				],
