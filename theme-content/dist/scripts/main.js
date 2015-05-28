@@ -1,4 +1,11 @@
-/*!
+/**!
+ * FoundationPress Starter Theme v5.5.2
+ * Foundation Based starter theme for WordPress
+ * 
+ * Build time:     28-05-2015
+ * @license:       
+ */
+ /*!
  * Modernizr v2.8.3
  * www.modernizr.com
  *
@@ -14025,8 +14032,8 @@ var PriceCounter = ( function() {
 
 
     var options = {
-        priceEl: '#couponBuyout_value_per_piece',
-        selectEl: '#couponBuyout_quantity'
+        priceEl: '#coupon_checkout_value_per_piece',
+        selectEl: '#coupon_checkout_quantity'
     };
 
 
@@ -14187,8 +14194,8 @@ $(document).foundation();
 
 
     var options = {
-        priceEl: '#couponBuyout_value_per_piece',
-        selectEl: '#couponBuyout_quantity'
+        priceEl: '#coupon_checkout_value_per_piece',
+        selectEl: '#coupon_checkout_quantity'
     };
 
 

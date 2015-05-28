@@ -1,4 +1,11 @@
-@charset "UTF-8";
+/**!
+ * FoundationPress Starter Theme v5.5.2
+ * Foundation Based starter theme for WordPress
+ * 
+ * Build time:     28-05-2015
+ * @license:       
+ */
+ @charset "UTF-8";
 /**
  * Overrides the highlight color shown when the user taps a link or
  * a JavaScript clickable element in Safari on iPhone.
@@ -6141,8 +6148,7 @@ a.color-white {
 
 .nav-submenu {
   display: block;
-  margin: 0 -0.9375rem;
-  margin-top: -1.5rem; }
+  margin: 0 -0.9375rem; }
   .nav-submenu ul {
     display: block;
     margin: 0;
@@ -6172,14 +6178,9 @@ a.color-white {
       .nav-submenu ul > li:first-child a {
         border-radius: 10px 0 0 0; }
 
-@media only screen and (min-width: 40.0625em) {
-  .nav-submenu {
-    margin-top: -3rem; } }
-
 @media only screen and (min-width: 64.0625em) {
   .nav-submenu {
-    margin: 0 -2.5rem;
-    margin-top: -2.5rem; } }
+    margin: 0; } }
 
 .nav.nav-footer {
   display: block;
