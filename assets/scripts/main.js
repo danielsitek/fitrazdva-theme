@@ -82,8 +82,8 @@ $(document).foundation();
 
 
     var options = {
-        priceEl: '#couponBuyout_value_per_piece',
-        selectEl: '#couponBuyout_quantity'
+        priceEl: '#coupon_checkout_value_per_piece',
+        selectEl: '#coupon_checkout_quantity'
     };
 
 
