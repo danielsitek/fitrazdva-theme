@@ -253,13 +253,18 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
-            grunt: { files: ['Gruntfile.js'] },
+            grunt: {
+                files: ['Gruntfile.js'],
+                options: {
+                    reload: true
+                }
+            },
 
             js: {
                 files: '<%= options.folders.dev %>scripts/**/*.js',
                 tasks: ['jshint', 'concat:javascript'],
 				options: {
-					livereload: true,
+					livereload: 13702,
 				}
             },
 
@@ -267,7 +272,7 @@ module.exports = function(grunt) {
                 files: '<%= options.folders.dev %>styles/**/*.scss',
                 tasks: ['sass', 'autoprefixer', 'csscomb'],
 				options: {
-					livereload: true,
+					livereload: 13702,
 				}
             },
 
@@ -275,14 +280,14 @@ module.exports = function(grunt) {
                 files: '<%= options.folders.dev %>images/**',
                 tasks: ['copy:images'],
 				options: {
-					livereload: true,
+					livereload: 13702,
 				}
             },
 
 			 all: {
 				files: '**/*.php',
 				options: {
-					livereload: true,
+					livereload: 13702,
 				}
 			}
         }
