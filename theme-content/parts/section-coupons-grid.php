@@ -1,3 +1,16 @@
+<?php
+
+use FitRazDvaCoupons\Front\CouponItem;
+
+if ( ! class_exists('CouponItem') ) {
+    return;
+}
+
+$args = array(
+    'post_type' => 'coupon'
+);
+
+?>
 <div class="row">
     <div class="column span-12">
         <h2>Ostatní slevové poukazy</h2>
@@ -9,14 +22,7 @@
 
         <div class="coupon-grid">
             <div class="row" data-columns>
-
 <?php
-
-use FitRazDvaCoupons\Front\CouponItem;
-
-$args = array(
-    'post_type' => 'coupon'
-);
 
 /**
  *
