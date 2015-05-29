@@ -1,0 +1,230 @@
+
+
+.coupon-item {
+    position: relative;
+    display: block;
+    border-radius: $global-radius;
+    transition: all .25s;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1);
+    padding: 0;
+    margin: 0 0 ($base-line-height-rem * 2) 0;
+    @include clearfix();
+
+    &:hover {
+        transition: all .25s;
+        box-shadow: 0 0px 0px 3px $primary-color;
+    }
+}
+
+
+.coupon-item-image {
+    position: relative;
+    display: block;
+    width: auto;
+    background-color: $silver;
+    border-radius: $global-radius $global-radius 0 0;
+    @include clearfix();
+
+    img {
+        display: block;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        border: 0 none;
+        outline: 0 none;
+        border-radius: $global-radius $global-radius 0 0;
+    }
+
+}
+
+
+.coupon-item-body {
+    display: block;
+    background-color: $white;
+    margin: 0;
+    padding: 0;
+    border: 1px solid $silver;
+    border-top: 0 none;
+    border-radius: 0 0 $global-radius $global-radius;
+    @include clearfix();
+
+}
+
+.coupon-item-body-header {
+    margin: ($base-line-height-rem / 2);
+}
+
+.coupon-item-body-properties {
+    display: block;
+    border-top: 1px solid $silver;
+    @include clearfix();
+}
+
+
+.coupon-item-hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+    opacity: 0;
+    z-index: 10;
+    border-radius: $global-radius;
+    box-shadow: inset 0 0 100px 0 $white;
+    transition: opacity .25s ease-in-out;
+}
+
+.coupon-item-hover-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $white;
+    border-radius: $global-radius $global-radius 0 0;
+    opacity: .5;
+    z-index: 10;
+
+}
+
+.coupon-item-hover-content {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    padding: $base-line-height-rem;
+    padding-top: ($base-line-height-rem * 4.5);
+    z-index: 20;
+}
+
+.coupon-item {
+
+    .coupon-item-hover {
+        display: block;
+    }
+
+    &:hover {
+
+        .coupon-item-hover {
+            transition: opacity .25s ease-in-out;
+            opacity: 1;
+        }
+    }
+}
+
+
+
+
+.coupon-item-prop {
+    display: block;
+    border: 0 none;
+    margin: 0;
+    padding: ($base-line-height-rem / 3) ($base-line-height-rem / 2);
+    text-align: right;
+    float: left;
+
+    &.prop-due-date {
+        width: 40%;
+    }
+
+    &.prop-percent {
+        width: 25%;
+    }
+
+    &.prop-price {
+        width: 35%;
+    }
+}
+
+
+.coupon-item-prop + .coupon-item-prop {
+    border-left: 1px solid $silver;
+}
+
+
+.coupon-item-prop-header {
+    display: block;
+    font-size: 88%;
+}
+
+.coupon-item-prop-content {
+    display: block;
+    font-size: 112.5%;
+}
+
+
+
+.coupon-item-range {
+    margin: 0 0 ($base-line-height-rem * 1) 0;
+}
+
+.coupon-item-range-header {
+    margin: 0 0 ($base-line-height-rem * .5) 0;
+
+    table {
+        border: 0 none;
+        background-color: transparent;
+        font-size: inherit;
+
+        tr, td {
+            padding: 0;
+        }
+    }
+}
+
+
+
+.coupon-item-range-bar {
+    display: block;
+    position: relative;
+    margin: 0 0 ($base-line-height-rem * .5) 0;
+    padding: 0;
+    height: ($base-line-height-rem * .25);
+    width: auto;
+    background-color: $silver;
+    border-radius: $global-radius;
+    overflow: hidden;
+}
+
+.coupon-item-range-bar-filling {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: $success-color;
+    border-radius: $global-radius;
+}
+
+
+
+// .coupon-grid {
+
+//     > .row {
+
+//         > .coupon-item {
+//             width: 428px;
+//             margin-left: ($base-line-height-rem * .5);
+//             margin-right: ($base-line-height-rem * .5);
+//             float: left;
+
+//             &:nth-of-type(2n + 1) {
+//                 clear: both;
+//             }
+//         }
+//     }
+// }
+
+
+

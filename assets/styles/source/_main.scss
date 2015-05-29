@@ -57,15 +57,29 @@ a {
 }
 
 figure {
+    display: block;
     margin: 0;
+    text-align: center;
 }
 
 img {
     margin: 0 0 $base-line-height-rem 0;
     border-radius: $global-radius;
+
+    &.float-left,
+    &.alignleft,
+    &.float-right,
+    &.alignright {
+        float: none;
+    }
 }
 
 @media #{$medium-up} {
+
+    figure {
+        display: inherit;
+        text-align: none;
+    }
 
     img {
         margin: 0 0 $base-line-height-rem 0;
@@ -73,11 +87,13 @@ img {
         &.float-left,
         &.alignleft {
             margin-right: $base-line-height-rem;
+            float: left;
         }
 
         &.float-right,
         &.alignright {
             margin-left: $base-line-height-rem;
+            float: right;
         }
     }
 }
@@ -132,6 +148,14 @@ hr {
 
 
 
+
+.bg-white {
+    background-color: $white;
+}
+
+.bg-light {
+    background-color: $white-smoke;
+}
 
 
 

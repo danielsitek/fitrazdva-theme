@@ -4,8 +4,9 @@ Author: Ole Fredrik Lie
 URL: http://olefredrik.com
 */
 
-if ( !defined('WP_DEVELOP') )
+if ( !defined('WP_DEVELOP') ) {
     define('WP_DEVELOP', false);
+}
 
 
 require __DIR__ . '/library/class-page-custom-menu-admin.php';
@@ -48,6 +49,7 @@ require_once('library/custom-gallery.php');
 /**
  * Init for WP Admin section
  */
+
 use FitRazDva\SetPageCustomMenuAdmin;
 
 $set_page_custom_menu_admin = new SetPageCustomMenuAdmin();

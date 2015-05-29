@@ -121,7 +121,7 @@ $black       : #000000;
 $primary-color: #781036;
 $secondary-color: #e7e7e7;
 $alert-color: #f04124;
-$success-color: #43AC6A;
+$success-color: #67BB24;
 $warning-color: #f08a24;
 $info-color: #a0d3e8;
 
@@ -142,7 +142,7 @@ $font-smoothing: antialiased;
 // $last-child-float: $opposite-direction;
 
 // We use these to make sure border radius matches unless we want it different.
-// $global-radius: 3px;
+$global-radius: 5px;
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -1281,7 +1281,7 @@ $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 // 30. Tables
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-table-classes: $include-html-classes;
+$include-html-table-classes: false;
 
 // These control the background color for the table and even rows
 // $table-bg: $white;
@@ -1294,14 +1294,14 @@ $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 
 // These control the table head styles
 // $table-head-bg: $white-smoke  ;
-// $table-head-font-size: rem-calc(14);
+$table-head-font-size: inherit;
 // $table-head-font-color: $jet;
 // $table-head-font-weight: $font-weight-bold;
 // $table-head-padding: rem-calc(8 10 10);
 
 // These control the row padding and font styles
 // $table-row-padding: rem-calc(9 10);
-// $table-row-font-size: rem-calc(14);
+$table-row-font-size: inherit;
 // $table-row-font-color: $jet;
 // $table-line-height: rem-calc(18);
 

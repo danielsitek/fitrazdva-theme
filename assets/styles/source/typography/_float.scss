@@ -2,17 +2,17 @@
 
 @mixin float-classes{
   .alignleft,
-  .float-left    { float: left !important; }
+  .float-left    { float: left; }
   .alignright,
-  .float-right   { float: right !important; }
+  .float-right   { float: right; }
   .aligncenter,
-  .float-center  { float: none !important; margin-left: auto; margin-right: auto; }
+  .float-center  { float: none; margin-left: auto; margin-right: auto; }
 
   @for $i from 1 through length($align-class-names) {
     @media #{(nth($align-class-breakpoints, $i))} {
-      .#{(nth($align-class-names, $i))}-float-left    { float: left !important; }
-      .#{(nth($align-class-names, $i))}-float-right   { float: right !important; }
-      .#{(nth($align-class-names, $i))}-float-center  { float: none !important; margin-left: auto; margin-right: auto; }
+      .#{(nth($align-class-names, $i))}-float-left    { float: left; }
+      .#{(nth($align-class-names, $i))}-float-right   { float: right; }
+      .#{(nth($align-class-names, $i))}-float-center  { float: none; margin-left: auto; margin-right: auto; }
     }
   }
 }

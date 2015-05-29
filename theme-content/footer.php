@@ -123,15 +123,17 @@
     </div>
 </footer>
 
-<a class="exit-off-canvas"></a>
+<?php
 
-	<?php do_action( 'foundationpress_layout_end' ); ?>
-	</div>
-</div>
-<?php wp_footer(); ?>
-<?php do_action( 'foundationpress_before_closing_body' ); ?>
-<?php if (WP_DEVELOP) { ?>
-<script src="http://localhost:35729/livereload.js?snipver=1"></script>
+do_action( 'foundationpress_layout_end' );
+
+wp_footer();
+
+do_action( 'foundationpress_before_closing_body' );
+
+if (WP_DEVELOP) {
+?>
+<script src="http://localhost:13702/livereload.js?snipver=1"></script>
 <?php }; ?>
 </body>
 </html>

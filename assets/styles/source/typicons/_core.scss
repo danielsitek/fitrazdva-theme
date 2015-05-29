@@ -1,0 +1,26 @@
+
+
+/* :before psuedo-selector inserts and styles icon */
+.typcn {
+    display: inline-block;
+    font: normal normal normal 1em typicons;
+    font-size: inherit;
+    text-rendering: auto;
+    transform: translate(0, 0);
+
+    &:before {
+        font-family: 'typicons';
+        font-style: normal;
+        font-weight: normal;
+        speak: none;
+        display: inline-block;
+        text-decoration: inherit;
+        width: 1em;
+        height: 1em;
+        font-size: 1em;
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+}

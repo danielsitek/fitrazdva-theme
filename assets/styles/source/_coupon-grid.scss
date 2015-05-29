@@ -1,0 +1,29 @@
+
+
+.coupon-grid {
+    display: block;
+
+    [data-columns]::before {
+        content: '2 .column.small-12.medium-6';
+    }
+
+    .row {
+        margin-left: -($base-line-height-rem);
+        margin-right: -($base-line-height-rem);
+
+        .column {
+            padding-left: $base-line-height-rem;
+            padding-right: $base-line-height-rem;
+        }
+    }
+}
+
+
+.no-js {
+    .coupon-grid {
+        [data-columns]::before {
+            content: none;
+        }
+    }
+}
+

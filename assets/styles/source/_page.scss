@@ -23,14 +23,14 @@
     background-color: $white;
     border: 0 none;
     margin: 0;
-    padding: $base-line-height-rem 0 0 0;
+    padding: 0;
 }
 
 
 @media #{$medium-up} {
 
     .page-main-content {
-        padding: ($base-line-height-rem * 2) 0;
+        // padding: ($base-line-height-rem * 2) 0;
     }
 }
 
@@ -38,11 +38,34 @@
 
     .page-main-content {
         border-radius: rem-calc(10) rem-calc(10) 0 0;
-        padding: rem-calc(40);
-        padding-bottom: rem-calc(5);
+        // padding: rem-calc(40);
+        padding: 0;
     }
 }
 
+
+.page-main-section {
+    margin: 0;
+    padding: 0;
+    @include clearfix();
+}
+
+.page-main-section-content {
+    padding: 0;
+    margin: ($base-line-height-rem * 3) 0;
+}
+
+@media #{$large-up} {
+
+    .page-main-section-content {
+        margin-left: rem-calc(40);
+        margin-right: rem-calc(40);
+
+        &.section-header {
+            margin-top: rem-calc(40);
+        }
+    }
+}
 
 
 /**
