@@ -2,13 +2,24 @@
 
 use FitRazDvaCoupons\Front\CouponItem;
 
-if ( ! class_exists('CouponItem') ) {
+if ( ! class_exists('FitRazDvaCoupons\Bootstrap') ) {
     return;
 }
 
 $args = array(
     'post_type' => 'coupon'
 );
+
+/**
+ *
+ * @uses WP_Query https://codex.wordpress.org/Class_Reference/WP_Query
+ */
+
+$coupons_grid = new WP_Query( $args );
+
+if ( ! $coupons_grid->have_posts() ) {
+    return;
+}
 
 ?>
 <div class="row">
@@ -23,12 +34,6 @@ $args = array(
         <div class="coupon-grid">
             <div class="row" data-columns>
 <?php
-
-/**
- *
- * @uses WP_Query https://codex.wordpress.org/Class_Reference/WP_Query
- */
-$coupons_grid = new WP_Query( $args );
 
 if ( $coupons_grid->have_posts() ) {
 
@@ -46,7 +51,6 @@ if ( $coupons_grid->have_posts() ) {
 }
 
 ?>
-
             </div>
         </div>
     </div>

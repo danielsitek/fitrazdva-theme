@@ -8,7 +8,7 @@ $coupon_item = new CouponItem;
 <div class="coupon-form-buyout">
     <div class="coupon-form-buyout-content">
 
-        <form action="" id="couponBuyout" class="form" method="POST">
+        <form action="<?php echo esc_url( $_SERVER['SCRIPT_URI'] ); ?>" id="coupon_checkout" class="form" method="POST">
             <fieldset>
                 <p>
                     <span>Původní cena:</span> <strong class="float-right"><?php echo $coupon_item->get_price_original(); ?> Kč</strong><br>
@@ -27,7 +27,7 @@ $coupon_item = new CouponItem;
                             </div>
                             <div class="column span-6">
                                 <span class="form-mask">
-                                    <select name="couponBuyout[quantity]" id="couponBuyout_quantity" class="form-select form-mask-content span-12" tabindex="1">
+                                    <select name="coupon_checkout[quantity]" id="coupon_checkout_quantity" class="form-select form-mask-content span-12" tabindex="1">
                                         <option value="1">1 ks</option>
                                         <option value="2">2 ks</option>
                                         <option value="3">3 ks</option>
@@ -52,19 +52,19 @@ $coupon_item = new CouponItem;
                             <strong>Váš email:</strong><br>
                             <span>Zašleme vám na něj informace o&nbsp;objednávce</span>
                         </div>
-                        <input type="email" name="couponBuyout[email]" id="couponBuyout_email" placeholder="frantiska.krasna@seznam.cz" tabindex="1" class="form-input span-12" required="required">
+                        <input type="email" name="coupon_checkout[email]" id="coupon_checkout_email" placeholder="frantiska.krasna@seznam.cz" tabindex="1" class="form-input span-12" required="required">
                     </label>
                 </div>
 
                 <div class="form-group input-checkbox">
                     <label>
-                        <input type="checkbox" name="couponBuyout[agreement]" id="couponBuyout_agreement" tabindex="1" required="required">
+                        <input type="checkbox" name="coupon_checkout[agreement]" id="coupon_checkout_agreement" tabindex="1" required="required">
                         <div class="input-label">
                             Souhlasím s&nbsp;<a href="/obchodni-podminky">obchodními podmínkami</a>
                         </div>
                     </label>
                     <label>
-                        <input type="checkbox" name="couponBuyout[newsletter]" id="couponBuyout_newsletter" checked="checked" tabindex="1">
+                        <input type="checkbox" name="coupon_checkout[newsletter]" id="coupon_checkout_newsletter" checked="checked" tabindex="1">
                         <div class="input-label">
                             <strong>Dejte mi vědět o&nbsp;dalších akčních nabídkách.</strong> Nebojte se, žádný spam, jen naše speciální balíčky za speciální ceny.
                         </div>
@@ -72,15 +72,15 @@ $coupon_item = new CouponItem;
                 </div>
 
                 <div class="form-group input-interested">
-                    <input type="checkbox" name="couponBuyout[alive]" class="form-input-interested" id="couponBuyout_alive" tabindex="-1">
+                    <input type="checkbox" name="coupon_checkout[alive]" class="form-input-interested" id="coupon_checkout_alive" tabindex="-1">
                 </div>
 
-                <input type="hidden" name="couponBuyout[value_per_piece]" id="couponBuyout_value_per_piece" value="<?php echo $coupon_item->get_price_after_discount( true ); ?>">
-                <input type="hidden" name="couponBuyout[token]" id="couponBuyout_token" value="cup001">
-                <input type="hidden" name="couponBuyout[return_url]" id="couponBuyout_return_url" value="/slevove-poukazy/cup001">
+                <input type="hidden" name="coupon_checkout[value_per_piece]" id="coupon_checkout_value_per_piece" value="<?php echo $coupon_item->get_price_after_discount( true ); ?>">
+                <input type="hidden" name="coupon_checkout[coupon_id]" id="coupon_checkout_token" value="<?php echo $coupon_item->get_id(); ?>">
+                <input type="hidden" name="coupon_checkout[return_url]" id="coupon_checkout_return_url" value="<?php echo esc_url( $_SERVER['SCRIPT_URI'] ); ?>">
 
                 <div class="form-actions text-right">
-                    <button type="submit" id="couponBuyout_submit" name="couponBuyout[submit]" class="button button-primary button-large js-form-buyout-submit" tabindex="1">Koupit za <strong><span class="js-return-counted-prize"><?php echo $coupon_item->get_price_after_discount(); ?></span>&nbsp;Kč</strong></button>
+                    <button type="submit" id="coupon_checkout_submit" name="coupon_checkout[submit]" class="button button-primary button-large js-form-buyout-submit" tabindex="1">Koupit za <strong><span class="js-return-counted-prize"><?php echo $coupon_item->get_price_after_discount(); ?></span>&nbsp;Kč</strong></button>
                 </div>
 
             </fieldset>
@@ -88,3 +88,57 @@ $coupon_item = new CouponItem;
 
     </div>
 </div>
+
+<script type="text/javascript" src="https://testgw.gopay.cz/gp-gw/js/embed.js"></script>
+<script>
+
+    ( function ( $ ){
+
+        var $form = $( '#coupon_checkout' );
+        var return_url = location.href;
+        var formData;
+        var $submit_button = $form.find( '.js-form-buyout-submit' );
+
+        $form.on( 'submit', function ( event ) {
+
+            event.preventDefault();
+            formData = $(this).serialize();
+
+            initPayment( formData );
+
+            return false;
+
+        } );
+
+        function initPayment ( formData ) {
+            console.log( formData );
+
+            $.ajax( {
+                url: '<?php echo admin_url( "admin-ajax.php" ); ?>',
+                method: 'POST',
+                data: 'action=coupon_checkout&' + formData
+            } )
+            .done( onInitPaymentDone );
+        }
+
+        function onInitPaymentDone ( res ) {
+
+            console.log( res );
+
+            goToGateway( res );
+
+            // _gopay.checkout( { gatewayUrl: res.data.gwUrl }, initCheckout );
+        }
+
+        function goToGateway ( res ) {
+
+            window.location.href = res.data.gwUrl;
+        }
+
+        // function initCheckout ( res ) {
+
+        // }
+
+    }( jQuery ) );
+
+</script>
