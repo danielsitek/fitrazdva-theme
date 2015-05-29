@@ -172,6 +172,7 @@ select {
     input,
     select,
     textarea {
+        width: 100%;
         font-size: inherit;
         display: inline;
         line-height: inherit;
@@ -187,6 +188,11 @@ select {
             box-shadow: $form-focus-box-shadow;
             transition: all .25s ease-in-out;
         }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        width: auto;
     }
 }
 

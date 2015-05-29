@@ -1,0 +1,16 @@
+
+
+$typicons-path: '../fonts/';
+$typicons-version: '2.0.7';
+
+@font-face {
+    font-family: 'typicons';
+    font-weight: normal;
+    font-style: normal;
+    src: url('#{$typicons-path}typicons.eot?v=#{$typicons-version}');
+    src: url('#{$typicons-path}typicons.eot?#iefix&v=#{$typicons-version}') format('embedded-opentype'),
+        url('#{$typicons-path}typicons.woff?v=#{$typicons-version}') format('woff'),
+        url('#{$typicons-path}typicons.ttf?v=#{$typicons-version}') format('truetype'),
+        url('#{$typicons-path}typicons.svg?v=#{$typicons-version}#typicons') format('svg');
+}
+

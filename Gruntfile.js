@@ -184,6 +184,14 @@ module.exports = function(grunt) {
                 cwd: '<%= options.folders.bower %>font-awesome/fonts',
                 src: ['fontawesome-webfont.*'],
                 dest: '<%= options.folders.production %>fonts'
+            },
+
+            typicons: {
+                expand: true,
+                nonull: true,
+                cwd: '<%= options.folders.bower %>typicons/src/font',
+                src: ['*.eot', '*.svg', '*.ttf', '*.woff'],
+                dest: '<%= options.folders.production %>fonts'
             }
         },
 
@@ -212,13 +220,13 @@ module.exports = function(grunt) {
                 // '<%= options.folders.bower %>foundation/js/foundation/foundation.interchange.js',
                 // '<%= options.folders.bower %>foundation/js/foundation/foundation.joyride.js',
                 // '<%= options.folders.bower %>foundation/js/foundation/foundation.magellan.js',
-                '<%= options.folders.bower %>foundation/js/foundation/foundation.offcanvas.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.offcanvas.js',
                 // '<%= options.folders.bower %>foundation/js/foundation/foundation.orbit.js',
                 // '<%= options.folders.bower %>foundation/js/foundation/foundation.reveal.js',
                 // '<%= options.folders.bower %>foundation/js/foundation/foundation.slider.js',
                 // '<%= options.folders.bower %>foundation/js/foundation/foundation.tab.js',
                 // '<%= options.folders.bower %>foundation/js/foundation/foundation.tooltip.js',
-                '<%= options.folders.bower %>foundation/js/foundation/foundation.topbar.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.topbar.js',
 
                 '<%= options.folders.bower %>salvattore/dist/salvattore.js',
 
@@ -284,7 +292,7 @@ module.exports = function(grunt) {
 				}
             },
 
-			 all: {
+			all: {
 				files: '**/*.php',
 				options: {
 					livereload: 13702,
@@ -329,7 +337,7 @@ module.exports = function(grunt) {
     grunt.registerTask(
         'build-assets',
         'Minify and copy images and fonts.',
-        ['copy:images', 'copy:fontawesome']
+        ['copy:images', 'copy:typicons']
     );
 
     grunt.registerTask(
