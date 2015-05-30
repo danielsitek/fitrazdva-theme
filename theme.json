@@ -21,10 +21,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/olefredrik/FoundationPress.git"
+        "url": "https://github.com/danielsitek/fitrazdva-theme"
     },
     "bugs": {
-        "url": "https://github.com/olefredrik/FoundationPress.git/issues"
+        "url": "https://github.com/danielsitek/fitrazdva-theme/issues"
     },
     "license": {
         "name": "MIT",
