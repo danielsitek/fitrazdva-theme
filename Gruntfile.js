@@ -17,15 +17,17 @@ module.exports = function(grunt) {
 	require('time-grunt')(grunt);
 
 	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
+        pkg: grunt.file.readJSON('package.json'),
+		theme: grunt.file.readJSON('theme.json'),
 
 		banner: [
             '/**!',
-            ' * <%= pkg.title %> v<%= pkg.version %>',
-            ' * <%= pkg.description %>',
+            ' * <%= theme.title %>',
+            ' * <%= theme.description %>',
             ' * ',
-            ' * Build time:     <%= grunt.template.today("dd-mm-yyyy") %>',
-            ' * @license:       <%= pkg.license %>',
+            ' * @version:       v<%= theme.version %>',
+            ' * @updated:       <%= grunt.template.today("dd-mm-yyyy") %>',
+            ' * @license:       <%= theme.license.name %>',
             ' */',
             ' '
         ].join('\n'),
@@ -143,6 +145,10 @@ module.exports = function(grunt) {
                     stdout: true,
                     stdin: false
                 }
+            },
+            // Package theme-content into zip file.
+            make_zip: {
+                command: 'zip -r zip/<%= theme.name %>-<%= theme.version %>.zip theme-content/'
             }
         },
 
