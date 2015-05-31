@@ -1,13 +1,11 @@
 
-var PriceCounter = ( function() {
+var PriceCounter = (function() {
     'use strict';
-
 
     var options = {
         priceEl: '#coupon_checkout_value_per_piece',
         selectEl: '#coupon_checkout_quantity'
     };
-
 
     function PriceCounter(options) {
         this.options = options;
@@ -37,7 +35,6 @@ var PriceCounter = ( function() {
         return this.price;
     };
 
-
     return PriceCounter;
 
-}() );
+}());

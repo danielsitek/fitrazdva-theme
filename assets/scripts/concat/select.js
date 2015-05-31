@@ -1,13 +1,11 @@
 
-var Select = ( function() {
+var Select = (function() {
     'use strict';
-
 
     var options = {
         mainClass: '.js-input-select',
         valueClass: '.js-input-select-value'
     };
-
 
     function Select(el, options) {
         this.el = el;
@@ -18,7 +16,6 @@ var Select = ( function() {
         this._init();
     }
 
-
     Select.prototype._init = function() {
         var self = this;
         $(this.selectEl).on('change.select', function(event) {
@@ -27,7 +24,6 @@ var Select = ( function() {
         });
     };
 
-
     Select.prototype._setValue = function(val) {
 
         if (val.length > 0) {
@@ -35,7 +31,6 @@ var Select = ( function() {
         }
     };
 
-
     return Select;
 
-}() );
+}());

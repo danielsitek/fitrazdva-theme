@@ -2,7 +2,6 @@ $(document).foundation();
 
 (function(window) {
     'use strict';
-
     if (window.App === undefined) {
         window.App = {};
     }
@@ -58,7 +57,7 @@ $(document).foundation();
 
 }(window));
 
-( function( $ ) {
+(function($) {
     'use strict';
 
     var options = {
@@ -74,28 +73,24 @@ $(document).foundation();
         });
     }
 
+}(jQuery));
 
-}( jQuery ) );
-
-( function( $, window ) {
+(function($, window) {
     'use strict';
-
 
     var options = {
         priceEl: '#coupon_checkout_value_per_piece',
         selectEl: '#coupon_checkout_quantity'
     };
 
-
     // init PriceCounter class
-    if ( $( options.priceEl ).length > 0 && $( options.selectEl ).length > 0) {
-        var price = new PriceCounter( options );
+    if ($(options.priceEl).length > 0 && $(options.selectEl).length > 0) {
+        var price = new PriceCounter(options);
 
-        price.on( 'price-updated', function() {
+        price.on('price-updated', function() {
             var self = this;
-            $( '.js-return-counted-prize' ).text( window.formatNumberBy3( price.getPrice(), ",", ' ' ) );
+            $('.js-return-counted-prize').text(window.formatNumberBy3(price.getPrice(), ',', ' '));
         });
     }
 
-
-}( jQuery, window ) );
+}(jQuery, window));
