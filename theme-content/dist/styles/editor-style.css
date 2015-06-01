@@ -1,4 +1,12 @@
-@charset "UTF-8";
+/**!
+ * FitRazDva WordPress Theme
+ * This is WordPress theme for website FitRazDva.cz. It`s build on top of slightly modified FoundationPress starter theme, based on Foundation 5 framework by Zurb.
+ * 
+ * @version:       v0.1.0
+ * @updated:       01-06-2015
+ * @license:       MIT
+ */
+ @charset "UTF-8";
 /**
  * Overrides the highlight color shown when the user taps a link or
  * a JavaScript clickable element in Safari on iPhone.
@@ -4432,6 +4440,9 @@ img {
       margin-left: 1.5rem;
       float: right; } }
 
+.text-shadow {
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8); }
+
 .radius {
   border-radius: 5px; }
 
@@ -4479,6 +4490,15 @@ hr {
 
 .bg-light {
   background-color: #F5F5F5; }
+
+.nav-footer-links {
+  color: #781036; }
+  .nav-footer-links ul a {
+    text-decoration: none;
+    color: #eaa6c1; }
+    .nav-footer-links ul a:hover {
+      text-decoration: underline;
+      color: #FFFFFF; }
 
 .clearfix:before, .clearfix:after {
   content: " ";
@@ -4872,6 +4892,10 @@ a.color-white {
   .page-main {
     background-color: transparent; } }
 
+.page-width-content {
+  max-width: 62.5rem;
+  margin: 0 auto; }
+
 /**
  * Page Main - Content
  */
@@ -4882,10 +4906,17 @@ a.color-white {
   margin: 0;
   padding: 0; }
 
+@media only screen and (min-width: 40.0625em) {
+  .page-width-content {
+    padding: 0 1.5rem; } }
+
 @media only screen and (min-width: 64.0625em) {
   .page-main-content {
     border-radius: 0.625rem 0.625rem 0 0;
-    padding: 0; } }
+    padding: 0; }
+  .page-width-content {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem; } }
 
 .page-main-section {
   margin: 0;
@@ -5226,7 +5257,7 @@ a.color-white {
   .nav.nav-dropdown > li {
     display: block;
     float: none; }
-    .nav.nav-dropdown > li a {
+    .nav.nav-dropdown > li > a {
       display: block;
       height: 50px;
       line-height: 50px;
@@ -5240,19 +5271,22 @@ a.color-white {
       -webkit-transition: all 0.1s;
            -o-transition: all 0.1s;
               transition: all 0.1s; }
-      .nav.nav-dropdown > li a.active,
-      .nav.nav-dropdown > li a:hover {
+      .nav.nav-dropdown > li > a.active,
+      .nav.nav-dropdown > li > a:hover {
         background-color: #781036;
         color: #FFFFFF;
         -webkit-transition: all 0.1s;
              -o-transition: all 0.1s;
                 transition: all 0.1s; }
-    .nav.nav-dropdown > li.first a {
-      border-radius: 10px 0 0 0; }
-    .nav.nav-dropdown > li.last a {
-      border-radius: 0 0 10px 10px; }
+    .nav.nav-dropdown > li:first-of-type > a,
+    .nav.nav-dropdown > li.first > a {
+      border-top-left-radius: 10px; }
+    .nav.nav-dropdown > li:last-of-type > a,
+    .nav.nav-dropdown > li.last > a {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px; }
 
-.nav li:hover .nav.nav-dropdown {
+.nav > li:hover > .nav.nav-dropdown {
   border-radius: 10px 0 10px 10px;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
@@ -5362,6 +5396,8 @@ a.color-white {
 .panel {
   padding: 1.5rem;
   margin-bottom: 1.5rem; }
+  .panel.-marginless {
+    margin-bottom: 0; }
   .panel .panel-content {
     display: block;
     margin: 0;
