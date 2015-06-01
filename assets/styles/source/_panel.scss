@@ -4,6 +4,10 @@
     padding: $base-line-height-rem;
     margin-bottom: $base-line-height-rem;
 
+    &.-marginless {
+        margin-bottom: 0;
+    }
+
     .panel-content {
         display: block;
         margin: 0;

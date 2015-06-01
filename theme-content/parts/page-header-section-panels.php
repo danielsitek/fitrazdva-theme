@@ -1,12 +1,12 @@
 <div class="row">
     <div class="column small-12">
-        <div class="panel">
+        <div class="panel -marginless">
 
 
             <div class="row">
                 <div class="column small-12">
                     <header>
-                        <strong class="color-white h2">Proč studio Fit Raz Dva?</strong>
+                        <strong class="color-white h2 text-shadow">Proč studio Fit Raz Dva?</strong>
                     </header>
                 </div>
             </div>

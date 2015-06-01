@@ -14,6 +14,12 @@
 }
 
 
+.page-width-content {
+    max-width: $row-width;
+    margin: 0 auto;
+}
+
+
 
 /**
  * Page Main - Content
@@ -32,6 +38,10 @@
     .page-main-content {
         // padding: ($base-line-height-rem * 2) 0;
     }
+
+    .page-width-content {
+        padding: 0 $base-line-height-rem;
+    }
 }
 
 @media #{$large-up} {
@@ -40,6 +50,11 @@
         border-radius: rem-calc(10) rem-calc(10) 0 0;
         // padding: rem-calc(40);
         padding: 0;
+    }
+
+    .page-width-content {
+        padding-left: rem-calc(40);
+        padding-right: rem-calc(40);
     }
 }
 
