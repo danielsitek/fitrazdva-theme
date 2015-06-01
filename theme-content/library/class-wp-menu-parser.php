@@ -58,7 +58,7 @@ class WPMenuParser
 
         ob_start();
 
-        wp_nav_menu(array(
+        wp_nav_menu( array(
             'container' => 'div',                      // remove nav container
             'container_class' => '',                   // class of container
             'menu' => $this->menu_identificator,       // menu name
@@ -70,7 +70,7 @@ class WPMenuParser
             'link_after' => '',                        // after each link text
             'depth' => 5,                              // limit the depth of the nav
             'fallback_cb' => false                     // fallback function (see below)
-        ));
+        ) );
 
         $this->generated_wp_menu = ob_get_contents();
         ob_end_clean();
@@ -107,7 +107,7 @@ class WPMenuParser
     private function getMenuDetails()
     {
 
-        $menus = wp_get_nav_menus(array('slug' => $this->menu_identificator));
+        $menus = wp_get_nav_menus( array('slug' => $this->menu_identificator) );
         $menus = $menus[0];
 
         return $menus;
@@ -144,7 +144,10 @@ class WPMenuParser
 
             if ( isset( $node['@attributes'] ) ) {
 
-                $attr = $this->getLinkObject( $node['@attributes']['id'] );
+                if ( isset( $node['@attributes']['id'] ) ) {
+
+                    $attr = $this->getLinkObject( $node['@attributes']['id'] );
+                }
 
                 if ( isset( $node['ul'] ) ) {
 
@@ -175,6 +178,7 @@ class WPMenuParser
         $items = array();
 
         $dom->loadHTML( mb_convert_encoding( $this->generated_wp_menu, 'HTML-ENTITIES', 'UTF-8' ) );
+
         /**
          * Vybereme vždy první element `a`. Tím vyřadíme všechny další `a` v případné podúrovní.
          */
