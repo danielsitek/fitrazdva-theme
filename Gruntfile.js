@@ -148,7 +148,7 @@ module.exports = function(grunt) {
             },
             // Package theme-content into zip file.
             make_zip: {
-                command: 'zip -r zip/<%= theme.name %>-<%= theme.version %>.zip theme-content/'
+                command: 'zip -r <%= theme.name %>-<%= theme.version %>.zip theme-content/'
             }
         },
 
@@ -367,5 +367,11 @@ module.exports = function(grunt) {
         'init',
         'Prepare the project for development',
         ['shell:bower', 'concat:javascriptIE', 'build']
+    );
+
+    grunt.registerTask(
+        'theme-build',
+        'Save theme_content to zip file',
+        ['shell:make_zip']
     );
 };
