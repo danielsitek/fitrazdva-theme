@@ -3,7 +3,7 @@
  * This is WordPress theme for website FitRazDva.cz. It`s build on top of slightly modified FoundationPress starter theme, based on Foundation 5 framework by Zurb.
  * 
  * @version:       v0.1.0
- * @updated:       01-06-2015
+ * @updated:       05-06-2015
  * @license:       MIT
  */
  @charset "UTF-8";
@@ -4544,7 +4544,8 @@ hr {
 .float-center {
   float: none;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  display: block; }
 
 @media only screen and (max-width: 40em) {
   .small-only-float-left {
@@ -4554,7 +4555,8 @@ hr {
   .small-only-float-center {
     float: none;
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto;
+    display: block; } }
 
 @media only screen {
   .small-float-left {
@@ -4564,7 +4566,8 @@ hr {
   .small-float-center {
     float: none;
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto;
+    display: block; } }
 
 @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
   .medium-only-float-left {
@@ -4574,7 +4577,8 @@ hr {
   .medium-only-float-center {
     float: none;
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto;
+    display: block; } }
 
 @media only screen and (min-width: 40.0625em) {
   .medium-float-left {
@@ -4584,7 +4588,8 @@ hr {
   .medium-float-center {
     float: none;
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto;
+    display: block; } }
 
 @media only screen and (min-width: 64.0625em) and (max-width: 90em) {
   .large-only-float-left {
@@ -4594,7 +4599,8 @@ hr {
   .large-only-float-center {
     float: none;
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto;
+    display: block; } }
 
 @media only screen and (min-width: 64.0625em) {
   .large-float-left {
@@ -4604,7 +4610,8 @@ hr {
   .large-float-center {
     float: none;
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto;
+    display: block; } }
 
 @media only screen and (min-width: 90.0625em) and (max-width: 120em) {
   .xlarge-only-float-left {
@@ -4614,7 +4621,8 @@ hr {
   .xlarge-only-float-center {
     float: none;
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto;
+    display: block; } }
 
 @media only screen and (min-width: 90.0625em) {
   .xlarge-float-left {
@@ -4624,7 +4632,8 @@ hr {
   .xlarge-float-center {
     float: none;
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto;
+    display: block; } }
 
 @media only screen and (min-width: 120.0625em) and (max-width: 99999999em) {
   .xxlarge-only-float-left {
@@ -4634,7 +4643,8 @@ hr {
   .xxlarge-only-float-center {
     float: none;
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto;
+    display: block; } }
 
 @media only screen and (min-width: 120.0625em) {
   .xxlarge-float-left {
@@ -4644,7 +4654,8 @@ hr {
   .xxlarge-float-center {
     float: none;
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto;
+    display: block; } }
 
 .table {
   width: 100%;
@@ -5030,7 +5041,8 @@ a.color-white {
     margin-bottom: 1.5rem; }
   .block-grid img {
     display: block;
-    margin: 0; }
+    margin: 0 auto;
+    width: 100%; }
 
 .block-grid.small-one-up > .block-grid-item {
   width: 100%; }
