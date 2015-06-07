@@ -2,7 +2,7 @@
   "name": "foundationpress",
   "title": "FoundationPress Starter Theme",
   "description": "Foundation Based starter theme for WordPress",
-  "version": "5.5.2",
+  "version": "0.1.0",
   "engines": {
     "node": ">= 0.12.0",
     "npm": ">=2.1.5"
@@ -33,10 +33,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/danielsitek/fitrazdva-theme"
+    "url": "git+https://github.com/danielsitek/fitrazdva-theme.git"
   },
   "dependencies": {},
   "scripts": {
     "test": "grunt --verbose"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/danielsitek/fitrazdva-theme/issues"
+  },
+  "homepage": "https://github.com/danielsitek/fitrazdva-theme#readme",
+  "main": "Gruntfile.js",
+  "keywords": [
+    "wordpress",
+    "theme",
+    "custom",
+    "responsive",
+    "magenta"
+  ],
+  "author": "Daniel Sitek",
+  "license": "MIT"
 }
