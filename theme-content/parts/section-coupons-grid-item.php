@@ -1,6 +1,10 @@
 <div class="coupon-item" data-id="<?php echo $coupon_item->get_id(); ?>">
     <div class="coupon-item-image">
-        <img src="<?php echo $coupon_item->get_banner()[0]['src']; ?>" alt="<?php echo $coupon_item->get_banner()[0]['alt']; ?>">
+        <?php if ( isset( $coupon_item->get_banner()[0] ) ) { ?>
+            <img
+                src="<?php echo $coupon_item->get_banner()[0]['src']; ?>"
+                alt="<?php echo $coupon_item->get_banner()[0]['alt']; ?>">
+        <?php } ?>
         <div class="coupon-item-hover">
             <div class="coupon-item-hover-overlay"></div>
             <div class="coupon-item-hover-content">
