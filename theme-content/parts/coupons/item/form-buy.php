@@ -111,7 +111,7 @@ $coupon_item = new CouponItem;
         } );
 
         function initPayment ( formData ) {
-            console.log( formData );
+            // console.log( formData );
 
             $.ajax( {
                 url: '<?php echo admin_url( "admin-ajax.php" ); ?>',
@@ -123,21 +123,27 @@ $coupon_item = new CouponItem;
 
         function onInitPaymentDone ( res ) {
 
-            console.log( res );
+            // console.log( res );
 
-            goToGateway( res );
+            // goToGateway( res );
 
-            // _gopay.checkout( { gatewayUrl: res.data.gwUrl }, initCheckout );
+            _gopay.checkout( { gatewayUrl: res.data.gwUrl }, initCheckout );
         }
 
         function goToGateway ( res ) {
 
-            window.location.href = res.data.gwUrl;
+            if ( res.data.gwUrl !== undefined ) {
+                window.location.href = res.data.gwUrl;
+            }
         }
 
-        // function initCheckout ( res ) {
+        function initCheckout ( res ) {
+            // console.log( res );
 
-        // }
+            if ( res.url !== undefined ) {
+                window.location.href = res.url;
+            }
+        }
 
     }( jQuery ) );
 

@@ -38,6 +38,7 @@ while ( have_posts() ) : the_post(); ?>
 
         <div class="page-main-section bg-light">
             <div class="page-main-section-content">
+                <h2 id="podminky-akce">Podmínky akce</h2>
                 <?php echo $coupon_item->get_terms_of_event(); ?>
             </div>
         </div>
