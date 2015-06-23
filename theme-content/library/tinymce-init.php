@@ -1,7 +1,8 @@
 <?php
 
+if ( ! function_exists( 'fitrazdva_theme_tinymce_init' ) ) :
 // Prevent TinyMCE from stripping out schema.org metadata
-function foundationpress_tinymce_init( $options )
+function fitrazdva_theme_tinymce_init( $options )
 {
     /**
      *   Edit extended_valid_elements as needed. For syntax, see
@@ -38,4 +39,5 @@ function foundationpress_tinymce_init( $options )
     return $options;
 }
 
-add_filter('tiny_mce_before_init', 'foundationpress_tinymce_init' );
+add_filter('tiny_mce_before_init', 'fitrazdva_theme_tinymce_init' );
+endif;
