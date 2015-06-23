@@ -8,7 +8,7 @@ $coupon_item = new CouponItem;
 <div class="coupon-form-buyout">
     <div class="coupon-form-buyout-content">
 
-        <form action="<?php echo esc_url( $_SERVER['SCRIPT_URI'] ); ?>" id="coupon_checkout" class="form" method="POST">
+        <form action="<?php echo $coupon_item->get_action_url(); ?>" id="coupon_checkout" class="form" method="POST">
             <fieldset>
                 <p>
                     <span>Původní cena:</span> <strong class="float-right"><?php echo $coupon_item->get_price_original(); ?> Kč</strong><br>
@@ -77,7 +77,7 @@ $coupon_item = new CouponItem;
 
                 <input type="hidden" name="coupon_checkout[value_per_piece]" id="coupon_checkout_value_per_piece" value="<?php echo $coupon_item->get_price_after_discount( true ); ?>">
                 <input type="hidden" name="coupon_checkout[coupon_id]" id="coupon_checkout_token" value="<?php echo $coupon_item->get_id(); ?>">
-                <input type="hidden" name="coupon_checkout[return_url]" id="coupon_checkout_return_url" value="<?php echo esc_url( $_SERVER['SCRIPT_URI'] ); ?>">
+                <input type="hidden" name="coupon_checkout[return_url]" id="coupon_checkout_return_url" value="<?php echo $coupon_item->get_action_url(); ?>">
 
                 <div class="form-actions text-right">
                     <button type="submit" id="coupon_checkout_submit" name="coupon_checkout[submit]" class="button button-primary button-large js-form-buyout-submit" tabindex="1">Koupit za <strong><span class="js-return-counted-prize"><?php echo $coupon_item->get_price_after_discount(); ?></span>&nbsp;Kč</strong></button>
@@ -111,7 +111,7 @@ $coupon_item = new CouponItem;
         } );
 
         function initPayment ( formData ) {
-            console.log( formData );
+            // console.log( formData );
 
             $.ajax( {
                 url: '<?php echo admin_url( "admin-ajax.php" ); ?>',
@@ -123,21 +123,27 @@ $coupon_item = new CouponItem;
 
         function onInitPaymentDone ( res ) {
 
-            console.log( res );
+            // console.log( res );
 
-            goToGateway( res );
+            // goToGateway( res );
 
-            // _gopay.checkout( { gatewayUrl: res.data.gwUrl }, initCheckout );
+            _gopay.checkout( { gatewayUrl: res.data.gwUrl }, initCheckout );
         }
 
         function goToGateway ( res ) {
 
-            window.location.href = res.data.gwUrl;
+            if ( res.data.gwUrl !== undefined ) {
+                window.location.href = res.data.gwUrl;
+            }
         }
 
-        // function initCheckout ( res ) {
+        function initCheckout ( res ) {
+            // console.log( res );
 
-        // }
+            if ( res.url !== undefined ) {
+                window.location.href = res.url;
+            }
+        }
 
     }( jQuery ) );
 

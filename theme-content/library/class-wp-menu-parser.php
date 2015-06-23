@@ -144,10 +144,7 @@ class WPMenuParser
 
             if ( isset( $node['@attributes'] ) ) {
 
-                if ( isset( $node['@attributes']['id'] ) ) {
-
-                    $attr = $this->getLinkObject( $node['@attributes']['id'] );
-                }
+                $attr = $this->getLinkObject( $node['@attributes']['id'] );
 
                 if ( isset( $node['ul'] ) ) {
 

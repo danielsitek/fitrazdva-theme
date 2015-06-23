@@ -69,7 +69,9 @@ module.exports = function(grunt) {
             }
         },
 
-        clean: ['<%= options.folders.production %>'],
+        clean: {
+            build: ['<%= options.folders.production %>']
+        },
 
 		sass: {
             options: {
@@ -145,10 +147,6 @@ module.exports = function(grunt) {
                     stdout: true,
                     stdin: false
                 }
-            },
-            // Package theme-content into zip file.
-            make_zip: {
-                command: 'zip -r <%= theme.name %>-<%= theme.version %>.zip theme-content/'
             }
         },
 
@@ -266,6 +264,22 @@ module.exports = function(grunt) {
 			}
 		},
 
+        compress: {
+            theme: {
+                options: {
+                    archive: '<%= theme.name %>.zip'
+                },
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'theme-content',
+                        src: ['**/*'],
+                        dest: '<%= theme.name %>/'
+                    }
+                ]
+            }
+        },
+
 		watch: {
             grunt: {
                 files: ['Gruntfile.js'],
@@ -311,6 +325,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-banner');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -349,7 +364,7 @@ module.exports = function(grunt) {
     grunt.registerTask(
         'build',
         'Build whole project',
-        ['clean', 'build-css', 'build-js', 'build-assets']
+        ['clean:build', 'build-css', 'build-js', 'build-assets']
     );
 
     // ### Init assets
@@ -371,7 +386,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask(
         'theme-build',
-        'Save theme_content to zip file',
-        ['shell:make_zip']
+        'Create theme zip package',
+        ['compress:theme']
     );
 };

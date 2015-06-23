@@ -12,7 +12,7 @@
         display: block;
         float: none;
 
-        a {
+        & > a {
             display: block;
             height:50px;
             line-height: 50px;
@@ -34,28 +34,31 @@
 
         }
 
+        &:first-of-type,
         &.first {
 
-            a {
-                border-radius: 10px 0 0 0;
+            & > a {
+                border-top-left-radius: 10px;
             }
         }
 
+        &:last-of-type,
         &.last {
 
-            a {
-                border-radius: 0 0 10px 10px;
+            & > a {
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
             }
         }
     }
 }
 
 
-.nav li {
+.nav > li {
 
     &:hover {
 
-        .nav.nav-dropdown{
+        & > .nav.nav-dropdown{
             border-radius: 10px 0 10px 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, .7);
             display: block;

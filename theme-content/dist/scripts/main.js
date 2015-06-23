@@ -1,9 +1,10 @@
 /**!
- * FoundationPress Starter Theme v5.5.2
- * Foundation Based starter theme for WordPress
+ * FitRazDva WordPress Theme
+ * This is WordPress theme for website FitRazDva.cz. It`s build on top of slightly modified FoundationPress starter theme, based on Foundation 5 framework by Zurb.
  * 
- * Build time:     29-05-2015
- * @license:       
+ * @version:       v0.1.0
+ * @updated:       05-06-2015
+ * @license:       MIT
  */
  /*!
  * Modernizr v2.8.3
@@ -13415,15 +13416,13 @@ return {
 }));
 ;
 
-var PriceCounter = ( function() {
+var PriceCounter = (function() {
     'use strict';
-
 
     var options = {
         priceEl: '#coupon_checkout_value_per_piece',
         selectEl: '#coupon_checkout_quantity'
     };
-
 
     function PriceCounter(options) {
         this.options = options;
@@ -13453,20 +13452,18 @@ var PriceCounter = ( function() {
         return this.price;
     };
 
-
     return PriceCounter;
 
-}() );;
+}());
+;
 
-var Select = ( function() {
+var Select = (function() {
     'use strict';
-
 
     var options = {
         mainClass: '.js-input-select',
         valueClass: '.js-input-select-value'
     };
-
 
     function Select(el, options) {
         this.el = el;
@@ -13477,7 +13474,6 @@ var Select = ( function() {
         this._init();
     }
 
-
     Select.prototype._init = function() {
         var self = this;
         $(this.selectEl).on('change.select', function(event) {
@@ -13486,7 +13482,6 @@ var Select = ( function() {
         });
     };
 
-
     Select.prototype._setValue = function(val) {
 
         if (val.length > 0) {
@@ -13494,15 +13489,14 @@ var Select = ( function() {
         }
     };
 
-
     return Select;
 
-}() );;
+}());
+;
 $(document).foundation();
 
 (function(window) {
     'use strict';
-
     if (window.App === undefined) {
         window.App = {};
     }
@@ -13558,7 +13552,7 @@ $(document).foundation();
 
 }(window));
 
-( function( $ ) {
+(function($) {
     'use strict';
 
     var options = {
@@ -13574,28 +13568,24 @@ $(document).foundation();
         });
     }
 
+}(jQuery));
 
-}( jQuery ) );
-
-( function( $, window ) {
+(function($, window) {
     'use strict';
-
 
     var options = {
         priceEl: '#coupon_checkout_value_per_piece',
         selectEl: '#coupon_checkout_quantity'
     };
 
-
     // init PriceCounter class
-    if ( $( options.priceEl ).length > 0 && $( options.selectEl ).length > 0) {
-        var price = new PriceCounter( options );
+    if ($(options.priceEl).length > 0 && $(options.selectEl).length > 0) {
+        var price = new PriceCounter(options);
 
-        price.on( 'price-updated', function() {
+        price.on('price-updated', function() {
             var self = this;
-            $( '.js-return-counted-prize' ).text( window.formatNumberBy3( price.getPrice(), ",", ' ' ) );
+            $('.js-return-counted-prize').text(window.formatNumberBy3(price.getPrice(), ',', ' '));
         });
     }
 
-
-}( jQuery, window ) );
+}(jQuery, window));
