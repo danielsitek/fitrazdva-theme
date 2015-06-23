@@ -1,0 +1,175 @@
+
+/**
+ * Page Main
+ */
+.page-main {
+    background-color: $white;
+}
+
+@media #{$large-up} {
+
+    .page-main {
+        background-color: transparent;
+    }
+}
+
+
+.page-width-content {
+    max-width: $row-width;
+    margin: 0 auto;
+}
+
+
+
+/**
+ * Page Main - Content
+ */
+.page-main-content {
+    display: block;
+    background-color: $white;
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+
+
+@media #{$medium-up} {
+
+    .page-main-content {
+        // padding: ($base-line-height-rem * 2) 0;
+    }
+
+    .page-width-content {
+        padding: 0 $base-line-height-rem;
+    }
+}
+
+@media #{$large-up} {
+
+    .page-main-content {
+        border-radius: rem-calc(10) rem-calc(10) 0 0;
+        // padding: rem-calc(40);
+        padding: 0;
+    }
+
+    .page-width-content {
+        padding-left: rem-calc(40);
+        padding-right: rem-calc(40);
+    }
+}
+
+
+.page-main-section {
+    margin: 0;
+    padding: 0;
+    @include clearfix();
+}
+
+.page-main-section-content {
+    padding: 0;
+    margin: ($base-line-height-rem * 3) 0;
+}
+
+@media #{$large-up} {
+
+    .page-main-section-content {
+        margin-left: rem-calc(40);
+        margin-right: rem-calc(40);
+
+        &.section-header {
+            margin-top: rem-calc(40);
+        }
+    }
+}
+
+
+/**
+ * Page Brand Logo
+ */
+.page-brand-logo {
+    position: relative;
+    display: block;
+    width: rem-calc(288);
+    height: rem-calc(216);
+    background: transparent url('../images/theme/background-logo.png') 0 0 no-repeat;
+    background-size: rem-calc(288) rem-calc(216);
+    padding: 0;
+    margin: 0 0 $base-line-height-rem 0;
+
+    > a {
+        display: block;
+        background: transparent url('../images/theme/studio-fit-raz-dva-logo.png') 0 0 no-repeat;
+        background-size: rem-calc(243) rem-calc(167);
+        width: rem-calc(243);
+        height: rem-calc(167);
+        position: absolute;
+        overflow: hidden;
+        text-decoration: none;
+        text-indent: -9999px;
+        top: rem-calc(20);
+        left: rem-calc(20);
+        right: auto;
+        bottom: auto;
+    }
+}
+
+
+
+/**
+ * Main Navigation container
+ */
+.main-navigation {
+    position: absolute;
+    z-index: 100;
+    top: ($base-line-height-rem * 4);
+    right: rem-calc(40);
+    display: block;
+}
+
+
+
+
+/**
+ * Page Footer
+ */
+.page-footer {
+    padding-top: rem-calc(110);
+    background: transparent url('../images/theme/background-footer-small.jpg') top center;
+    background-repeat: no-repeat;
+
+    .footer-header {
+        margin-bottom: ($base-line-height-rem * 0.65);
+    }
+}
+
+@media #{$medium-up} {
+    .page-footer {
+        background-image: url('../images/theme/background-footer-medium.jpg');
+    }
+}
+
+@media #{$large-up} {
+    .page-footer {
+        background-image: url('../images/theme/background-footer-large.jpg');
+    }
+}
+
+
+/**
+ * Page Footer - signature
+ */
+.page-footer-signature {
+    margin: 0;
+    padding: $base-line-height-rem 0;
+    padding-top: $base-line-height-rem * 2;
+    color: $primary-color;
+}
+
+@media #{$medium-up} {
+
+    .page-footer-signature {
+        background-image: url('../images/theme/SignFooter_bg.png');
+        background-position: top center;
+        background-repeat: no-repeat;
+    }
+}

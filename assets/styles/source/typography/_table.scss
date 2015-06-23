@@ -1,0 +1,85 @@
+
+
+// .table class
+// ==================================================
+.table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-bottom: ($base-line-height-rem * 2);
+    border: 0 none;
+    background-color: $white;
+
+    th, td {
+        padding: 8px;
+        line-height: 1.5;
+        text-align: left;
+        border: 0 none;
+        font-size: inherit;
+    }
+
+    thead {
+        font-weight: 800;
+        color: $primary-light-color;
+        background-color: transparent;
+
+        th {
+            vertical-align: bottom;
+            border-bottom: 3px solid $primary-light-color;
+            width: 25%;
+            color: $primary-color;
+            font-size: 120%;
+        }
+
+        th {
+            width: 40%;
+        }
+
+        th + th {
+            width: 30%;
+        }
+    }
+
+    tbody {
+
+        tr {
+            transition: all .15s;
+
+            &:hover {
+                background: lighten($primary-light-color, 15%);
+            }
+
+        }
+
+        td {
+            border-bottom: 1px solid $seda-bg;
+
+            strike {
+                color: #9d9d9d;
+            }
+
+            span, .akcni-cena {
+                color: $primary-color;
+            }
+        }
+    }
+
+    tfoot {
+
+        td {
+            background: #e8e8e8;
+            font-size: 90%;
+            font-style: italic;
+            color: #8d8d8d;
+            border-radius: 0 0 5px 5px;
+        }
+    }
+
+    thead:first-child tr:first-child td:first-child {
+        border-radius: 50px;
+        background: aqua;
+    }
+}
+
+
+

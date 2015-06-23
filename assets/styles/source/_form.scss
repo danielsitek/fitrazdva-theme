@@ -1,0 +1,211 @@
+
+
+// $form-focus-color: #0AB2EF;
+// $form-focus-color: #94D3EA;
+$form-focus-color: #79BFD8;
+$form-focus-box-shadow: 0 0 10px rgba($form-focus-color, .8);
+
+$form-el-border-width: 2px;
+
+
+
+.input-label {
+    margin-bottom: .5em;
+}
+
+.input-checkbox {
+    display: block;
+    @include clearfix();
+
+    input[type="checkbox"] {
+        float: left;
+        margin: 0.3em;
+    }
+
+    .input-label {
+        margin: 0 0 0 1.9em;
+        display: block;
+    }
+}
+
+.form-group {
+    display: block;
+    padding: 0;
+    margin: $base-line-height-rem 0;
+}
+
+.form-controls-horizontal {
+
+    .input-label {
+        margin: 0;
+        padding-top: 10px;
+    }
+}
+
+
+.form-actions {
+    display: block;
+    padding: 0;
+    margin: $base-line-height-rem 0 0 0;
+}
+
+
+.form-select-mask {
+    display: block;
+    position: relative;
+    padding: 10px 5px;
+    border: $form-el-border-width solid $seda-bg;
+    border-radius: $global-radius;
+    background-color: $white;
+    cursor: pointer;
+    @include clearfix();
+
+    .form-select-mask-value {
+        float: left;
+    }
+
+    .form-select-mask-icon {
+        float: right;
+    }
+}
+
+
+
+.form-mask {
+    display: block;
+    position: relative;
+
+    .form-mask-content {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 0;
+        z-index: 10;
+    }
+
+    .form-mask-item {
+        position: relative;
+        z-index: 1;
+        transition: all .25s ease-in-out;
+    }
+
+    .form-mask-content {
+
+        &:focus ~ .form-mask-item {
+            border-color: $form-focus-color;
+            box-shadow: $form-focus-box-shadow;
+            transition: all .25s ease-in-out;
+        }
+    }
+}
+
+
+
+
+input[type="checkbox"],
+input[type="radio"],
+select {
+    cursor: pointer;
+}
+
+input,
+select,
+textarea {
+    font-weight: 300;
+    font-size: inherit;
+    transition: all .25s ease-in-out;
+
+    &:focus {
+        outline: 0 none;
+        transition: all .25s ease-in-out;
+    }
+}
+
+
+
+input,
+select {
+    &::-webkit-input-placeholder {
+        font-weight: 400;
+    }
+
+    &::-moz-placeholder {
+        font-weight: 400;
+    }
+
+    &:-moz-placeholder {
+        font-weight: 400;
+    }
+
+    &:-ms-input-placeholder {
+        font-weight: 400;
+    }
+}
+
+
+
+.form {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    button,
+    .button {
+        margin-bottom: 0;
+    }
+
+    label {
+        display: block;
+        margin: 0 0 .5em 0;
+        font-size: inherit;
+    }
+
+    fieldset {
+        display: block;
+        border: 0 none;
+        padding: 0;
+        margin: 0;
+        font-size: inherit;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        font-size: inherit;
+        display: inline;
+        line-height: inherit;
+        padding: 10px 5px;
+        border: $form-el-border-width solid $seda-bg;
+        border-radius: $global-radius;
+        background-color: $white;
+        transition: all .25s ease-in-out;
+        height: auto;
+
+        &:focus {
+            border-color: $form-focus-color;
+            box-shadow: $form-focus-box-shadow;
+            transition: all .25s ease-in-out;
+        }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        width: auto;
+    }
+}
+
+
+.input-interested {
+    display: none;
+    visibility: hidden;
+}
+
+.form-input-interested {
+    display: none;
+    visibility: hidden;
+    appearance: none;
+}
+
+

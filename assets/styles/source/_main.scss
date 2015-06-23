@@ -3,3 +3,190 @@
 html {
     @include box-sizing();
 }
+
+body {
+    background-image: url('../images/theme/background-stripes_short.jpg');
+    background-repeat: repeat-x;
+    background-position: top center;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+    display: block;
+    font-family: $header-font-family;
+    font-weight: $header-font-weight;
+    font-style: italic;
+    margin: 0 0 $base-line-height-rem 0;
+}
+
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
+    text-decoration: none;
+}
+
+h1, .h1 {
+    font-size: (($h1-precalc / 16) * 1em);
+    line-height: 1.2;
+}
+
+h2, .h2 {
+    font-size: (($h2-precalc / 16) * 1em);
+    line-height: 1.3;
+}
+
+h3, .h3 {
+    font-size: (($h3-precalc / 16) * 1em);
+}
+
+h4, .h4 {
+    font-size: (($h4-precalc / 16) * 1em);
+    font-weight: 700;
+}
+
+h5, .h5 {
+    font-size: (($h5-precalc / 16) * 1em);
+    line-height: 2.09;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+a {
+    transition: all .2s;
+
+    &:hover {
+        transition: all .2s;
+    }
+}
+
+figure {
+    display: block;
+    margin: 0;
+    text-align: center;
+}
+
+img {
+    margin: 0 0 $base-line-height-rem 0;
+    border-radius: $global-radius;
+
+    &.float-left,
+    &.alignleft,
+    &.float-right,
+    &.alignright {
+        float: none;
+    }
+}
+
+@media #{$medium-up} {
+
+    figure {
+        display: inherit;
+        text-align: none;
+    }
+
+    img {
+        margin: 0 0 $base-line-height-rem 0;
+
+        &.float-left,
+        &.alignleft {
+            margin-right: $base-line-height-rem;
+            float: left;
+        }
+
+        &.float-right,
+        &.alignright {
+            margin-left: $base-line-height-rem;
+            float: right;
+        }
+    }
+}
+
+
+.text-shadow {
+    text-shadow: 0 2px 2px rgba(0,0,0,.8);
+}
+
+
+.radius {
+    border-radius: $global-radius;
+}
+
+
+hr {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin: ($base-line-height-rem * 2) 0;
+    padding: 0;
+    border: 0 none;
+    outline: 0 none;
+    background: url('../images/theme/dotted-line-horizontal.png') top center repeat-x;
+    @include clearfix();
+}
+
+
+.image-border {
+    display: block;
+    padding: 5px !important;
+    background: #f4f4f4;
+    transition: all .15s;
+    border-radius: 5px;
+
+    img {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        border-radius: 2px;
+    }
+
+    &:hover {
+        background: #dcdcdc;
+    }
+}
+
+
+.sub-titulek {
+    display: block;
+    font-size: 130%;
+    font-style: italic;
+    color: $primary-color;
+}
+
+
+
+
+.bg-white {
+    background-color: $white;
+}
+
+.bg-light {
+    background-color: $white-smoke;
+}
+
+
+.nav-footer-links {
+    color: $primary-color;
+
+    ul {
+
+        a {
+            text-decoration: none;
+            color: #eaa6c1;
+
+            &:hover {
+                text-decoration: underline;
+                color: $white;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

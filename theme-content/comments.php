@@ -83,7 +83,7 @@ if ( comments_open() ) :
 			<textarea name="comment" id="comment" tabindex="4"></textarea>
 		</p>
 		<p id="allowed_tags" class="small"><strong>XHTML:</strong> <?php _e( 'You can use these tags:','foundationpress' ); ?> <code><?php echo allowed_tags(); ?></code></p>
-		<p><input name="submit" class="button" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'Submit Comment', 'foundationpress' ); ?>"></p>
+		<p><input name="submit" class="button radius" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'Submit Comment', 'foundationpress' ); ?>"></p>
 		<?php comment_id_fields(); ?>
 		<?php do_action( 'comment_form', $post->ID ); ?>
 	</form>
@@ -92,4 +92,3 @@ if ( comments_open() ) :
 <?php
 	endif; // if you delete this the sky will fall on your head
 endif; // if you delete this the sky will fall on your head
-?>

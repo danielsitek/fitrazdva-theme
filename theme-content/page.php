@@ -1,32 +1,27 @@
-<?php get_header(); ?>
+<?php
 
-<div class="row">
-	<div class="small-12 large-8 columns" role="main">
+$layout['template'] = 'page.php';
 
-	<?php do_action( 'foundationpress_before_content' ); ?>
+get_header();
 
-	<?php while ( have_posts() ) : the_post(); ?>
-		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<header>
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-			</header>
-			<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
-			<div class="entry-content">
-				<?php the_content(); ?>
-			</div>
-			<footer>
-				<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
-				<p><?php the_tags(); ?></p>
-			</footer>
-			<?php do_action( 'foundationpress_page_before_comments' ); ?>
-			<?php comments_template(); ?>
-			<?php do_action( 'foundationpress_page_after_comments' ); ?>
-		</article>
-	<?php endwhile;?>
+do_action( 'foundationpress_before_content' );
 
-	<?php do_action( 'foundationpress_after_content' ); ?>
+while ( have_posts() ) : the_post(); ?>
+	<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+		<div class="page-main-section">
+            <div class="page-main-section-content section-header">
+                <header>
+                    <h1 class="entry-title"><?php the_title(); ?></h1>
+                </header>
+            </div>
+            <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+            <div class="page-main-section-content">
+                <?php the_content(); ?>
+            </div>
+        </div>
+	</article>
+<?php endwhile;
 
-	</div>
-	<?php get_sidebar(); ?>
-</div>
-<?php get_footer(); ?>
+do_action( 'foundationpress_after_content' );
+
+get_footer();

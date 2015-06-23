@@ -1,0 +1,46 @@
+
+$text-smaller:  (12/16) * 100%;
+$text-small:    (14/16) * 100%;
+$text-normal:   (16/16) * 100%;
+$text-large:    (18/16) * 100%;
+$text-larger:   (20/16) * 100%;
+
+
+.h1 { font-size: $h1-font-size - $h1-font-reduction; }
+.h2 { font-size: $h2-font-size - $h2-font-reduction; }
+.h3 { font-size: $h3-font-size - $h3-font-reduction; }
+.h4 { font-size: $h4-font-size - $h4-font-reduction; }
+.h5 { font-size: $h5-font-size - $h5-font-reduction; }
+.h6 { font-size: $h6-font-size - $h6-font-reduction; }
+
+@media #{$medium-up} {
+    .h1 { font-size: $h1-font-size; }
+    .h2 { font-size: $h2-font-size; }
+    .h3 { font-size: $h3-font-size; }
+    .h4 { font-size: $h4-font-size; }
+    .h5 { font-size: $h5-font-size; }
+    .h6 { font-size: $h6-font-size; }
+}
+
+@mixin text_size_classes{
+
+    // .text-smaller   { font-size: $text-smaller; }
+    // .text-small     { font-size: $text-small; }
+    // .text-normal    { font-size: $text-normal; }
+    // .text-large     { font-size: $text-large; }
+    // .text-larger    { font-size: $text-larger; }
+
+    @for $i from 1 through length($align-class-names) {
+        @media #{(nth($align-class-breakpoints, $i))} {
+            .#{(nth($align-class-names, $i))}-text-smaller   { font-size: $text-smaller; }
+            .#{(nth($align-class-names, $i))}-text-small     { font-size: $text-small; }
+            .#{(nth($align-class-names, $i))}-text-normal    { font-size: $text-normal; }
+            .#{(nth($align-class-names, $i))}-text-large     { font-size: $text-large; }
+            .#{(nth($align-class-names, $i))}-text-larger    { font-size: $text-larger; }
+        }
+    }
+}
+
+@include exports("text-size") {
+    @include text_size_classes;
+}

@@ -17,15 +17,17 @@ module.exports = function(grunt) {
 	require('time-grunt')(grunt);
 
 	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
+        pkg: grunt.file.readJSON('package.json'),
+		theme: grunt.file.readJSON('theme.json'),
 
 		banner: [
             '/**!',
-            ' * <%= pkg.title %> v<%= pkg.version %>',
-            ' * <%= pkg.description %>',
+            ' * <%= theme.title %>',
+            ' * <%= theme.description %>',
             ' * ',
-            ' * Build time:     <%= grunt.template.today("dd-mm-yyyy") %>',
-            ' * @license:       <%= pkg.license %>',
+            ' * @version:       v<%= theme.version %>',
+            ' * @updated:       <%= grunt.template.today("dd-mm-yyyy") %>',
+            ' * @license:       <%= theme.license.name %>',
             ' */',
             ' '
         ].join('\n'),
@@ -67,7 +69,9 @@ module.exports = function(grunt) {
             }
         },
 
-        clean: ['<%= options.folders.production %>'],
+        clean: {
+            build: ['<%= options.folders.production %>']
+        },
 
 		sass: {
             options: {
@@ -152,7 +156,8 @@ module.exports = function(grunt) {
                 reporter: require('jshint-stylish')
             },
             all: [
-                '<%= options.folders.dev %>scripts/*.js',
+                '<%= options.folders.dev %>scripts/main.js',
+                '<%= options.folders.dev %>scripts/concat/**.js',
                 'Gruntfile.js',
                 'bower.json',
                 'package.json'
@@ -160,7 +165,10 @@ module.exports = function(grunt) {
         },
 
         jscs: {
-            src: '<%= options.folders.dev %>scripts/*.js',
+            src: [
+                '<%= options.folders.dev %>scripts/main.js',
+                '<%= options.folders.dev %>scripts/concat/**.js'
+            ],
             options: {
                 config: ".jscsrc"
             }
@@ -180,6 +188,14 @@ module.exports = function(grunt) {
                 cwd: '<%= options.folders.bower %>font-awesome/fonts',
                 src: ['fontawesome-webfont.*'],
                 dest: '<%= options.folders.production %>fonts'
+            },
+
+            typicons: {
+                expand: true,
+                nonull: true,
+                cwd: '<%= options.folders.bower %>typicons/src/font',
+                src: ['*.eot', '*.svg', '*.ttf', '*.woff'],
+                dest: '<%= options.folders.production %>fonts'
             }
         },
 
@@ -193,29 +209,33 @@ module.exports = function(grunt) {
 				'<%= options.folders.bower %>modernizr/modernizr.js',
 				'<%= options.folders.bower %>jquery/dist/jquery.js',
                 '<%= options.folders.bower %>jquery-placeholder/jquery.placeholder.js',
+                '<%= options.folders.dev %>scripts/lib/*.js',
 
-				// Foundation core
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.js',
+                // Foundation core
+                '<%= options.folders.bower %>foundation/js/foundation/foundation.js',
 
-				// Pick the componenets you need in your project
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.abide.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.accordion.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.alert.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.clearing.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.dropdown.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.equalizer.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.interchange.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.joyride.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.magellan.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.offcanvas.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.orbit.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.reveal.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.slider.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.tab.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.tooltip.js',
-				'<%= options.folders.bower %>foundation/js/foundation/foundation.topbar.js',
+                // Pick the componenets you need in your project
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.abide.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.accordion.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.alert.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.clearing.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.dropdown.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.equalizer.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.interchange.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.joyride.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.magellan.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.offcanvas.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.orbit.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.reveal.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.slider.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.tab.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.tooltip.js',
+                // '<%= options.folders.bower %>foundation/js/foundation/foundation.topbar.js',
 
-				// Include your own custom scripts (located in the custom folder)
+                '<%= options.folders.bower %>salvattore/dist/salvattore.js',
+
+                // Include your own custom scripts (located in the custom folder)
+                '<%= options.folders.dev %>scripts/concat/*.js',
 				'<%= options.folders.dev %>scripts/main.js'
 
 				],
@@ -244,14 +264,35 @@ module.exports = function(grunt) {
 			}
 		},
 
+        compress: {
+            theme: {
+                options: {
+                    archive: '<%= theme.name %>.zip'
+                },
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'theme-content',
+                        src: ['**/*'],
+                        dest: '<%= theme.name %>/'
+                    }
+                ]
+            }
+        },
+
 		watch: {
-            grunt: { files: ['Gruntfile.js'] },
+            grunt: {
+                files: ['Gruntfile.js'],
+                options: {
+                    reload: true
+                }
+            },
 
             js: {
                 files: '<%= options.folders.dev %>scripts/**/*.js',
                 tasks: ['jshint', 'concat:javascript'],
 				options: {
-					livereload: true,
+					livereload: 13702,
 				}
             },
 
@@ -259,7 +300,7 @@ module.exports = function(grunt) {
                 files: '<%= options.folders.dev %>styles/**/*.scss',
                 tasks: ['sass', 'autoprefixer', 'csscomb'],
 				options: {
-					livereload: true,
+					livereload: 13702,
 				}
             },
 
@@ -267,14 +308,14 @@ module.exports = function(grunt) {
                 files: '<%= options.folders.dev %>images/**',
                 tasks: ['copy:images'],
 				options: {
-					livereload: true,
+					livereload: 13702,
 				}
             },
 
-			 all: {
+			all: {
 				files: '**/*.php',
 				options: {
-					livereload: true,
+					livereload: 13702,
 				}
 			}
         }
@@ -284,6 +325,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-banner');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -316,13 +358,13 @@ module.exports = function(grunt) {
     grunt.registerTask(
         'build-assets',
         'Minify and copy images and fonts.',
-        ['copy:images', 'copy:fontawesome']
+        ['copy:images', 'copy:typicons']
     );
 
     grunt.registerTask(
         'build',
         'Build whole project',
-        ['clean', 'build-css', 'build-js', 'build-assets']
+        ['clean:build', 'build-css', 'build-js', 'build-assets']
     );
 
     // ### Init assets
@@ -340,5 +382,11 @@ module.exports = function(grunt) {
         'init',
         'Prepare the project for development',
         ['shell:bower', 'concat:javascriptIE', 'build']
+    );
+
+    grunt.registerTask(
+        'theme-build',
+        'Create theme zip package',
+        ['compress:theme']
     );
 };

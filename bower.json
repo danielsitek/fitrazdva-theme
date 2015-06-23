@@ -15,6 +15,8 @@
     "jquery": "~1.11",
     "font-awesome": "~4",
     "foundation": "zurb/bower-foundation",
-    "modernizr": "~2.8.3"
+    "modernizr": "~2.8.3",
+    "salvattore": "~1.0.7",
+    "typicons": "~2.0.7"
   }
 }

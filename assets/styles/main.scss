@@ -9,7 +9,10 @@
   @import "import-foundation";
 
 // Import Font Awesome scss.
-  @import "import-font-awesome";
+  // @import "import-font-awesome";
+
+// Import Typicons.
+  @import "source/typicons/index";
 
 // Our own project settings
   @import "settings-main";
@@ -17,3 +20,21 @@
 // And here shall be our own components.
   @import "source/main";
   @import "source/tools/index";
+  @import "source/typography/index";
+  @import "source/page";
+  @import "source/block-grid";
+  @import "source/nav";
+  @import "source/nav-main";
+  @import "source/nav-dropdown";
+  @import "source/nav-submenu";
+  @import "source/nav-footer";
+  @import "source/gallery-item";
+  @import "source/button";
+  @import "source/panel";
+  @import "source/form";
+  @import "source/map-pobocky";
+  @import "source/coupon-grid";
+  @import "source/coupon-item";
+  @import "source/coupon-primary";
+  @import "source/coupon-info-box";
+  @import "source/coupon-form-buyout";
