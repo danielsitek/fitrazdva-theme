@@ -21,12 +21,12 @@ if ( ! $coupons_grid->have_posts() ) {
     return;
 }
 
+// <div class="row">
+//     <div class="column span-12">
+//         <h2>Ostatní slevové poukazy</h2>
+//     </div>
+// </div>
 ?>
-<div class="row">
-    <div class="column span-12">
-        <h2>Ostatní slevové poukazy</h2>
-    </div>
-</div>
 
 <div class="row">
     <div class="column span-12">
