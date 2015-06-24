@@ -2,8 +2,8 @@
  * FitRazDva WordPress Theme
  * This is WordPress theme for website FitRazDva.cz. It`s build on top of slightly modified FoundationPress starter theme, based on Foundation 5 framework by Zurb.
  * 
- * @version:       v0.1.0
- * @updated:       05-06-2015
+ * @version:       v0.2.0
+ * @updated:       24-06-2015
  * @license:       MIT
  */
  /*!

@@ -1,4 +1,4 @@
-<meta charset="utf-8" />
+
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="content-type" content="text/html;">
@@ -8,7 +8,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="author" content="Daniel Sitek | danielsitek.cz | @danielsitek">
 <meta name="copyright" content="<?php echo date('Y');?>, I&amp;K FIT RAZ DVA s.r.o. | fitrazdva.cz">
-<title><?php if ( is_category() ) {
+<title><?php
+if ( is_category() ) {
     echo 'Category Archive for &quot;'; single_cat_title(); echo '&quot; | '; bloginfo( 'name' );
 } elseif ( is_tag() ) {
     echo 'Tag Archive for &quot;'; single_tag_title(); echo '&quot; | '; bloginfo( 'name' );
@@ -24,14 +25,90 @@
     wp_title( '' );
 } else {
     echo wp_title( ' | ', 'false', 'right' ); bloginfo( 'name' );
-} ?></title>
+}
+?></title>
+<?php
+
+$__meta = array();
+
+$__meta['global'] = array(
+    'image' => get_template_directory_uri() . '/dist/images/content/sharing-studio-fit-raz-dva.jpg',
+);
+// ###############################################
+// # Open Graph data #
+$__meta['facebook'] = array(
+    'og:type'           => 'website',
+    'og:title'          => get_the_title(),
+    'og:url'            => get_permalink(),
+    'og:locale'         => 'cs_CZ',
+    // 'og:description'    => '...',
+    'og:image'          => $__meta['global']['image'],
+    'og:image:type'     => 'image/jpeg',
+    'og:image:width'    => '620',
+    'og:image:height'   => '350',
+    'og:site_name'      => get_bloginfo( 'name' ),
+    'og:app_id'         => '1413736542',
+    'og:admins'         => '125723587609346',
+);
+
+foreach ($__meta['facebook'] as $property => $content) {
+    echo "<meta property='" . $property . "' content='" . $content . "' />";
+}
+
+// ###############################################
+// # Twitter Card data #
+
+$__meta['twitter'] = array(
+   'twitter:card' =>  'summary_large_image',
+   'twitter:domain' =>  home_url(),
+   // 'twitter:site' =>  '...',
+   'twitter:title' =>  get_the_title(),
+   // 'twitter:description' =>  '...',
+   // 'twitter:creator' =>  '...',
+   // 'twitter:creator:id' =>  '...',
+   'twitter:image:src' =>  $__meta['global']['image'],
+   'twitter:image:width' =>  '620',
+   'twitter:image:height' =>  '350',
+);
+
+foreach ($__meta['twitter'] as $property => $content) {
+    echo "<meta name='" . $property . "' content='" . $content . "' />";
+}
+
+// ###############################################
+// # Google Authorship and Publisher Markup #
+
+$__meta['google_authorship'] =  array(
+    // 'author' => '...',
+    // 'publisher' => '...',
+);
+
+foreach ($__meta['google_authorship'] as $rel => $href) {
+    echo "<link rel='" . $rel . "' href='" . $href . "' />";
+}
+
+// ###############################################
+// # Schema.org markup for Google+ #
+
+$__meta['schema_org'] =  array(
+    'name' => get_the_title(),
+    // 'description' => '...',
+    'image' => $__meta['global']['image'],
+);
+
+foreach ($__meta['schema_org'] as $itemprop => $content) {
+    echo "<meta itemprop='" . $itemprop . "' content='" . $content . "' />";
+}
+
+// ###############################################
+?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/icons/favicon.ico" type="image/x-icon">
-<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/icons/favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/icons/apple-touch-icon-144x144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/icons/apple-touch-icon-114x114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/icons/apple-touch-icon-72x72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/icons/apple-touch-icon-precomposed.png">
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/dist/images/icons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/dist/images/icons/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/dist/images/icons/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/dist/images/icons/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/dist/images/icons/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/dist/images/icons/apple-touch-icon-precomposed.png">
 <link type="text/plain" rel="author" href="/humans.txt">
 <?php wp_head(); ?>
 <link href="//fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
