@@ -41,6 +41,7 @@ if ( $coupons_grid->have_posts() ) {
 
         $coupons_grid->the_post();
 
+
         $coupon_item = new CouponItem;
 
         if ( $coupon_item->is_active() ) {
