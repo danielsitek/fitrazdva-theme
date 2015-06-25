@@ -6,8 +6,12 @@ if ( ! class_exists('FitRazDvaCoupons\Bootstrap') ) {
     return;
 }
 
+// http://www.advancedcustomfields.com/resources/orde-posts-by-custom-fields/
 $args = array(
-    'post_type' => 'coupon'
+    'post_type'     => 'coupon',
+    'meta_key'      => 'offer_to',
+    'orderby'       => 'meta_value_num',
+    'order'         => 'DESC'
 );
 
 /**
@@ -40,7 +44,6 @@ if ( $coupons_grid->have_posts() ) {
     while ( $coupons_grid->have_posts() ) {
 
         $coupons_grid->the_post();
-
 
         $coupon_item = new CouponItem;
 
