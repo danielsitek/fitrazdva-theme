@@ -43,7 +43,11 @@ while ( have_posts() ) : the_post(); ?>
             </div>
         </div>
 
-        <?php if ( $coupon_item->is_active() ) { ?>
+        <?php
+        $today = date( 'yymmdd' );
+        $offer_from = date( 'yymmdd', $coupon_item->get_offer_from( true ) );
+        $offer_to = date( 'yymmdd', $coupon_item->get_offer_to( true ) );
+        if ( $coupon_item->is_active() && ( $offer_from <= $today && $offer_to >= $today ) ) { ?>
         <div class="page-main-section">
             <div class="page-main-section-content">
                 <?php get_template_part( 'parts/coupons/item/form-buy' ); ?>
