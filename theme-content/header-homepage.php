@@ -1,6 +1,8 @@
 <!doctype html>
 <!--[if lt IE 9]>
 <html
+    itemscope
+    itemtype="http://schema.org/Article"
     class="old-ie no-js"
     xml:lang="cs"
     <?php language_attributes(); ?>
