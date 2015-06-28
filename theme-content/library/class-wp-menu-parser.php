@@ -36,10 +36,8 @@ class WPMenuParser
      */
     public function parse( $menu_identificator = '' )
     {
-
         $this->parseWPMenuToString( $menu_identificator );
         return $this->parseMenuStringToArray();
-
     }
 
 
@@ -53,7 +51,6 @@ class WPMenuParser
      */
     private function parseWPMenuToString( $menu_identificator = '' )
     {
-
         $this->menu_identificator = $menu_identificator;
 
         ob_start();
@@ -74,7 +71,6 @@ class WPMenuParser
 
         $this->generated_wp_menu = ob_get_contents();
         ob_end_clean();
-
     }
 
 
@@ -87,27 +83,30 @@ class WPMenuParser
      */
     private function parseMenuStringToArray()
     {
-
         $items = array();
 
         $parsedDOM = $this->parseDomToArray( $this->generated_wp_menu );
+        $menu_details = $this->getMenuDetails();
 
-        $items['name'] = $this->getMenuDetails()->name;
-        $items['slug'] = $this->getMenuDetails()->slug;
-        $items['id'] = $this->getMenuDetails()->term_id;
-        $items['description'] = $this->getMenuDetails()->description;
+        $items['name']          = ( $menu_details ) ? $menu_details->name : 'name';
+        $items['slug']          = ( $menu_details ) ? $menu_details->slug : 'slug';
+        $items['id']            = ( $menu_details ) ? $menu_details->term_id : 'id';
+        $items['description']   = ( $menu_details ) ? $menu_details->description : 'description';
 
         $items['items'] = $this->parseListItems( $parsedDOM['ul']['li'] );
 
         return $items;
-
     }
 
 
     private function getMenuDetails()
     {
-
         $menus = wp_get_nav_menus( array('slug' => $this->menu_identificator) );
+
+        if ( !$menus ) {
+            return;
+        }
+
         $menus = $menus[0];
 
         return $menus;
@@ -125,7 +124,6 @@ class WPMenuParser
      */
     private function parseListItems( $list_item = array() )
     {
-
         $items = array();
 
         /**
@@ -170,7 +168,6 @@ class WPMenuParser
      */
     private function getLinkObject( $el_id = '' )
     {
-
         $dom = new DOMDocument();
         $items = array();
 
@@ -210,7 +207,6 @@ class WPMenuParser
      */
     private function parseDomToArray( $DOM = '' )
     {
-
         $parsedDOMxml = simplexml_load_string( $DOM );
         $parsedDOMjson = json_encode( $parsedDOMxml );
         $parsedDOM = json_decode( $parsedDOMjson, true );
