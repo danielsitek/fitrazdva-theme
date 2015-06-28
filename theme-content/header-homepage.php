@@ -1,9 +1,11 @@
 <!doctype html>
 <!--[if lt IE 9]>
 <html
+    itemscope
+    itemtype="http://schema.org/Article"
     class="old-ie no-js"
     xml:lang="cs"
-    lang="cs"
+    <?php language_attributes(); ?>
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:og="http://ogp.me/ns#"
 >

@@ -46,6 +46,12 @@ require_once('library/custom-header.php');
 // Customized gallery
 require_once('library/custom-gallery.php');
 
+// Extending TinyMCE editor
+require_once('library/tinymce-init.php');
+
+// Insert Google Tag Manager
+require_once('library/google-tag-managager-controller.php');
+
 /**
  * Init for WP Admin section
  */

@@ -53,9 +53,7 @@ class SetPageSubmenu
         if ( $this->hasMenu ) {
 
             $this->menu_parser = new WPMenuParser();
-
             $this->generated_menu = $this->menu_parser->parse( $this->menu_slug );
-
             $this->generated_menu_dom = $this->getMenuTemplate( $this->generated_menu );
         }
     }
@@ -85,9 +83,7 @@ class SetPageSubmenu
         $active_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
         ob_start();
-
         require_once( __DIR__ . '/view/template-page-custom-menu.php');
-
         $templated_menu = ob_get_contents();
         ob_end_clean();
 
