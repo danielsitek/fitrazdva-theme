@@ -4,7 +4,6 @@ use FitRazDvaCoupons\Front\CouponItem;
 $coupon_item = new CouponItem;
 
 ?>
-<a name="koupit"></a>
 <div class="coupon-form-buyout">
     <div class="coupon-form-buyout-content">
 
