@@ -7,6 +7,10 @@
     margin: 0;
     padding: 0;
     @include clearfix();
+
+    & + & {
+        margin-top: $base-line-height-rem;
+    }
 }
 
 .coupon-form-buyout-content {
