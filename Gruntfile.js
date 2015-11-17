@@ -233,6 +233,7 @@ module.exports = function(grunt) {
                 // '<%= options.folders.bower %>foundation/js/foundation/foundation.topbar.js',
 
                 '<%= options.folders.bower %>salvattore/dist/salvattore.js',
+                '<%= options.folders.bower %>slicknav/dist/jquery.slicknav.js',
 
                 // Include your own custom scripts (located in the custom folder)
                 '<%= options.folders.dev %>scripts/concat/*.js',
@@ -283,6 +284,7 @@ module.exports = function(grunt) {
 		watch: {
             grunt: {
                 files: ['Gruntfile.js'],
+                tasks: ['default'],
                 options: {
                     reload: true
                 }

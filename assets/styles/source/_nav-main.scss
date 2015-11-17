@@ -1,62 +1,65 @@
 
 
-.nav.nav-main {
+@media #{$medium-up} {
 
-    & > li {
-        display: block;
-        height: 80px;
-        float: left;
-        position: relative;
+    .nav.nav-main {
 
-        & > a {
+        & > li {
             display: block;
             height: 80px;
-            line-height: 80px;
-            vertical-align: middle;
-            background-color: $white;
-            padding: 0 20px;
-            margin: 0;
-            text-decoration: none;
-            color: $primary-color;
-            font-weight: 100;
-            transition: all .1s;
+            float: left;
+            position: relative;
 
-
-            &.active,
-            &:hover {
-                background-color: $primary-color;
-                color: $white;
+            & > a {
+                display: block;
+                height: 80px;
+                line-height: 80px;
+                vertical-align: middle;
+                background-color: $white;
+                padding: 0 20px;
+                margin: 0;
+                text-decoration: none;
+                color: $primary-color;
+                font-weight: 100;
                 transition: all .1s;
-            }
-        }
 
-        &.active, &:hover {
 
-            & > a {
-                background-color: $primary-color;
-                color: $white;
-                transition: all .1s;
-            }
-        }
-
-        &.first {
-
-            & > a {
-                border-radius: 10px 0 0 10px;
-            }
-        }
-
-        &.last {
-
-            & > a {
-                border-radius: 0 10px 10px 0;
+                &.active,
+                &:hover {
+                    background-color: $primary-color;
+                    color: $white;
+                    transition: all .1s;
+                }
             }
 
-            &:hover {
+            &.active, &:hover {
 
                 & > a {
+                    background-color: $primary-color;
+                    color: $white;
+                    transition: all .1s;
+                }
+            }
 
-                    border-radius: 0 10px 0 0;
+            &.first {
+
+                & > a {
+                    border-radius: 10px 0 0 10px;
+                }
+            }
+
+            &.last {
+
+                & > a {
+                    border-radius: 0 10px 10px 0;
+                }
+
+                &:hover {
+
+                    & > a {
+
+                        border-radius: 0 10px 0 0;
+                    }
                 }
             }
         }
