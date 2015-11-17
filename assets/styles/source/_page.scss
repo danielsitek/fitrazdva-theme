@@ -83,33 +83,44 @@
 }
 
 
+
 /**
  * Page Brand Logo
  */
 .page-brand-logo {
+    font-size: 10px;
     position: relative;
     display: block;
-    width: rem-calc(288);
-    height: rem-calc(216);
+    width: em-calc(288);
+    height: em-calc(220);
     background: transparent url('../images/theme/background-logo.png') 0 0 no-repeat;
-    background-size: rem-calc(288) rem-calc(216);
+    background-size: em-calc(288) em-calc(216);
     padding: 0;
-    margin: 0 0 $base-line-height-rem 0;
+    margin: 0;
 
     > a {
         display: block;
         background: transparent url('../images/theme/studio-fit-raz-dva-logo.png') 0 0 no-repeat;
-        background-size: rem-calc(243) rem-calc(167);
-        width: rem-calc(243);
-        height: rem-calc(167);
+        background-size: em-calc(243) em-calc(167);
+        width: em-calc(243);
+        height: em-calc(167);
         position: absolute;
         overflow: hidden;
         text-decoration: none;
         text-indent: -9999px;
-        top: rem-calc(20);
-        left: rem-calc(20);
+        top: em-calc(20);
+        left: em-calc(20);
         right: auto;
         bottom: auto;
+    }
+}
+
+@media #{$large-up} {
+
+    .page-brand-logo {
+        font-size: 100%;
+        height: em-calc(216);
+        margin-bottom: $base-line-height-rem;
     }
 }
 
@@ -121,9 +132,16 @@
 .main-navigation {
     position: absolute;
     z-index: 100;
-    top: ($base-line-height-rem * 4);
+    top: ($base-line-height-rem * 2);
     right: rem-calc(40);
     display: block;
+}
+
+@media #{$large-up} {
+
+    .main-navigation {
+        top: ($base-line-height-rem * 4);
+    }
 }
 
 

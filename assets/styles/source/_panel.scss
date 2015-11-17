@@ -4,7 +4,7 @@
     padding: $base-line-height-rem;
     margin-bottom: $base-line-height-rem;
 
-    &.-marginless {
+    &.panel-marginless {
         margin-bottom: 0;
     }
 
@@ -22,5 +22,22 @@
         border-radius: rem-calc(10);
         background-color: rgb(102,35,55);
         background-color: rgba(102,35,55,.7);
+    }
+
+    &.panel-proc-studio {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+}
+
+@media #{$medium-up} {
+
+    .panel {
+
+        &.panel-proc-studio {
+            padding-left: $base-line-height-rem;
+            padding-right: $base-line-height-rem;
+        }
     }
 }

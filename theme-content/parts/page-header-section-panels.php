@@ -1,6 +1,6 @@
 <div class="row">
     <div class="column small-12">
-        <div class="panel -marginless">
+        <div class="panel panel-marginless panel-proc-studio">
 
 
             <div class="row">
@@ -13,11 +13,7 @@
             <div class="row">
                 <div class="column small-12 medium-4">
                     <div class="panel panel-header text-center color-white">
-                        <div class="panel-content">
-                            <p>
-                                Používáme nejmodernější zařízení, které odstraní i&nbsp;hlouběji uložené tuky.
-                            </p>
-                        </div>
+                        Používáme nejmodernější zařízení, které odstraní i&nbsp;hlouběji uložené tuky.
                     </div>
                 </div>
                 <div class="column small-12 medium-4">

@@ -94,3 +94,12 @@ $(document).foundation();
     }
 
 }(jQuery, window));
+
+(function($) {
+
+    $('#menu-hlavni-menu').slicknav({
+        prependTo: '#mobile-nav',
+        brand: '<a href="/" class="link-clean"><strong>Studio Fit Raz Dva</strong></a>'
+    });
+
+}(jQuery));

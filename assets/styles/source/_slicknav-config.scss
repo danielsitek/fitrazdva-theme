@@ -1,0 +1,158 @@
+
+
+
+.slicknav_menu,
+.nav-mobile {
+    display: none;
+}
+
+.main-navigation {
+    display: block;
+}
+
+.js {
+
+    body {
+        padding-top: ($base-line-height-rem * 4);
+    }
+
+    .slicknav_menu {
+        display: block;
+    }
+
+    .main-navigation,
+    .page-brand-logo {
+        display: none;
+    }
+
+    .nav-mobile {
+        display: block;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        top: 0;
+    }
+}
+
+
+@media #{$medium-up} {
+
+    .js {
+
+        body {
+            padding-top: 0;
+        }
+
+        .slicknav_menu {
+            display:none;
+        }
+
+        .main-navigation,
+        .page-brand-logo {
+            display: block;
+        }
+    }
+}
+
+
+
+
+//colors
+$color_0: rgba(255, 255, 255, 0.75);
+$color_btn: $primary-color;
+$color_btn_text: $white;
+$color_text: $primary-color;
+$color_shadow: #000;
+$color_bg: $white;
+$color_hover_bg: $smoke;
+$color_hover_text: $primary-color;
+
+.slicknav_menu {
+    font-size: inherit;
+    background: $color_bg;
+    border-bottom: 1px solid $iron;
+    box-shadow: 0 0 10px rgba($black, .2);
+    margin: 5px;
+    border-radius: 3px;
+
+    .slicknav_menutxt {
+        color: $color_btn_text;
+        font-weight: bold;
+        text-shadow: 0 1px 3px $color_shadow;
+    }
+
+    .slicknav_icon-bar {
+        background-color: $color_btn_text;
+    }
+}
+
+.slicknav_btn {
+    margin: 5px 5px 6px 5px;
+    padding: 1rem 1.5rem 1.0625rem 1.5rem;
+    text-decoration: none;
+    text-shadow: 0 1px 1px $color_0;
+    border-radius: 4px;
+    background-color: $color_btn;
+}
+
+.slicknav_nav {
+    color: $color_text;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    list-style: none;
+    overflow: hidden;
+
+    ul {
+        list-style: none;
+        overflow: hidden;
+        padding: 0;
+        margin: 0 0 0 20px;
+    }
+
+    .slicknav_row {
+        padding: 5px 10px;
+        margin: 2px 5px;
+
+        &:hover {
+            border-radius: 6px;
+            background: $color_hover_bg;
+            color: $color_text;
+        }
+    }
+
+    a {
+        padding: 5px 10px;
+        margin: 2px 5px;
+        text-decoration: none;
+        color: $color_text;
+
+        &:hover {
+            border-radius: 6px;
+            background: $color_hover_bg;
+            color: $color_hover_text;
+        }
+    }
+
+    .slicknav_txtnode {
+        margin-left: 15px;
+    }
+
+    .slicknav_item a {
+        padding: 0;
+        margin: 0;
+    }
+
+    .slicknav_parent-link a {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.slicknav_brand {
+    color: $color_text;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 1rem .5rem 0 .5rem;
+    height: 44px;
+}
