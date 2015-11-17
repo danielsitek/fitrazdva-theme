@@ -5938,6 +5938,42 @@ select:-ms-input-placeholder {
   padding: 7px 12px;
   height: 44px; }
 
+@-webkit-keyframes navigation-in {
+  0% {
+    -webkit-transform: translateY(-8em);
+            transform: translateY(-8em); }
+  40% {
+    -webkit-transform: translateY(-8em);
+            transform: translateY(-8em); }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@-o-keyframes navigation-in {
+  0% {
+    -o-transform: translateY(-8em);
+       transform: translateY(-8em); }
+  40% {
+    -o-transform: translateY(-8em);
+       transform: translateY(-8em); }
+  100% {
+    -o-transform: translateY(0);
+       transform: translateY(0); } }
+
+@keyframes navigation-in {
+  0% {
+    -webkit-transform: translateY(-8em);
+         -o-transform: translateY(-8em);
+            transform: translateY(-8em); }
+  40% {
+    -webkit-transform: translateY(-8em);
+         -o-transform: translateY(-8em);
+            transform: translateY(-8em); }
+  100% {
+    -webkit-transform: translateY(0);
+         -o-transform: translateY(0);
+            transform: translateY(0); } }
+
 .slicknav_menu,
 .nav-mobile {
   display: none; }
@@ -5949,7 +5985,10 @@ select:-ms-input-placeholder {
   padding-top: 6rem; }
 
 .js .slicknav_menu {
-  display: block; }
+  display: block;
+  -webkit-animation: navigation-in 1s 0s ease;
+       -o-animation: navigation-in 1s 0s ease;
+          animation: navigation-in 1s 0s ease; }
 
 .js .main-navigation,
 .js .page-brand-logo {
@@ -5988,7 +6027,7 @@ select:-ms-input-placeholder {
 
 .slicknav_btn {
   margin: 5px 5px 6px 5px;
-  padding: 1rem 1.5rem 1.0625rem 1.5rem;
+  padding: 1rem 1.2rem 1.0625rem 1.2rem;
   text-decoration: none;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   border-radius: 4px;
@@ -6000,7 +6039,9 @@ select:-ms-input-placeholder {
   padding: 0;
   font-size: 100%;
   list-style: none;
-  overflow: hidden; }
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 80vh; }
   .slicknav_nav ul {
     list-style: none;
     overflow: hidden;
@@ -6031,12 +6072,21 @@ select:-ms-input-placeholder {
     padding: 0;
     margin: 0; }
 
+@media only screen and (orientation: landscape) {
+  .slicknav_nav {
+    max-height: 70vh; } }
+
 .slicknav_brand {
   color: #781036;
-  font-size: 18px;
-  line-height: 30px;
-  padding: 1rem .5rem 0 .5rem;
-  height: 44px; }
+  font-size: 112.5%;
+  padding: .75rem .5rem 0 .5rem;
+  line-height: 1.2; }
+
+.slicknav_brand-link {
+  text-decoration: none; }
+
+.slicknav_brand-link-part {
+  display: block; }
 
 body {
   margin: 12px !important;
