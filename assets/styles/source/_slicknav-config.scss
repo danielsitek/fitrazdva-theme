@@ -151,8 +151,15 @@ $color_hover_text: $primary-color;
 
 .slicknav_brand {
     color: $color_text;
-    font-size: 18px;
-    line-height: 30px;
-    padding: 1rem .5rem 0 .5rem;
-    height: 44px;
+    font-size: $text-large;
+    padding: .75rem .5rem 0 .5rem;
+    line-height: 1.2;
+}
+
+.slicknav_brand-link {
+    text-decoration: none;
+}
+
+.slicknav_brand-link-part {
+    display: block;
 }

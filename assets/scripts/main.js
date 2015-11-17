@@ -99,7 +99,7 @@ $(document).foundation();
 
     $('#menu-hlavni-menu').slicknav({
         prependTo: '#mobile-nav',
-        brand: '<a href="/" class="link-clean"><strong>Studio Fit Raz Dva</strong></a>'
+        brand: '<a href="/" class="slicknav_brand-link"><em class="small-text-smaller color-gray-light slicknav_brand-link-part">Studio</em><strong class="slicknav_brand-link-part">Fit Raz Dva</strong></a>'
     });
 
 }(jQuery));
