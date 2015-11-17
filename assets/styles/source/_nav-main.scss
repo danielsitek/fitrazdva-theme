@@ -6,17 +6,17 @@
 
         & > li {
             display: block;
-            height: 80px;
+            height: ($base-line-height-rem * 3);
             float: left;
             position: relative;
 
             & > a {
                 display: block;
-                height: 80px;
-                line-height: 80px;
+                height: ($base-line-height-rem * 3);
+                line-height: ($base-line-height-rem * 3);
                 vertical-align: middle;
                 background-color: $white;
-                padding: 0 20px;
+                padding: 0 ($base-line-height-rem * .5);
                 margin: 0;
                 text-decoration: none;
                 color: $primary-color;
@@ -61,6 +61,20 @@
                         border-radius: 0 10px 0 0;
                     }
                 }
+            }
+        }
+    }
+}
+
+
+@media #{$large-up} {
+
+    .nav.nav-main {
+
+        & > li {
+
+            & > a {
+                padding: 0 ($base-line-height-rem);
             }
         }
     }
