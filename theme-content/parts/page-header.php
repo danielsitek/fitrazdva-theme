@@ -1,3 +1,4 @@
+<div class="nav-mobile" id="mobile-nav"></div>
 <header>
     <div class="row">
         <div class="column small-12">
