@@ -155,5 +155,30 @@ if (WP_DEVELOP) {
 ?>
 <script src="http://localhost:13702/livereload.js?snipver=1"></script>
 <?php }; ?>
+<script type="text/javascript">
+
+    (function($){
+
+        var font = document.createElement('style');
+        font.type = 'text/css';
+        var s = document.getElementsByTagName('style')[0];
+
+        function loadFont(data) {
+            font.innerHTML = data;
+            s.parentNode.insertBefore(font, s);
+        }
+
+        $.ajax({
+            method: 'GET',
+            url: '//fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic&subset=latin,latin-ext'
+        }).always(function( data, textStatus, jqXHR ){
+
+            if (textStatus === 'success') {
+                loadFont(data);
+            }
+        });
+
+    }(jQuery))
+</script>
 </body>
 </html>
