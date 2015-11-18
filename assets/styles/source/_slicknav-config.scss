@@ -123,8 +123,9 @@ $color_hover_text: $primary-color;
         margin: 0 0 0 20px;
     }
 
-    .slicknav_row {
-        padding: 5px 10px;
+    .slicknav_row,
+    a {
+        padding: 10px 10px;
         margin: 2px 5px;
 
         &:hover {
@@ -135,16 +136,8 @@ $color_hover_text: $primary-color;
     }
 
     a {
-        padding: 5px 10px;
-        margin: 2px 5px;
         text-decoration: none;
         color: $color_text;
-
-        &:hover {
-            border-radius: 6px;
-            background: $color_hover_bg;
-            color: $color_hover_text;
-        }
     }
 
     .slicknav_txtnode {
