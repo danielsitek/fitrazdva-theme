@@ -3,7 +3,7 @@
  * This is WordPress theme for website FitRazDva.cz. It`s build on top of slightly modified FoundationPress starter theme, based on Foundation 5 framework by Zurb.
  * 
  * @version:       v0.2.1
- * @updated:       17-11-2015
+ * @updated:       18-11-2015
  * @license:       MIT
  */
  @charset "UTF-8";
@@ -6047,22 +6047,18 @@ select:-ms-input-placeholder {
     overflow: hidden;
     padding: 0;
     margin: 0 0 0 20px; }
-  .slicknav_nav .slicknav_row {
-    padding: 5px 10px;
-    margin: 2px 5px; }
-    .slicknav_nav .slicknav_row:hover {
-      border-radius: 6px;
-      background: #EEEEEE;
-      color: #781036; }
+  .slicknav_nav .slicknav_row,
   .slicknav_nav a {
-    padding: 5px 10px;
-    margin: 2px 5px;
-    text-decoration: none;
-    color: #781036; }
+    padding: 10px 10px;
+    margin: 2px 5px; }
+    .slicknav_nav .slicknav_row:hover,
     .slicknav_nav a:hover {
       border-radius: 6px;
       background: #EEEEEE;
       color: #781036; }
+  .slicknav_nav a {
+    text-decoration: none;
+    color: #781036; }
   .slicknav_nav .slicknav_txtnode {
     margin-left: 15px; }
   .slicknav_nav .slicknav_item a {
