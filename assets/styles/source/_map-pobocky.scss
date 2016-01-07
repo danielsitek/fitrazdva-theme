@@ -44,14 +44,23 @@
             }
 
             &.pin-brno {
-                top: 29.4%;
-                left: 87.1%;
+                top: 54%;
+                left: 64%;
             }
 
             &.pin-ostrava {
-                top: 54%;
-                left: 64%;
+                top: 29.4%;
+                left: 87.1%;
             }
         }
     }
 }
+
+
+@media #{$large-up} {
+
+    .map-pobocky {
+        right: -1rem;
+    }
+}
+
