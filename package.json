@@ -2,7 +2,7 @@
   "name": "foundationpress",
   "title": "FoundationPress Starter Theme",
   "description": "Foundation Based starter theme for WordPress",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "engines": {
     "node": ">= 0.12.0",
     "npm": ">=2.1.5"
