@@ -300,7 +300,7 @@ module.exports = function(grunt) {
 
             sass: {
                 files: '<%= options.folders.dev %>styles/**/*.scss',
-                tasks: ['sass', 'autoprefixer', 'csscomb'],
+                tasks: ['sass', 'autoprefixer'],
 				options: {
 					livereload: 13702,
 				}
