@@ -111,5 +111,4 @@ foreach ($__meta['schema_org'] as $itemprop => $content) {
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/dist/images/icons/apple-touch-icon-precomposed.png">
 <link type="text/plain" rel="author" href="/humans.txt">
 <?php wp_head(); ?>
-<link href="//fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
