@@ -1,6 +1,9 @@
-# FitRazDva WordPress Theme [![Build Status](https://travis-ci.org/olefredrik/FoundationPress.svg?branch=master)](https://travis-ci.org/olefredrik/FoundationPress)
+# FitRazDva WordPress Theme
 
 This is WordPress theme for website FitRazDva.cz. It`s build on top of slightly modified FoundationPress starter theme, based on Foundation 5 framework by Zurb.
+
+[![Build Status](https://travis-ci.org/olefredrik/FoundationPress.svg?branch=master)](https://travis-ci.org/olefredrik/FoundationPress)
+[![Code Climate](https://codeclimate.com/github/danielsitek/fitrazdva-theme/badges/gpa.svg)](https://codeclimate.com/github/danielsitek/fitrazdva-theme)
 
 ## Requirements
 
