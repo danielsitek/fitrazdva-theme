@@ -6,7 +6,8 @@
 <meta name="msvalidate.01" content="E8E082613BE024D283123691F4EED881">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="author" content="Daniel Sitek | danielsitek.cz | @danielsitek">
+<!-- <meta name="author" content="Daniel Sitek | danielsitek.cz | @danielsitek"> -->
+<meta name="author" content="Studio Fit Raz Dva">
 <meta name="copyright" content="<?php echo date('Y');?>, I&amp;K FIT RAZ DVA s.r.o. | fitrazdva.cz">
 <title><?php
 if ( is_category() ) {
@@ -29,10 +30,15 @@ if ( is_category() ) {
 ?></title>
 <?php
 
+$thumb_id = get_post_thumbnail_id();
+$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);
+$thumb_url = $thumb_url_array[0];
+
 $__meta = array();
 
 $__meta['global'] = array(
-    'image' => get_template_directory_uri() . '/dist/images/content/sharing-studio-fit-raz-dva.jpg',
+    'image'          => ($thumb_url) ? $thumb_url : get_template_directory_uri() . '/dist/images/content/sharing-studio-fit-raz-dva.jpg',
+    'description'    => get_excerpt_by_id( get_the_ID() ),
 );
 // ###############################################
 // # Open Graph data #
@@ -41,19 +47,16 @@ $__meta['facebook'] = array(
     'og:title'          => get_the_title(),
     'og:url'            => get_permalink(),
     'og:locale'         => 'cs_CZ',
-    // 'og:description'    => '...',
+    'og:description'    => get_excerpt_by_id( get_the_ID() ),
     'og:image'          => $__meta['global']['image'],
     'og:image:type'     => 'image/jpeg',
     'og:image:width'    => '620',
     'og:image:height'   => '350',
     'og:site_name'      => get_bloginfo( 'name' ),
-    'og:app_id'         => '1413736542',
-    'og:admins'         => '125723587609346',
+    // 'fb:app_id'         => '1413736542',
+    // 'fb:admins'         => '125723587609346',
+    'fb:app_id'         => '125723587609346',
 );
-
-foreach ($__meta['facebook'] as $property => $content) {
-    echo "<meta property='" . $property . "' content='" . $content . "' />";
-}
 
 // ###############################################
 // # Twitter Card data #
@@ -71,10 +74,6 @@ $__meta['twitter'] = array(
    'twitter:image:height' =>  '350',
 );
 
-foreach ($__meta['twitter'] as $property => $content) {
-    echo "<meta name='" . $property . "' content='" . $content . "' />";
-}
-
 // ###############################################
 // # Google Authorship and Publisher Markup #
 
@@ -83,18 +82,36 @@ $__meta['google_authorship'] =  array(
     // 'publisher' => '...',
 );
 
-foreach ($__meta['google_authorship'] as $rel => $href) {
-    echo "<link rel='" . $rel . "' href='" . $href . "' />";
-}
-
 // ###############################################
 // # Schema.org markup for Google+ #
 
 $__meta['schema_org'] =  array(
     'name' => get_the_title(),
-    // 'description' => '...',
+    'description' => $__meta['global']['description'],
     'image' => $__meta['global']['image'],
 );
+
+$__meta['general'] =  array(
+    'description' => $__meta['global']['description'],
+);
+
+do_action( 'foundationpress_head_meta_setting' );
+
+foreach ($__meta['general'] as $property => $content) {
+    echo "<meta name='" . $property . "' content='" . $content . "' />";
+}
+
+foreach ($__meta['facebook'] as $property => $content) {
+    echo "<meta property='" . $property . "' content='" . $content . "' />";
+}
+
+foreach ($__meta['twitter'] as $property => $content) {
+    echo "<meta name='" . $property . "' content='" . $content . "' />";
+}
+
+foreach ($__meta['google_authorship'] as $rel => $href) {
+    echo "<link rel='" . $rel . "' href='" . $href . "' />";
+}
 
 foreach ($__meta['schema_org'] as $itemprop => $content) {
     echo "<meta itemprop='" . $itemprop . "' content='" . $content . "' />";

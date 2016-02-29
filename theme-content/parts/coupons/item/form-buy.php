@@ -91,7 +91,7 @@ $coupon_item = new CouponItem;
 <script type="text/javascript" src="https://testgw.gopay.cz/gp-gw/js/embed.js"></script>
 <script>
 
-    ( function ( $ ){
+    ( function ( $, dataLayer ){
 
         var $form = $( '#coupon_checkout' );
         var return_url = location.href;
@@ -104,6 +104,11 @@ $coupon_item = new CouponItem;
             formData = $(this).serialize();
 
             initPayment( formData );
+
+            dataLayer.push({
+                'conversionValue': $('.js-return-counted-prize').text().replace(' ', ''),
+                'event': 'coupon_checkout_form_submit'
+            });
 
             return false;
 
@@ -144,6 +149,6 @@ $coupon_item = new CouponItem;
             }
         }
 
-    }( jQuery ) );
+    }( jQuery, (typeof dataLayer === 'undefined') ? window.dataLayer = [] : dataLayer ) );
 
 </script>

@@ -144,17 +144,12 @@
 </footer>
 
 <?php
-
-do_action( 'foundationpress_layout_end' );
-
-wp_footer();
-
-do_action( 'foundationpress_before_closing_body' );
-
 if (WP_DEVELOP) {
 ?>
 <script src="http://localhost:13702/livereload.js?snipver=1"></script>
-<?php }; ?>
+<?php
+};
+?>
 <script type="text/javascript">
 
     (function($){
@@ -180,5 +175,17 @@ if (WP_DEVELOP) {
 
     }(jQuery))
 </script>
+
+<?php
+
+do_action( 'foundationpress_layout_end' );
+
+dynamic_sidebar( 'scripts_body_end' );
+
+wp_footer();
+
+do_action( 'foundationpress_before_closing_body' );
+
+?>
 </body>
 </html>

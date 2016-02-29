@@ -33,4 +33,6 @@ while ( have_posts() ) : the_post(); ?>
 
 do_action( 'foundationpress_after_content' );
 
+get_template_part( 'parts/sklik' );
+
 get_footer();

@@ -1,12 +1,12 @@
 <?php
 
+use FitRazDvaCoupons\Front\CouponItem;
+
 $layout['template'] = 'single-coupon.php';
 
 get_header();
 
 do_action( 'foundationpress_before_content' );
-
-use FitRazDvaCoupons\Front\CouponItem;
 
 while ( have_posts() ) : the_post(); ?>
     <?php
@@ -59,5 +59,7 @@ while ( have_posts() ) : the_post(); ?>
 <?php endwhile;
 
 do_action( 'foundationpress_after_content' );
+
+get_template_part( 'parts/sklik' );
 
 get_footer();

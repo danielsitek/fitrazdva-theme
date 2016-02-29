@@ -11,9 +11,12 @@
 >
 <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
-<html <?php language_attributes(); ?>
-	xml:lang="cs"
-	class="no-js"
+<html
+    itemscope
+    itemtype="http://schema.org/Article"
+    class="no-js"
+    xml:lang="cs"
+    <?php language_attributes(); ?>
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:og="http://ogp.me/ns#"
 >

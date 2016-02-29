@@ -2,7 +2,6 @@
     <div class="column small-12">
         <div class="panel panel-marginless panel-proc-studio">
 
-
             <div class="row">
                 <div class="column small-12">
                     <header>
