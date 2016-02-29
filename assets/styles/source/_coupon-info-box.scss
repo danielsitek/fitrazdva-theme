@@ -2,9 +2,10 @@
 
 .coupon-info-box {
     display: block;
-    border: 1px solid $smoke;
+    border: 2px solid $smoke;
     border-radius: $global-radius;
     margin: 0;
+    margin-bottom: $base-line-height-rem;
     padding: 0;
     @include clearfix();
 }

@@ -63,6 +63,18 @@
     margin: 0;
     padding: 0;
     @include clearfix();
+
+    &.section-terms {
+        margin-left: (-($column-gutter/2));
+        margin-right: (-($column-gutter/2));
+        padding-left: ($column-gutter/2);
+        padding-right: ($column-gutter/2);
+
+        @media #{$large-up} {
+            margin: 0;
+            padding: 0;
+        }
+    }
 }
 
 .page-main-section-content {
