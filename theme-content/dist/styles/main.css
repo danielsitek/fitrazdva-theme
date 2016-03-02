@@ -3,7 +3,7 @@
  * This is WordPress theme for website FitRazDva.cz. It`s build on top of slightly modified FoundationPress starter theme, based on Foundation 5 framework by Zurb.
  * 
  * @version:       v0.3.0
- * @updated:       07-01-2016
+ * @updated:       01-03-2016
  * @license:       MIT
  */
  @charset "UTF-8";
@@ -1828,8 +1828,7 @@ a {
   line-height: inherit;
   text-decoration: underline; }
   a:hover, a:focus {
-    color: #670e2e;
-    text-decoration: undeline; }
+    color: #670e2e; }
   a img {
     border: none; }
 
@@ -4823,6 +4822,15 @@ a.color-white {
     display: table; }
   .page-main-section:after {
     clear: both; }
+  .page-main-section.section-terms {
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem; }
+    @media only screen and (min-width: 64.0625em) {
+      .page-main-section.section-terms {
+        margin: 0;
+        padding: 0; } }
 
 .page-main-section-content {
   padding: 0;
@@ -5173,11 +5181,9 @@ a.color-white {
       float: none; }
       .nav.nav-dropdown > li > a {
         display: block;
-        height: 50px;
-        line-height: 50px;
         vertical-align: middle;
         background-color: #FFFFFF;
-        padding: 0 20px;
+        padding: 15px 20px;
         margin: 0;
         text-decoration: none;
         color: #781036;
@@ -5782,9 +5788,10 @@ select:-ms-input-placeholder {
 
 .coupon-info-box {
   display: block;
-  border: 1px solid #EEEEEE;
+  border: 2px solid #EEEEEE;
   border-radius: 5px;
   margin: 0;
+  margin-bottom: 1.5rem;
   padding: 0; }
   .coupon-info-box:before, .coupon-info-box:after {
     content: " ";
