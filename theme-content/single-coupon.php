@@ -1,12 +1,12 @@
 <?php
 
+use FitRazDvaCoupons\Front\CouponItem;
+
 $layout['template'] = 'single-coupon.php';
 
 get_header();
 
 do_action( 'foundationpress_before_content' );
-
-use FitRazDvaCoupons\Front\CouponItem;
 
 while ( have_posts() ) : the_post(); ?>
     <?php
@@ -36,7 +36,7 @@ while ( have_posts() ) : the_post(); ?>
             </div>
         </div>
 
-        <div class="page-main-section bg-light">
+        <div class="page-main-section bg-light section-terms">
             <div class="page-main-section-content">
                 <h2 id="podminky-akce">Podmínky akce</h2>
                 <?php echo $coupon_item->get_terms_of_event(); ?>
@@ -59,5 +59,7 @@ while ( have_posts() ) : the_post(); ?>
 <?php endwhile;
 
 do_action( 'foundationpress_after_content' );
+
+get_template_part( 'parts/sklik' );
 
 get_footer();

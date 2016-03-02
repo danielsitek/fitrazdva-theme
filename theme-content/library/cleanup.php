@@ -201,4 +201,3 @@ function img_unautop($pee) {
 }
 endif;
 
-?>

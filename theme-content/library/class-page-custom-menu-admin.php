@@ -106,6 +106,7 @@ class SetPageCustomMenuAdmin
         $validityFrom = sanitize_text_field( $_POST['set_page_submenu'] );
         update_post_meta( $post_id, '_set_page_submenu', $validityFrom );
 
+        return $post_id;
     }
 
 }

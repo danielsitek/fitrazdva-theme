@@ -1,7 +1,7 @@
 <?php
 
 // The Header-image
-	$defaults = array(
+$defaults = array(
 
 	'default-image'   => '',
 	'width'           => 0,
@@ -17,4 +17,4 @@
 	'admin-preview-callback' => '',
 );
 
-	add_theme_support( 'custom-header', $defaults );
+add_theme_support( 'custom-header', $defaults );

@@ -271,7 +271,7 @@ $paragraph-margin-bottom: $base-line-height-rem;
 
 // We use these to style anchors
 $anchor-text-decoration: underline;
-$anchor-text-decoration-hover: undeline;
+$anchor-text-decoration-hover: underline;
 $anchor-font-color: $primary-color;
 $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 

@@ -1,18 +1,19 @@
 <?php
 /*
-Author: Ole Fredrik Lie
-URL: http://olefredrik.com
+Author: Daniel Sitek
+URL: http://danielsitek.cz
 */
 
 if ( !defined('WP_DEVELOP') ) {
     define('WP_DEVELOP', false);
 }
 
-
 require __DIR__ . '/library/class-page-custom-menu-admin.php';
 require __DIR__ . '/library/class-wp-menu-parser.php';
 require __DIR__ . '/library/class-custom-menus.php';
 
+
+require_once('library/function-get-excerpt-by-id.php');
 
 // Various clean up functions
 require_once('library/cleanup.php');
@@ -51,6 +52,9 @@ require_once('library/tinymce-init.php');
 
 // Insert Google Tag Manager
 require_once('library/google-tag-managager-controller.php');
+
+// Insert Facebook SDK
+require_once('library/facebook-sdk-controller.php');
 
 /**
  * Init for WP Admin section

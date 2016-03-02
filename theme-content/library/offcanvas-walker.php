@@ -32,4 +32,3 @@ class Foundationpress_Offcanvas_Walker extends Walker_Nav_Menu {
 
 }
 endif;
-?>

@@ -2,6 +2,9 @@
 
 if ( ! function_exists( 'fitrazdva_theme_google_tag_manager' ) ) :
 
+/**
+ *
+ */
 function fitrazdva_theme_google_tag_manager()
 {
     if ( defined( 'WP_DEVELOP' ) && WP_DEVELOP ) {
@@ -11,7 +14,7 @@ function fitrazdva_theme_google_tag_manager()
 
     get_template_part( 'parts/google-tag-manager' );
 
-    return true;
+    return;
 }
 
 
