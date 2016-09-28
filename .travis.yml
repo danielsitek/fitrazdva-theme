@@ -102,7 +102,7 @@ script:
     # --standard: Use WordPress as the standard.
     # --extensions: Only sniff PHP files.
     # --ignore: Ignore these files/directories
-    - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php --ignore=./bower_components/
+    - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=$(pwd)/codesniffer.ruleset.xml --extensions=php
 
 
 # Receive notifications for build results.
