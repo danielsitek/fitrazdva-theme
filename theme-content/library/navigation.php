@@ -27,7 +27,7 @@ if ( ! function_exists( 'fitrazdvatheme_main_nav_bar' ) ) {
 	        'link_after' => '',                             // after each link text
 	        'depth' => 4,                                   // limit the depth of the nav
 	        'fallback_cb' => false,                         // fallback function (see below)
-	        'walker' => new FitrazdvaTheme_main_nav_walker()
+	        'walker' => new FitrazdvaTheme_main_nav_walker(),
 	    ));
 	}
 }
@@ -49,7 +49,7 @@ if ( ! function_exists( 'foundationpress_mobile_off_canvas' ) ) {
 	        'link_after' => '',                             // after each link text
 	        'depth' => 5,                                   // limit the depth of the nav
 	        'fallback_cb' => false,                         // fallback function (see below)
-	        'walker' => new Foundationpress_Offcanvas_Walker()
+	        'walker' => new Foundationpress_Offcanvas_Walker(),
 	    ));
 	}
 }
@@ -62,9 +62,9 @@ if ( ! function_exists( 'foundationpress_mobile_off_canvas' ) ) {
  * 4) Save Menu. Your menu item will now appear as a button in your top-menu
 */
 if ( ! function_exists( 'foundationpress_add_menuclass' ) ) {
-	function foundationpress_add_menuclass($ulclass) {
-	    $find = array('/<a rel="button"/', '/<a title=".*?" rel="button"/');
-	    $replace = array('<a rel="button" class="button"', '<a rel="button" class="button"');
+	function foundationpress_add_menuclass( $ulclass ) {
+	    $find = array( '/<a rel="button"/', '/<a title=".*?" rel="button"/' );
+	    $replace = array( '<a rel="button" class="button"', '<a rel="button" class="button"' );
 
 	    return preg_replace( $find, $replace, $ulclass, 1 );
 	}
@@ -75,13 +75,14 @@ if ( ! function_exists( 'foundationpress_add_menuclass' ) ) {
 /**
  * Prida classy `first` a `last` itemum v menu
  */
-function custom_first_and_last_menu_class($items) {
-    $items[1]->classes[] = 'first'; // add first class
+function custom_first_and_last_menu_class( $items ) {
+	$items[1]->classes[] = 'first'; // add first class
 
-    $cnt = count($items);
-    while($items[$cnt--]->post_parent != 0); // find last li item
-    $items[$cnt+1]->classes[] = 'last'; // last item class
-    return $items;
+	$cnt = count( $items );
+	while ( $items[ $cnt-- ]->post_parent != 0 ) {
+// find last li item
+}	$items[ $cnt + 1 ]->classes[] = 'last'; // last item class
+	return $items;
 }
-add_filter('wp_nav_menu_objects', 'custom_first_and_last_menu_class'); //filter to iterate each menu
+add_filter( 'wp_nav_menu_objects', 'custom_first_and_last_menu_class' ); // filter to iterate each menu
 

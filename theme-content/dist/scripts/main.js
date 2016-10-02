@@ -3,7 +3,7 @@
  * This is WordPress theme for website FitRazDva.cz. It`s build on top of slightly modified FoundationPress starter theme, based on Foundation 5 framework by Zurb.
  * 
  * @version:       v0.3.0
- * @updated:       01-03-2016
+ * @updated:       02-10-2016
  * @license:       MIT
  */
  /*!
@@ -12125,15 +12125,14 @@ Emitter.prototype.hasListeners = function(event){
 
 ;
 
-
 ( function( window ){
 
     function formatNumberBy3(num, decpoint, sep) {
         // check for missing parameters and use defaults if so
-        if (arguments.length == 2) {
+        if (arguments.length === 2) {
             sep = ",";
         }
-        if (arguments.length == 1) {
+        if (arguments.length === 1) {
             sep = ",";
             decpoint = ".";
         }
@@ -12147,14 +12146,14 @@ Emitter.prototype.hasListeners = function(event){
         z = "";
 
 
-        if (typeof(x) != "undefined") {
+        if (typeof(x) !== "undefined") {
             // reverse the digits. regexp works from left to right.
             for (var i=x.length-1;i>=0;i--) {
                 z += x.charAt(i);
             }
             // add seperators. but undo the trailing one, if there
             z = z.replace(/(\d{3})/g, "$1" + sep);
-            if (z.slice(-sep.length) == sep) {
+            if (z.slice(-sep.length) === sep) {
                 z = z.slice(0, -sep.length);
             }
             x = "";
@@ -12163,7 +12162,7 @@ Emitter.prototype.hasListeners = function(event){
                 x += z.charAt(i);
             }
             // add the fraction back in, if it was there
-            if (typeof(y) != "undefined" && y.length > 0) {
+            if (typeof(y) !== "undefined" && y.length > 0) {
                 x += decpoint + y;
             }
         }
@@ -12172,7 +12171,8 @@ Emitter.prototype.hasListeners = function(event){
 
     window.formatNumberBy3 = formatNumberBy3;
 
-}( window ) );;
+}( window ) );
+;
 /*
  * Foundation Responsive Library
  * http://foundation.zurb.com
@@ -13890,6 +13890,9 @@ return {
     };
 }(jQuery, document, window));
 ;
+/**
+ * Class PriceCounter
+ */
 
 var PriceCounter = (function() {
     'use strict';
@@ -13931,6 +13934,9 @@ var PriceCounter = (function() {
 
 }());
 ;
+/**
+ * Class Select
+ */
 
 var Select = (function() {
     'use strict';
@@ -13968,6 +13974,10 @@ var Select = (function() {
 
 }());
 ;
+/**
+ * Main js
+ */
+
 $(document).foundation();
 
 (function(window) {
@@ -14071,9 +14081,10 @@ $(document).foundation();
 
     $('#menu-hlavni-menu').slicknav({
         prependTo: '#mobile-nav',
-        brand: '<a href="/" class="slicknav_brand-link"><em class="small-text-smaller color-gray-light slicknav_brand-link-part">Studio</em><strong class="slicknav_brand-link-part">Fit Raz Dva</strong></a>'
+        brand: '<a href="/" class="slicknav_brand-link">' +
+            '<em class="small-text-smaller color-gray-light slicknav_brand-link-part">Studio</em>' +
+            '<strong class="slicknav_brand-link-part">Fit Raz Dva</strong>' +
+        '</a>'
     });
 
 }(jQuery, window));
-
-

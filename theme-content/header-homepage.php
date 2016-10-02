@@ -6,17 +6,17 @@
     class="old-ie no-js"
     xml:lang="cs"
     <?php language_attributes(); ?>
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:og="http://ogp.me/ns#"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:og="http://ogp.me/ns#"
 >
 <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
 <html
-    itemscope
-    itemtype="http://schema.org/Article"
-    class="no-js"
-    xml:lang="cs"
-    <?php language_attributes(); ?>
+	itemscope
+	itemtype="http://schema.org/Article"
+	class="no-js"
+	xml:lang="cs"
+	<?php language_attributes(); ?>
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:og="http://ogp.me/ns#"
 >

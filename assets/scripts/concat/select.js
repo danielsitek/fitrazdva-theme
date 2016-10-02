@@ -1,3 +1,6 @@
+/**
+ * Class Select
+ */
 
 var Select = (function() {
     'use strict';

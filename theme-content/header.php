@@ -6,8 +6,8 @@
     class="old-ie no-js"
     xml:lang="cs"
     <?php language_attributes(); ?>
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:og="http://ogp.me/ns#"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:og="http://ogp.me/ns#"
 >
 <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
@@ -37,5 +37,5 @@ get_template_part( 'parts/page-header' );
 <div class="column small-12">
 <?php
 
-get_template_part('parts/page-main-content-top');
+get_template_part( 'parts/page-main-content-top' );
 do_action( 'foundationpress_after_header' );

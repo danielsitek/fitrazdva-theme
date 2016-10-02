@@ -16,7 +16,7 @@
 			<?php if ( has_post_thumbnail() ) : ?>
 				<div class="row">
 					<div class="column">
-						<?php the_post_thumbnail( '', array('class' => 'th') ); ?>
+						<?php the_post_thumbnail( '', array( 'class' => 'th' ) ); ?>
 					</div>
 				</div>
 			<?php endif; ?>
