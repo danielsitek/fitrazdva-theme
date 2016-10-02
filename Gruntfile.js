@@ -1,10 +1,10 @@
 /**!
  *
- * FoundationPress Gruntfile.js
+ * FitRazDva Theme Gruntfile.js
  *
  * @version:   v0.1.0
  * @author:    Daniel Sitek
- * @updated:   05/07/2015
+ * @updated:   10/02/2016
  *
  */
 
@@ -37,7 +37,8 @@ module.exports = function(grunt) {
                 bower: 'bower_components/',
                 dev: 'assets/',
                 production: 'theme-content/dist/'
-            }
+            },
+            livereload: 13702
         },
 
 
@@ -104,48 +105,11 @@ module.exports = function(grunt) {
             }
         },
 
-        csscomb: {
-            options: {
-                "always-semicolon": true,
-                "block-indent": 2,
-                "color-case": "lower",
-                "combinator-space": true,
-                "element-case": "lower",
-                "eof-newline": true,
-                "leading-zero": false,
-                "remove-empty-rulesets": true,
-                "rule-indent": 2,
-                "stick-brace": " ",
-                "strip-spaces": true,
-                "unitless-zero": true,
-                "vendor-prefix-align": true
-            },
-            build: {
-                expand: true,
-                cwd: '<%= options.folders.production %>styles/main.css',
-                src: '*.css',
-                dest: '<%= options.folders.production %>styles/main.css'
-            }
-        },
-
         cssmin: {
             project: {
                 files: {
                     '<%= options.folders.production %>styles/main.min.css': ['<%= options.folders.production %>styles/main.css'],
                     '<%= options.folders.production %>styles/editor-style.min.css': ['<%= options.folders.production %>styles/editor-style.css']
-                }
-            }
-        },
-
-        shell: {
-            // #### Run bower install
-            // Used as part of `grunt init`. See the section on [Building Assets](#building%20assets) for more
-            // information.
-            bower: {
-                command: path.resolve('./node_modules/.bin/bower --allow-root install'),
-                options: {
-                    stdout: true,
-                    stdin: false
                 }
             }
         },
@@ -294,7 +258,7 @@ module.exports = function(grunt) {
                 files: '<%= options.folders.dev %>scripts/**/*.js',
                 tasks: ['jshint', 'concat:javascript'],
 				options: {
-					livereload: 13702,
+					livereload: '<%= options.livereload %>',
 				}
             },
 
@@ -302,7 +266,7 @@ module.exports = function(grunt) {
                 files: '<%= options.folders.dev %>styles/**/*.scss',
                 tasks: ['sass', 'autoprefixer'],
 				options: {
-					livereload: 13702,
+					livereload: '<%= options.livereload %>',
 				}
             },
 
@@ -310,14 +274,14 @@ module.exports = function(grunt) {
                 files: '<%= options.folders.dev %>images/**',
                 tasks: ['copy:images'],
 				options: {
-					livereload: 13702,
+					livereload: '<%= options.livereload %>',
 				}
             },
 
 			all: {
 				files: '**/*.php',
 				options: {
-					livereload: 13702,
+					livereload: '<%= options.livereload %>',
 				}
 			}
         }
@@ -334,10 +298,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-csscomb');
     grunt.loadNpmTasks("grunt-jscs");
 	grunt.loadNpmTasks('grunt-sass');
-    grunt.loadNpmTasks('grunt-shell');
 
 
 	grunt.registerTask(
@@ -348,7 +310,7 @@ module.exports = function(grunt) {
     grunt.registerTask(
         'build-css',
         'Build styles for development',
-        ['sass', 'autoprefixer', 'csscomb', 'cssmin', 'usebanner:css']
+        ['sass', 'autoprefixer', 'cssmin', 'usebanner:css']
     );
 
     grunt.registerTask(
@@ -383,7 +345,7 @@ module.exports = function(grunt) {
     grunt.registerTask(
         'init',
         'Prepare the project for development',
-        ['shell:bower', 'concat:javascriptIE', 'build']
+        ['concat:javascriptIE', 'build']
     );
 
     grunt.registerTask(
