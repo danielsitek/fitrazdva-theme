@@ -1,4 +1,9 @@
 <?php
+/**
+ * Front-page php
+ *
+ * @package FitRazDva Theme
+ */
 
 $layout['template'] = 'front-page.php';
 

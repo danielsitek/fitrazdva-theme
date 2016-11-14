@@ -1,8 +1,16 @@
+<?php
+/**
+ * Page-header-homepage php
+ *
+ * @package FitRazDva Theme
+ */
+
+?>
 <header>
-    <div class="row">
-        <div class="column small-12">
-            <div class="page-brand-logo">
-                <a href="<?php echo home_url(); ?>">
+	<div class="row">
+		<div class="column small-12">
+			<div class="page-brand-logo">
+				<a href="<?php echo home_url(); ?>">
 					<strong><?php bloginfo( 'name' ); ?></strong>
 				</a>
 			</div>

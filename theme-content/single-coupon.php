@@ -1,4 +1,9 @@
 <?php
+/**
+ * Single-coupon php
+ *
+ * @package FitRazDva Theme
+ */
 
 use FitRazDvaCoupons\Front\CouponItem;
 
@@ -58,7 +63,5 @@ while ( have_posts() ) : the_post();
 <?php endwhile;
 
 do_action( 'foundationpress_after_content' );
-
-get_template_part( 'parts/sklik' );
 
 get_footer();

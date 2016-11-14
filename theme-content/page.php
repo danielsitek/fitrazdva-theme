@@ -1,4 +1,9 @@
 <?php
+/**
+ * Page php
+ *
+ * @package FitRazDva Theme
+ */
 
 $layout['template'] = 'page.php';
 

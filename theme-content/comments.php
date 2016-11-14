@@ -1,4 +1,10 @@
 <?php
+/**
+ * Comments php
+ *
+ * @package FitRazDva Theme
+ */
+
 if ( have_comments() ) :
 	if ( (is_page() || is_single()) && ( ! is_home() && ! is_front_page()) ) :
 ?>
@@ -35,8 +41,11 @@ endif;
 ?>
 
 <?php
-	// Do not delete these lines
-	// Prevent access to this file directly
+	/**
+	 * Do not delete these lines
+	 * Prevent access to this file directly
+	 */
+
 	defined( 'ABSPATH' ) or die( __( 'Please do not load this page directly. Thanks!', 'foundationpress' ) );
 
 	if ( post_password_required() ) { ?>
@@ -88,8 +97,8 @@ if ( $req ) { _e( ' (required)', 'foundationpress' ); } ?></label>
 		<?php comment_id_fields(); ?>
 		<?php do_action( 'comment_form', $post->ID ); ?>
 	</form>
-	<?php endif; // If registration required and not logged in ?>
+	<?php endif; /* If registration required and not logged in */ ?>
 </section>
 <?php
-	endif; // if you delete this the sky will fall on your head
-endif; // if you delete this the sky will fall on your head
+	endif; /* if you delete this the sky will fall on your head */
+endif; /* if you delete this the sky will fall on your head */

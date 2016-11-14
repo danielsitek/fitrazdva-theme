@@ -1,7 +1,15 @@
 <?php
+/**
+ * Widget-areas php
+ *
+ * @package FitRazDva Theme
+ */
 
 if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
 
+/**
+ * Sidebar widgets
+ */
 function foundationpress_sidebar_widgets() {
 
 	register_sidebar(array(

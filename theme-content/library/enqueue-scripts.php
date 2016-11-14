@@ -1,32 +1,49 @@
 <?php
+/**
+ * Enqueue-scripts php
+ *
+ * @package FitRazDva Theme
+ */
 
 if ( ! function_exists( 'foundationpress_scripts' ) ) :
 
+	/**
+	 * Foundationpress_scripts
+	 */
 	function foundationpress_scripts() {
 
-		// Enqueue Main Stylesheet
+		// Enqueue Main Stylesheet.
 		wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/styles/main.css', array(), '0.1.0' );
 
-		// Deregister the jquery version bundled with wordpress
+		// Deregister the jquery version bundled with wordpress.
 		wp_deregister_script( 'jquery' );
 
-		// Modernizr is used for polyfills and feature detection. Must be placed in header. (Not required)
+		// Modernizr is used for polyfills and feature detection. Must be placed in header. (Not required).
 		// wp_register_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.3', false );
-		// Fastclick removes the 300ms delay on click events in mobile environments. Must be placed in header. (Not required)
+		// Fastclick removes the 300ms delay on click events in mobile environments. Must be placed in header. (Not required).
 		// wp_register_script( 'fastclick', get_template_directory_uri() . '/js/vendor/fastclick.js', array(), '1.0.0', false );
 		// CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
-		wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', array(), '1.11', false );
+		wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', array(), '1.11', false );
+
+		wp_enqueue_script( 'webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js', array(), '1.6.16', true );
 
 		// Self hosted jQuery placed in the footer. (Comment the script above and uncomment the script below if you want to switch).
 		// wp_register_script( 'jquery', get_template_directory_uri() . '/js/vendor/jquery.js', array(), '2.1.3', true );
-		// If you'd like to cherry-pick the foundation components you need in your project, head over to Gruntfile.js and see lines 67-88
-		// It's a good idea to do this, performance-wise. No need to load everything if you're just going to use the grid anyway, you know :)
+		// If you'd like to cherry-pick the foundation components you need in your project, head over to Gruntfile.js and see lines 67-88.
+		// It's a good idea to do this, performance-wise. No need to load everything if you're just going to use the grid anyway, you know :).
 		wp_register_script( 'main-js', get_template_directory_uri() . '/dist/scripts/main.js', array( 'jquery' ), '5.5.2', true );
 
-		// Enqueue all registered scripts
-		wp_enqueue_script( 'modernizr' );
-		wp_enqueue_script( 'fastclick' );
-		wp_enqueue_script( 'jquery' );
+		if ( WP_DEVELOP ) {
+			wp_enqueue_script( 'livereload', '//localhost:13702/livereload.js?snipver=1', array(), '1', true );
+		};
+
+		wp_enqueue_script( 'html5shiv', 'https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js' );
+		wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
+
+		// Enqueue all registered scripts.
+		// wp_enqueue_script( 'modernizr' );
+		// wp_enqueue_script( 'fastclick' );
+		// wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'main-js' );
 
 	}

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Block-summary php
+ *
+ * @package FitRazDva Theme
+ */
 
 use FitRazDvaCoupons\Front\CouponItem;
 $coupon_item = new CouponItem;
@@ -82,15 +87,18 @@ $coupon_item = new CouponItem;
 			<a href="#koupit" class="button button-primary button-outline button-expand">Koupit poukaz</a>
 		</div>
 
-	   <!--  <p class="text-center">
+		<?php
+
+		/*
+	    <p class="text-center">
 			<a href="#" class="button button-small button-expand">Sdílejte poukaz na FB <i class="fa fa-fb"></i></a>
-		</p> -->
+		</p>
 
-		<!-- <p class="text-center">
+		<p class="text-center">
 			<a href="#" class="button button-small button-expand">Sdílejte poukaz emailem <i class="fa fa-envelope"></i></a>
-		</p> -->
+		</p>
 
-		<!-- <div class="row row-reset">
+		<div class="row row-reset">
 			<div class="row row-table text-center">
 				<div class="column">
 					<a href="#" class="button button-small button-expand">FB <i class="fa fa-envelope"></i></a>
@@ -102,7 +110,10 @@ $coupon_item = new CouponItem;
 					<a href="#" class="button button-small button-expand">Pic <i class="fa fa-envelope"></i></a>
 				</div>
 			</div>
-		</div> -->
+		</div>
+		 */
+
+		 ?>
 
 	</div>
 </div>

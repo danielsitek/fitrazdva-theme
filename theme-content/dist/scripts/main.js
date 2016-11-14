@@ -3,7 +3,7 @@
  * This is WordPress theme for website FitRazDva.cz. It`s build on top of slightly modified FoundationPress starter theme, based on Foundation 5 framework by Zurb.
  * 
  * @version:       v0.3.0
- * @updated:       02-10-2016
+ * @updated:       13-11-2016
  * @license:       MIT
  */
  /*!

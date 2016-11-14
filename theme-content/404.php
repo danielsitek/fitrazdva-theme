@@ -1,5 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Erro 404 php
+ *
+ * @package FitRazDva Theme
+ */
 
+get_header(); ?>
 <div class="page-main-section">
 	<div class="page-main-section-content">
 		<div class="row">

@@ -1,4 +1,11 @@
+<?php
+/**
+ * Page-head php
+ *
+ * @package FitRazDva Theme
+ */
 
+?>
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="content-type" content="text/html;">
@@ -138,4 +145,3 @@ foreach ( $__meta['schema_org'] as $itemprop => $content ) {
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/dist/images/icons/apple-touch-icon-precomposed.png">
 <link type="text/plain" rel="author" href="/humans.txt">
 <?php wp_head(); ?>
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->

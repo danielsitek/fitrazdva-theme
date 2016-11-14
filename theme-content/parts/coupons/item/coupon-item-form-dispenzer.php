@@ -1,4 +1,9 @@
 <?php
+/**
+ * Coupon-item-form-dispenzer php
+ *
+ * @package FitRazDva Theme
+ */
 
 if ( isset( $_SESSION['order_state'] ) ) {
 

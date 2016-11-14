@@ -1,6 +1,13 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Archive php
+ *
+ * @package FitRazDva Theme
+ */
+
+get_header(); ?>
 <div class="row">
-<!-- Row for main content area -->
+<?php /* Row for main content area */ ?>
 	<div class="small-12 large-8 columns" role="main">
 
 	<?php if ( have_posts() ) : ?>
@@ -13,7 +20,7 @@
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 
-	<?php endif; // end have_posts() check ?>
+	<?php endif; /* end have_posts() check */ ?>
 
 	<?php /* Display navigation to next/previous pages when applicable */ ?>
 	<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>

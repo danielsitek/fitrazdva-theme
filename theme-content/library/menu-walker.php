@@ -1,41 +1,70 @@
 <?php
 /**
  * Customize the output of menus for Foundation top bar
+ *
+ * @package FitRazDva Theme
  */
+
 if ( ! class_exists( 'Foundationpress_Top_Bar_Walker' ) ) :
 class Foundationpress_Top_Bar_Walker extends Walker_Nav_Menu {
 
-	function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
-		$element->has_children = ! empty( $children_elements[ $element->ID ] );
-		$element->classes[] = ( $element->current || $element->current_item_ancestor ) ? 'active' : '';
-		$element->classes[] = ( $element->has_children && 1 !== $max_depth ) ? 'has-dropdown' : '';
+		/**
+		 * Display_element
+		 *
+		 * @param $element                  Element.
+		 * @param $children_elements        Children elements.
+		 * @param $max_depth                Max depth.
+	     * @param int                                        $depth  Depth.
+		 * @param $args                     Arguments.
+		 * @param $output                   Output.
+		 */
+		function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
+			$element->has_children = ! empty( $children_elements[ $element->ID ] );
+			$element->classes[] = ( $element->current || $element->current_item_ancestor ) ? 'active' : '';
+			$element->classes[] = ( $element->has_children && 1 !== $max_depth ) ? 'has-dropdown' : '';
 
-		parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-	}
+			parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+			}
 
-	function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
-		$item_html = '';
-		parent::start_el( $item_html, $object, $depth, $args );
+		/**
+		 * Start_el
+		 *
+		 * @param $output                       Output.
+		 * @param $object                       Object.
+		 * @param int                                 $depth                 Depth.
+		 * @param array                               $args                  Arguments.
+		 * @param int                                 $current_object_id     Object ID.
+		 */
+		function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
+			$item_html = '';
+			parent::start_el( $item_html, $object, $depth, $args );
 
-		$output .= ( 0 == $depth ) ? '<li class="divider"></li>' : '';
+			$output .= ( 0 == $depth ) ? '<li class="divider"></li>' : '';
 
-		$classes = empty( $object->classes ) ? array() : (array) $object->classes;
+			$classes = empty( $object->classes ) ? array() : (array) $object->classes;
 
-		if ( in_array( 'label', $classes ) ) {
-			$output .= '<li class="divider"></li>';
-			$item_html = preg_replace( '/<a[^>]*>(.*)<\/a>/iU', '<label>$1</label>', $item_html );
+			if ( in_array( 'label', $classes ) ) {
+				$output .= '<li class="divider"></li>';
+				$item_html = preg_replace( '/<a[^>]*>(.*)<\/a>/iU', '<label>$1</label>', $item_html );
+			}
+
+		if ( in_array( 'divider', $classes ) ) {
+				$item_html = preg_replace( '/<a[^>]*>( .* )<\/a>/iU', '', $item_html );
 		}
 
-	if ( in_array( 'divider', $classes ) ) {
-		$item_html = preg_replace( '/<a[^>]*>( .* )<\/a>/iU', '', $item_html );
-	}
+			$output .= $item_html;
+			}
 
-		$output .= $item_html;
-	}
-
-	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$output .= "\n<ul class=\"sub-menu dropdown\">\n";
-	}
+		/**
+		 * Start_lvl
+		 *
+		 * @param $output           Output.
+		 * @param int                     $depth     Depth.
+		 * @param array                   $args      Arguments.
+		 */
+		function start_lvl( &$output, $depth = 0, $args = array() ) {
+			$output .= "\n<ul class=\"sub-menu dropdown\">\n";
+			}
 
 }
 endif;

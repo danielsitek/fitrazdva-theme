@@ -2,9 +2,10 @@
 /**
  * The template for displaying a "No posts found" message
  *
- * @subpackage FoundationPress
  * @since FoundationPress 1.0
+ * @package FitRazDva Theme
  */
+
 ?>
 
 <header class="page-header">

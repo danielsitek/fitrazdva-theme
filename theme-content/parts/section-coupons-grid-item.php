@@ -1,3 +1,11 @@
+<?php
+/**
+ * Section-coupons-grid-item php
+ *
+ * @package FitRazDva Theme
+ */
+
+?>
 <div class="coupon-item" data-id="<?php echo $coupon_item->get_id(); ?>">
 	<div class="coupon-item-image">
 		<?php if ( isset( $coupon_item->get_banner()[0] ) ) { ?>

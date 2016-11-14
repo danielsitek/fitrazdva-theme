@@ -1,4 +1,9 @@
 <?php
+/**
+ * Class-page-custom-menu-admin php
+ *
+ * @package FitRazDva Theme
+ */
 
 namespace FitRazDva;
 
@@ -33,6 +38,7 @@ class SetPageCustomMenuAdmin {
 
 	}
 
+
 	/**
 	 * Registers a Meta Box on our Contact Custom Post Type, called 'Contact Details'
 	 * reference:
@@ -60,8 +66,10 @@ class SetPageCustomMenuAdmin {
 		$menus = wp_get_nav_menus();
 		$saved_menu = get_post_meta( $post->ID, '_set_page_submenu', true );
 
-		// Add a nonce field so we can check for it later.
-		// https://developer.wordpress.org/reference/functions/wp_nonce_field/
+		/**
+		 * Add a nonce field so we can check for it later.
+		 * https://developer.wordpress.org/reference/functions/wp_nonce_field/
+		 */
 		wp_nonce_field( 'save_page_menu', 'page_menu_nonce' );
 
 		require_once( __DIR__ . '/view/meta-box-custom-menus.php' );
@@ -80,27 +88,30 @@ class SetPageCustomMenuAdmin {
 	 */
 	function save_meta_boxes( $post_id ) {
 
-		/* Check if our nonce is set. */
-		if ( ! isset( $_POST['page_menu_nonce'] ) ) {
+		$page_menu_nonce = sanitize_text_field( $_POST['page_menu_nonce'] );
+		$post_type = sanitize_text_field( $_POST['post_type'] );
+
+		/** Check if our nonce is set. */
+		if ( ! isset( $page_menu_nonce ) ) {
 			return $post_id;
 		}
 
-		/* Verify that the nonce is valid. */
-		if ( ! wp_verify_nonce( $_POST['page_menu_nonce'], 'save_page_menu' ) ) {
+		/** Verify that the nonce is valid. */
+		if ( ! wp_verify_nonce( $page_menu_nonce, 'save_page_menu' ) ) {
 			return $post_id;
 		}
 
-		/* Check this is the Contact Custom Post Type */
-		if ( self::POST_TYPE != $_POST['post_type'] ) {
+		/** Check this is the Contact Custom Post Type */
+		if ( self::POST_TYPE != $post_type ) {
 			return $post_id;
 		}
 
-		/* Check the logged in user has permission to edit this post */
+		/** Check the logged in user has permission to edit this post */
 		if ( ! current_user_can( 'edit_post', $post_id ) ) {
 			return $post_id;
 		}
 
-		/* OK to save meta data */
+		/** OK to save meta data */
 		$validity_from = sanitize_text_field( $_POST['set_page_submenu'] );
 		update_post_meta( $post_id, '_set_page_submenu', $validity_from );
 

@@ -1,12 +1,15 @@
 <?php
-
-/*
-Template Name: Coupons Grid
-*/
+/**
+ * Page_coupons php
+ *
+ * Template Name: Coupons Grid
+ *
+ * @package FitRazDva Theme
+ */
 
 use FitRazDva\CouponGridItem;
 
-$layout['template'] = 'page_coupons.php';
+$layout['template'] = 'page-coupons.php';
 
 get_header();
 
@@ -32,7 +35,5 @@ while ( have_posts() ) : the_post(); ?>
 <?php endwhile;
 
 do_action( 'foundationpress_after_content' );
-
-get_template_part( 'parts/sklik' );
 
 get_footer();

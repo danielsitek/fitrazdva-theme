@@ -1,4 +1,10 @@
 <?php
+/**
+ * Page-main-content-top php
+ *
+ * @package FitRazDva Theme
+ */
+
 use FitRazDva\SetPageSubmenu;
 
 $page_main_content_classes = array( 'page-main-content' );

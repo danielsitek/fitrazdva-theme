@@ -1,6 +1,10 @@
 <?php
+/**
+ * Custom-header php
+ *
+ * @package FitRazDva Theme
+ */
 
-// The Header-image
 $defaults = array(
 
 	'default-image'   => '',

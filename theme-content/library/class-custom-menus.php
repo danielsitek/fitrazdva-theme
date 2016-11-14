@@ -1,4 +1,9 @@
 <?php
+/**
+ * Class-custom-menus php
+ *
+ * @package FitRazDva Theme
+ */
 
 namespace FitRazDva;
 
@@ -72,7 +77,7 @@ class SetPageSubmenu {
 	/**
 	 * Get menu template
 	 *
-	 * @param  array  $menu_object [description]
+	 * @param  array $menu_object [description]
 	 * @return [string]            [description]
 	 */
 	private function get_menu_template( $menu_object = array() ) {

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Custom-header php
+ *
+ * @package FitRazDva Theme
+ */
 
 add_shortcode( 'gallery', 'get_my_gallery_content' );
 
@@ -31,6 +36,7 @@ function get_my_gallery_content( $attr ) {
 	 * @param array  $attr     Attributes of the gallery shortcode.
 	 * @param int    $instance Unique numeric ID of this gallery shortcode instance.
 	 */
+
 	$output = apply_filters( 'post_gallery', '', $attr, $instance );
 	if ( $output != '' ) {
 		return $output;
@@ -109,27 +115,7 @@ function get_my_gallery_content( $attr ) {
 	 *                    Defaults to false if the theme supports HTML5 galleries.
 	 *                    Otherwise, defaults to true.
 	 */
-	// if ( apply_filters( 'use_default_gallery_style', ! $html5 ) ) {
-	// $gallery_style = "
-	// <style type='text/css'>
-	// #{$selector} {
-	// margin: auto;
-	// }
-	// #{$selector} .gallery-item {
-	// float: {$float};
-	// margin-top: 10px;
-	// text-align: center;
-	// width: {$itemwidth}%;
-	// }
-	// #{$selector} img {
-	// border: 2px solid #cfcfcf;
-	// }
-	// #{$selector} .gallery-caption {
-	// margin-left: 0;
-	// }
-	// * see gallery_shortcode() in wp-includes/media.php */
-	// </style>\n\t\t";
-	// }
+
 	$size_class = sanitize_html_class( $atts['size'] );
 	$gallery_div = "<ul id='$selector' class='block-grid block-grid-id-{$id} block-grid-columns-{$columns} block-grid-size-{$size_class} small-two-up medium-three-up large-four-up'>";
 
@@ -141,6 +127,7 @@ function get_my_gallery_content( $attr ) {
 	 * @param string $gallery_style Default CSS styles and opening HTML div container
 	 *                              for the gallery shortcode output.
 	 */
+
 	$output = apply_filters( 'gallery_style', $gallery_style . $gallery_div );
 
 	$i = 0;
@@ -194,6 +181,7 @@ function fitrazdva_autoexpand_rel_wlightbox( $content ) {
  automatically insert rel="lightbox[nameofpost]" to every image with no manual work.
     if there are already rel="lightbox[something]" attributes, they are not clobbered.
     Michael Tyson, you are a regular expressions god! - http://atastypixel.com */
+
 function fitrazdva_do_regexp( $content, $id ) {
 	$id = esc_attr( $id );
 	$pattern = "/(<a(?![^>]*?rel=['\"]lightbox.*)[^>]*?href=['\"][^'\"]+?\.(?:bmp|gif|jpg|jpeg|png)\?{0,1}\S{0,}['\"][^\>]*)>/i";

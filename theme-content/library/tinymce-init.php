@@ -1,7 +1,18 @@
 <?php
+/**
+ * TinyMCE-init php
+ *
+ * @package FitRazDva Theme
+ */
 
 if ( ! function_exists( 'fitrazdva_theme_tinymce_init' ) ) :
-// Prevent TinyMCE from stripping out schema.org metadata
+
+/**
+ * Prevent TinyMCE from stripping out schema.org metadata
+ *
+ * @param  [type] $options [description]
+ * @return [type]          [description]
+ */
 function fitrazdva_theme_tinymce_init( $options ) {
 		/**
 	 *   Edit extended_valid_elements as needed. For syntax, see
@@ -14,9 +25,9 @@ function fitrazdva_theme_tinymce_init( $options ) {
 
 		$extended_valid_elements = '@[id|class|style|title|itemscope|itemtype|itemprop|datetime|rel|content],div,dl,dt,dd,ul,ol,li,span,hr,meta,link,p,a[rev|charset|href|lang|tabindex|accesskey|type|name|href|target|title|class|onfocus|onblur]';
 
-		// http://stackoverflow.com/a/23578423/4617589
+		/* http://stackoverflow.com/a/23578423/4617589 */
 		if ( ! isset( $options['extended_valid_elements'] ) ) {
-			$options['extended_valid_elements'] = $extended_valid_elements;
+		$options['extended_valid_elements'] = $extended_valid_elements;
 			} else {
 			$options['extended_valid_elements'] .= ',' . $extended_valid_elements;
 			}

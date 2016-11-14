@@ -1,13 +1,19 @@
 <?php
-// Pagination
+/**
+ * Function php
+ *
+ * @package FitRazDva Theme
+ */
+
+// Pagination.
 if ( ! function_exists( 'foundationpress_pagination' ) ) :
 function foundationpress_pagination() {
 		global $wp_query;
 
-		$big = 999999999; // This needs to be an unlikely integer
+		$big = 999999999; // This needs to be an unlikely integer.
 
-		// For more options and info view the docs for paginate_links()
-		// http://codex.wordpress.org/Function_Reference/paginate_links
+		// For more options and info view the docs for paginate_links().
+		// http://codex.wordpress.org/Function_Reference/paginate_links.
 		$paginate_links = paginate_links( array(
 		'base' => str_replace( $big, '%#%', html_entity_decode( get_pagenum_link( $big ) ) ),
 		'current' => max( 1, get_query_var( 'paged' ) ),
@@ -26,7 +32,7 @@ function foundationpress_pagination() {
 		$paginate_links = str_replace( "<li><a href='#'>&hellip;</a></li>", "<li><span class='dots'>&hellip;</span></li>", $paginate_links );
 		$paginate_links = preg_replace( '/\s*page-numbers/', '', $paginate_links );
 
-		// Display the pagination if more than one page is found
+		// Display the pagination if more than one page is found.
 		if ( $paginate_links ) {
 			echo '<div class="pagination-centered">';
 			echo $paginate_links;
@@ -42,7 +48,7 @@ endif;
 if ( ! function_exists( 'foundationpress_menu_fallback' ) ) :
 function foundationpress_menu_fallback() {
 		echo '<div class="alert-box secondary">';
-		// Translators 1: Link to Menus, 2: Link to Customize
+		// Translators 1: Link to Menus, 2: Link to Customize.
 		printf( __( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'foundationpress' ),
 			sprintf(  __( '<a href="%s">Menus</a>', 'foundationpress' ),
 				get_admin_url( get_current_blog_id(), 'nav-menus.php' )
@@ -55,7 +61,7 @@ function foundationpress_menu_fallback() {
 }
 endif;
 
-// Add Foundation 'active' class for the current menu item
+// Add Foundation 'active' class for the current menu item.
 if ( ! function_exists( 'foundationpress_active_nav_class' ) ) :
 function foundationpress_active_nav_class( $classes, $item ) {
 		if ( 1 == $item->current || true == $item->current_item_ancestor ) {
@@ -70,6 +76,7 @@ endif;
  * Use the active class of ZURB Foundation on wp_list_pages output.
  * From required+ Foundation http://themes.required.ch
  */
+
 if ( ! function_exists( 'foundationpress_active_list_pages_class' ) ) :
 function foundationpress_active_list_pages_class( $input ) {
 
@@ -80,6 +87,7 @@ function foundationpress_active_list_pages_class( $input ) {
 
 		return $output;
 }
+
 add_filter( 'wp_list_pages', 'foundationpress_active_list_pages_class', 10, 2 );
 endif;
 
@@ -90,9 +98,11 @@ class Foundationpress_Comments extends Walker_Comment {
 		var $tree_type = 'comment';
 		var $db_fields = array( 'parent' => 'comment_parent', 'id' => 'comment_ID' );
 
-		/** CONSTRUCTOR
+		/**
+		 * CONSTRUCTOR
 		 * You'll have to use this if you plan to get to the top of the comments list, as
-		 * start_lvl() only goes as high as 1 deep nested comments */
+		 * start_lvl() only goes as high as 1 deep nested comments
+		 */
 		function __construct() {
 	?>
 
@@ -101,16 +111,28 @@ class Foundationpress_Comments extends Walker_Comment {
 
 		<?php }
 
-		/** START_LVL
-		 * Starts the list before the CHILD elements are added. */
+		/**
+		 * START_LVL
+		 * Starts the list before the CHILD elements are added.
+		 *
+		 * @param $output
+		 * @param int    $depth
+		 * @param array  $args
+		 */
 		function start_lvl( &$output, $depth = 0, $args = array() ) {
 			$GLOBALS['comment_depth'] = $depth + 1; ?>
 
 					<ul class="children">
 		<?php }
 
-		/** END_LVL
-		 * Ends the children list of after the elements are added. */
+		/**
+		 * END_LVL
+		 * Ends the children list of after the elements are added.
+		 *
+		 * @param $output
+		 * @param int    $depth
+		 * @param array  $args
+		 */
 		function end_lvl( &$output, $depth = 0, $args = array() ) {
 			$GLOBALS['comment_depth'] = $depth + 1; ?>
 
@@ -118,7 +140,15 @@ class Foundationpress_Comments extends Walker_Comment {
 
 		<?php }
 
-		/** START_EL */
+		/**
+		 * START_EL
+		 *
+		 * @param $output
+		 * @param $comment
+		 * @param int     $depth
+		 * @param array   $args
+		 * @param int     $id
+		 */
 		function start_el( &$output, $comment, $depth = 0, $args = array(), $id = 0 ) {
 			$depth++;
 			$GLOBALS['comment_depth'] = $depth;
@@ -143,30 +173,30 @@ class Foundationpress_Comments extends Walker_Comment {
 
 			</header>
 
-					<section id="comment-content-<?php comment_ID(); ?>" class="comment">
-						<?php if ( ! $comment->comment_approved ) : ?>
-							<div class="notice">
+			<section id="comment-content-<?php comment_ID(); ?>" class="comment">
+				<?php if ( ! $comment->comment_approved ) : ?>
+				<div class="notice">
 					<p class="bottom"><?php $args['moderation']; ?></p>
 				</div>
-					<?php else : comment_text(); ?>
-					<?php endif; ?>
-					</section><!-- /.comment-content -->
+			<?php else : comment_text(); ?>
+			<?php endif; ?>
+			</section><!-- /.comment-content -->
 
-					<div class="comment-meta comment-meta-data hide">
-						<a href="<?php echo htmlspecialchars( get_comment_link( get_comment_ID() ) ) ?>"><?php comment_date(); ?> at <?php comment_time(); ?></a> <?php edit_comment_link( '(Edit)' ); ?>
-					</div><!-- /.comment-meta -->
+			<div class="comment-meta comment-meta-data hide">
+				<a href="<?php echo htmlspecialchars( get_comment_link( get_comment_ID() ) ) ?>"><?php comment_date(); ?> at <?php comment_time(); ?></a> <?php edit_comment_link( '(Edit)' ); ?>
+			</div><!-- /.comment-meta -->
 
-					<div class="reply">
-						<?php $reply_args = array(
-						'depth' => $depth,
-						'max_depth' => $args['max_depth'],
-						);
+			<div class="reply">
+				<?php $reply_args = array(
+				'depth' => $depth,
+				'max_depth' => $args['max_depth'],
+				);
 
-						comment_reply_link( array_merge( $args, $reply_args ) );  ?>
-					</div><!-- /.reply -->
-				</article><!-- /.comment-body -->
+				comment_reply_link( array_merge( $args, $reply_args ) );  ?>
+			</div><!-- /.reply -->
+	</article><!-- /.comment-body -->
 
-		<?php }
+			<?php }
 
 		function end_el( &$output, $comment, $depth = 0, $args = array() ) {
 	?>
@@ -175,7 +205,9 @@ class Foundationpress_Comments extends Walker_Comment {
 
 		<?php }
 
-		/** DESTRUCTOR */
+		/**
+		 * DESTRUCTOR
+		 */
 		function __destruct() {
 	?>
 

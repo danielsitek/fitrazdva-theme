@@ -1,11 +1,16 @@
 <?php
+/**
+ * Meta-box-custom-menus php
+ *
+ * @package FitRazDva Theme
+ */
 
-$no_menu_selected = __( 'No menu', self::TRANSLATION_DOMAIN );
-
-	?>
+$frd_trans = self::TRANSLATION_DOMAIN;
+$no_menu_selected = __( 'No menu', $frd_trans );
+?>
 <p>
 	<label for="set_page_submenu">
-		<strong><?php echo __( 'Choose existing menu:', self::TRANSLATION_DOMAIN ); ?></strong>
+		<strong><?php echo __( 'Choose existing menu:', $frd_trans ); ?></strong>
 	</label>
 </p>
 <select name="set_page_submenu" id="set_page_submenu" style="width: 100%;">

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Entry-meta php
+ *
+ * @package FitRazDva Theme
+ */
 
 if ( ! function_exists( 'foundationpress_entry_meta' ) ) :
 

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Form-buy php
+ *
+ * @package FitRazDva Theme
+ */
 
 use FitRazDvaCoupons\Front\CouponItem;
 $coupon_item = new CouponItem;
@@ -62,12 +67,18 @@ $coupon_item = new CouponItem;
 							Souhlasím s&nbsp;<a href="/obchodni-podminky">obchodními podmínkami</a>
 						</div>
 					</label>
-					<?php // <label>
-					// <input type="checkbox" name="coupon_checkout[newsletter]" id="coupon_checkout_newsletter" checked="checked" tabindex="1">
-					// <div class="input-label">
-					// <strong>Dejte mi vědět o&nbsp;dalších akčních nabídkách.</strong> Nebojte se, žádný spam, jen naše speciální balíčky za speciální ceny.
-					// </div>
-					// </label> ?>
+					<?php
+
+					/*
+					<label>
+					<input type="checkbox" name="coupon_checkout[newsletter]" id="coupon_checkout_newsletter" checked="checked" tabindex="1">
+					<div class="input-label">
+					<strong>Dejte mi vědět o&nbsp;dalších akčních nabídkách.</strong> Nebojte se, žádný spam, jen naše speciální balíčky za speciální ceny.
+					</div>
+					</label>
+					 */
+
+					?>
 				</div>
 
 				<div class="form-group input-interested">
