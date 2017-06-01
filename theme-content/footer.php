@@ -137,11 +137,11 @@
 					</div>
 					<div class="small-float-center medium-float-right text-center medium-text-right small-text-small">
 						<span class="align-right" itemprop="creator" itemscope itemtype="http://schema.org/Person">
-							Design &amp; Code by
+							<?php echo __('Design &amp; Code by', 'fitrazdvathemetrans'); ?>
 							<span itemprop="contactPoint">
-							<span itemprop="name">Daniel Sitek</span>
+							<span itemprop="name"><?php __('Daniel Sitek', 'fitrazdvathemetrans'); ?></span>
 							|
-							<a href="http://danielsitek.cz" title="Tvořím moderní Webové stránky | UI design | Grafika | Vizitky | Logo Design" itemprop="url">danielsitek.cz</a>
+							<a href="http://danielsitek.cz" title="<?php echo __('Tvořím moderní Webové stránky | UI design | Grafika | Vizitky | Logo Design', 'fitrazdvathemetrans'); ?>" itemprop="url"><?php echo __('danielsitek.cz', 'fitrazdvathemetrans'); ?></a>
 							</span>
 						</span>
 					</div>

@@ -16,14 +16,14 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/styles/main.css', array(), '0.1.0' );
 
 		// Deregister the jquery version bundled with wordpress.
-		wp_deregister_script( 'jquery' );
+		// wp_deregister_script( 'jquery' );
 
 		// Modernizr is used for polyfills and feature detection. Must be placed in header. (Not required).
 		// wp_register_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.3', false );
 		// Fastclick removes the 300ms delay on click events in mobile environments. Must be placed in header. (Not required).
 		// wp_register_script( 'fastclick', get_template_directory_uri() . '/js/vendor/fastclick.js', array(), '1.0.0', false );
 		// CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
-		wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', array(), '1.11', false );
+		wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', array(), '1.12', false );
 
 		wp_enqueue_script( 'webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js', array(), '1.6.16', true );
 

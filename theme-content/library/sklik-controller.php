@@ -14,7 +14,7 @@ function fitrazdva_sklik() {
 	if ( defined( 'WP_DEVELOP' ) && WP_DEVELOP ) {
 		echo '<!-- Sklik only on poduction -->';
 		return;
-		}
+	}
 
 	get_template_part( 'parts/sklik' );
 

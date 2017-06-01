@@ -50,7 +50,14 @@ class SetPageCustomMenuAdmin {
 	 */
 	function register_meta_boxes() {
 
-		add_meta_box( 'pase-custom-submenu', 'Set Page Submenu', array( $this, 'output_meta_box' ), self::POST_TYPE, 'side', 'low' );
+		add_meta_box(
+			'pase-custom-submenu',
+			'Set Page Submenu',
+			array( $this, 'output_meta_box' ),
+			self::POST_TYPE,
+			'side',
+			'low' 
+		);
 
 	}
 
@@ -88,21 +95,15 @@ class SetPageCustomMenuAdmin {
 	 */
 	function save_meta_boxes( $post_id ) {
 
-		$page_menu_nonce = sanitize_text_field( $_POST['page_menu_nonce'] );
-		$post_type = sanitize_text_field( $_POST['post_type'] );
-
-		/** Check if our nonce is set. */
-		if ( ! isset( $page_menu_nonce ) ) {
-			return $post_id;
-		}
-
 		/** Verify that the nonce is valid. */
-		if ( ! wp_verify_nonce( $page_menu_nonce, 'save_page_menu' ) ) {
+		if ( ! isset( $_POST['page_menu_nonce'] )
+			|| ! wp_verify_nonce( $_POST['page_menu_nonce'], 'save_page_menu' )
+		) {
 			return $post_id;
 		}
 
 		/** Check this is the Contact Custom Post Type */
-		if ( self::POST_TYPE != $post_type ) {
+		if ( self::POST_TYPE != $this->sanitize_post_field( $_POST['post_type'] ) ) {
 			return $post_id;
 		}
 
@@ -112,10 +113,20 @@ class SetPageCustomMenuAdmin {
 		}
 
 		/** OK to save meta data */
-		$validity_from = sanitize_text_field( $_POST['set_page_submenu'] );
-		update_post_meta( $post_id, '_set_page_submenu', $validity_from );
+		$post_submenu = $this->sanitize_post_field( $_POST['set_page_submenu'] );
+		update_post_meta( $post_id, '_set_page_submenu', $post_submenu );
 
 		return $post_id;
+	}
+	
+	
+	private function sanitize_post_field( $post ) {
+		
+		if ( ! isset( $post ) ) {
+			return false;
+		}
+		
+		return sanitize_text_field( $post );
 	}
 
 }

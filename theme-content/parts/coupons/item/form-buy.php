@@ -99,7 +99,6 @@ $coupon_item = new CouponItem;
 	</div>
 </div>
 
-<script type="text/javascript" src="<?php echo $coupon_item->get_gate_js(); ?>"></script>
 <script>
 
 	( function ( $, dataLayer ){
@@ -107,7 +106,6 @@ $coupon_item = new CouponItem;
 		var $form = $( '#coupon_checkout' );
 		var return_url = location.href;
 		var formData;
-		var $submit_button = $form.find( '.js-form-buyout-submit' );
 
 		$form.on( 'submit', function ( event ) {
 
@@ -140,16 +138,7 @@ $coupon_item = new CouponItem;
 
 			console.log( res );
 
-			// goToGateway( res );
-
 			_gopay.checkout( { gatewayUrl: res.data.gwUrl }, initCheckout );
-		}
-
-		function goToGateway ( res ) {
-
-			if ( res.data.gwUrl !== undefined ) {
-				window.location.href = res.data.gwUrl;
-			}
 		}
 
 		function initCheckout ( res ) {
