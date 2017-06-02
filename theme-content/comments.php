@@ -1,4 +1,10 @@
 <?php
+/**
+ * Comments php
+ *
+ * @package FitRazDva Theme
+ */
+
 if ( have_comments() ) :
 	if ( (is_page() || is_single()) && ( ! is_home() && ! is_front_page()) ) :
 ?>
@@ -28,16 +34,18 @@ if ( have_comments() ) :
 
 		?>
 
- 	</section>
+		</section>
 <?php
 	endif;
 endif;
 ?>
 
 <?php
-	// Do not delete these lines
+	/**
+	 * Do not delete these lines
+	 * Prevent access to this file directly
+	 */
 
-	// Prevent access to this file directly
 	defined( 'ABSPATH' ) or die( __( 'Please do not load this page directly. Thanks!', 'foundationpress' ) );
 
 	if ( post_password_required() ) { ?>
@@ -47,7 +55,7 @@ endif;
 		</div>
 	</section>
 	<?php
-		return;
+	return;
 	}
 ?>
 
@@ -63,14 +71,16 @@ if ( comments_open() ) :
 	<?php else : ?>
 	<form action="<?php echo get_option( 'siteurl' ); ?>/wp-comments-post.php" method="post" id="commentform">
 		<?php if ( is_user_logged_in() ) : ?>
-		<p><?php printf( __( 'Logged in as <a href="%s/wp-admin/profile.php">%s</a>.', 'foundationpress' ), get_option( 'siteurl' ), $user_identity ); ?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'foundationpress' ); ?>"><?php _e( 'Log out &raquo;', 'foundationpress' ); ?></a></p>
+		<p><?php printf( __( 'Logged in as <a href="%1$s/wp-admin/profile.php">%1$s</a>.', 'foundationpress' ), get_option( 'siteurl' ), $user_identity ); ?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'foundationpress' ); ?>"><?php _e( 'Log out &raquo;', 'foundationpress' ); ?></a></p>
 		<?php else : ?>
 		<p>
-			<label for="author"><?php _e( 'Name', 'foundationpress' ); if ( $req ) { _e( ' (required)', 'foundationpress' ); } ?></label>
+			<label for="author"><?php _e( 'Name', 'foundationpress' );
+if ( $req ) { _e( ' (required)', 'foundationpress' ); } ?></label>
 			<input type="text" class="five" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
 		</p>
 		<p>
-			<label for="email"><?php _e( 'Email (will not be published)', 'foundationpress' ); if ( $req ) { _e( ' (required)', 'foundationpress' ); } ?></label>
+			<label for="email"><?php _e( 'Email (will not be published)', 'foundationpress' );
+if ( $req ) { _e( ' (required)', 'foundationpress' ); } ?></label>
 			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
 		</p>
 		<p>
@@ -87,8 +97,8 @@ if ( comments_open() ) :
 		<?php comment_id_fields(); ?>
 		<?php do_action( 'comment_form', $post->ID ); ?>
 	</form>
-	<?php endif; // If registration required and not logged in ?>
+	<?php endif; /* If registration required and not logged in */ ?>
 </section>
 <?php
-	endif; // if you delete this the sky will fall on your head
-endif; // if you delete this the sky will fall on your head
+	endif; /* if you delete this the sky will fall on your head */
+endif; /* if you delete this the sky will fall on your head */

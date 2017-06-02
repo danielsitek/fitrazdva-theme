@@ -3,7 +3,7 @@
  * This is WordPress theme for website FitRazDva.cz. It`s build on top of slightly modified FoundationPress starter theme, based on Foundation 5 framework by Zurb.
  * 
  * @version:       v0.3.0
- * @updated:       01-03-2016
+ * @updated:       13-11-2016
  * @license:       MIT
  */
  @charset "UTF-8";
@@ -442,7 +442,7 @@ body {
   cursor: auto;
   font-family: "Ubuntu", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   margin: 0;
   padding: 0;
@@ -1326,7 +1326,7 @@ button, .button {
   border-width: 0;
   cursor: pointer;
   font-family: "Ubuntu", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   line-height: normal;
   margin: 0 0 1.25rem;
   position: relative;
@@ -1837,7 +1837,7 @@ a {
 p {
   font-family: inherit;
   font-size: inherit;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   margin-bottom: 1.5rem;
   text-rendering: optimizeLegibility; }
@@ -1885,7 +1885,7 @@ h6 {
 .subheader {
   line-height: 1.4;
   color: #6f6f6f;
-  font-weight: 300;
+  font-weight: 400;
   margin-top: 0.2rem;
   margin-bottom: 0.5rem; }
 
@@ -1918,7 +1918,7 @@ code {
   border-width: 1px;
   color: #383838;
   font-family: Consolas, "Liberation Mono", Courier, monospace;
-  font-weight: 300;
+  font-weight: 400;
   padding: 0.125rem 0.3125rem 0.0625rem; }
 
 /* Lists */
@@ -5157,9 +5157,9 @@ a.color-white {
               transition: all .1s; }
     .nav.nav-main > li.first > a {
       border-radius: 10px 0 0 10px; }
-    .nav.nav-main > li.last > a {
+    .nav.nav-main > li:last-child > a, .nav.nav-main > li.last > a {
       border-radius: 0 10px 10px 0; }
-    .nav.nav-main > li.last:hover > a {
+    .nav.nav-main > li:last-child:hover > a, .nav.nav-main > li.last:hover > a {
       border-radius: 0 10px 0 0; } }
 
 @media only screen and (min-width: 64.0625em) {

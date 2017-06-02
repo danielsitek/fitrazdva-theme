@@ -1,11 +1,15 @@
 <?php
 /**
- * Page php
+ * Page_coupons php
+ *
+ * Template Name: Coupons Grid
  *
  * @package FitRazDva Theme
  */
 
-$layout['template'] = 'page.php';
+use FitRazDva\CouponGridItem;
+
+$layout['template'] = 'page-coupons.php';
 
 get_header();
 
@@ -22,6 +26,9 @@ while ( have_posts() ) : the_post(); ?>
 			<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
 			<div class="page-main-section-content">
 				<?php the_content(); ?>
+			</div>
+			<div class="page-main-section-content">
+				<?php get_template_part( 'parts/section-coupons-grid' ); ?>
 			</div>
 		</div>
 	</article>

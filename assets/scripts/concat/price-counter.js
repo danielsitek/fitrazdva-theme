@@ -1,3 +1,6 @@
+/**
+ * Class PriceCounter
+ */
 
 var PriceCounter = (function() {
     'use strict';

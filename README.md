@@ -18,9 +18,9 @@ This is WordPress theme for website FitRazDva.cz. It`s build on top of slightly 
 
 ### Instalation
 
-`$ npm install`
-
-`$ grunt init`
+* `$ composer install` - to install all development dependencies
+* `$ ./bin/robo init` - to run some init scripts
+* `$ npm install` - to install all assets development dependencies
 
 ### Usage
 
@@ -47,6 +47,15 @@ This is WordPress theme for website FitRazDva.cz. It`s build on top of slightly 
   * `js/vendor`: Vendor scripts are copied from `bower_components/` to this directory. We use this path for enqueing the vendor scripts in WordPress.
 
   * Please note that you must run `grunt build` in your terminal for the script to be copied and concatinated. See [Gruntfile.js](https://github.com/olefredrik/FoundationPress/blob/master/Gruntfile.js) for details
+
+## Testing
+
+### Code quality
+
+For testing code quality against WordPress Coding Standards Configuration.
+
+* `./bin/robo sniff:test` - for checeking files
+* `./bin/robo sniff:fix` - for fixing automaticaly fixable issues (spaces -> tabs)
 
 ## Documentation
 

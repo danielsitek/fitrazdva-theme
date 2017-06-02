@@ -1,7 +1,10 @@
-.idea
+/.idea
+/bin/*
+/bower_components/
+/node_modules/
+/vendor/
+
 .DS_Store
 *.log
 *.sass-cache*
-bower_components/
-node_modules/
 *.zip

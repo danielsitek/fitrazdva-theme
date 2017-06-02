@@ -1,13 +1,12 @@
 
-
 ( function( window ){
 
     function formatNumberBy3(num, decpoint, sep) {
         // check for missing parameters and use defaults if so
-        if (arguments.length == 2) {
+        if (arguments.length === 2) {
             sep = ",";
         }
-        if (arguments.length == 1) {
+        if (arguments.length === 1) {
             sep = ",";
             decpoint = ".";
         }
@@ -21,14 +20,14 @@
         z = "";
 
 
-        if (typeof(x) != "undefined") {
+        if (typeof(x) !== "undefined") {
             // reverse the digits. regexp works from left to right.
             for (var i=x.length-1;i>=0;i--) {
                 z += x.charAt(i);
             }
             // add seperators. but undo the trailing one, if there
             z = z.replace(/(\d{3})/g, "$1" + sep);
-            if (z.slice(-sep.length) == sep) {
+            if (z.slice(-sep.length) === sep) {
                 z = z.slice(0, -sep.length);
             }
             x = "";
@@ -37,7 +36,7 @@
                 x += z.charAt(i);
             }
             // add the fraction back in, if it was there
-            if (typeof(y) != "undefined" && y.length > 0) {
+            if (typeof(y) !== "undefined" && y.length > 0) {
                 x += decpoint + y;
             }
         }

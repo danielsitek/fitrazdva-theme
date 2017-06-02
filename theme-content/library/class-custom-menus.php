@@ -1,4 +1,9 @@
 <?php
+/**
+ * Class-custom-menus php
+ *
+ * @package FitRazDva Theme
+ */
 
 namespace FitRazDva;
 
@@ -10,85 +15,84 @@ use FitRazDva;
  *
  * @author      Daniel Sitek
  */
-class SetPageSubmenu
-{
-
-    private $post_id;
-    private $menu_slug;
-    private $generated_menu;
-    private $generated_menu_dom;
-    private $menu_parser;
-
-    public $hasMenu = false;
+class SetPageSubmenu {
 
 
-    /**
-     * Constructor
-     *
-     * @param string $post_id   Get post id
-     */
-    public function __construct( $post_id )
-    {
+	private $post_id;
+	private $menu_slug;
+	private $generated_menu;
+	private $generated_menu_dom;
+	private $menu_parser;
 
-        $menu_slug = get_post_meta( $post_id, '_set_page_submenu', true );
-
-        if ( strlen( $menu_slug ) > 0 && $menu_slug != "0") {
-
-            $this->hasMenu = true;
-            $this->post_id = $post_id;
-            $this->menu_slug = $menu_slug;
-
-            $this->init();
-        }
-    }
+	public $has_menu = false;
 
 
-    /**
-     * init()
-     *
-     */
-    private function init()
-    {
+	/**
+	 * Constructor
+	 *
+	 * @param string $post_id   Get post id
+	 */
+	public function __construct( $post_id ) {
 
-        if ( $this->hasMenu ) {
+		$menu_slug = get_post_meta( $post_id, '_set_page_submenu', true );
 
-            $this->menu_parser = new WPMenuParser();
-            $this->generated_menu = $this->menu_parser->parse( $this->menu_slug );
-            $this->generated_menu_dom = $this->getMenuTemplate( $this->generated_menu );
-        }
-    }
+		if ( strlen( $menu_slug ) > 0 && $menu_slug != '0' ) {
 
+			$this->has_menu = true;
+			$this->post_id = $post_id;
+			$this->menu_slug = $menu_slug;
 
-    /**
-     * getMenu()
-     *
-     * Render custom set menu for page
-     *
-     */
-    public function getMenu()
-    {
-
-        if ( $this->hasMenu ) {
-
-            echo $this->generated_menu_dom;
-        }
-    }
+			$this->init();
+		}
+	}
 
 
-    private function getMenuTemplate( $menu_object = array() )
-    {
+	/**
+	 * Init
+	 */
+	private function init() {
 
-        $templated_menu;
-        $menu = $menu_object;
-        $active_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+		if ( $this->has_menu ) {
 
-        ob_start();
-        require_once( __DIR__ . '/view/template-page-custom-menu.php');
-        $templated_menu = ob_get_contents();
-        ob_end_clean();
+			$this->menu_parser = new WPMenuParser();
+			$this->generated_menu = $this->menu_parser->parse( $this->menu_slug );
+			$this->generated_menu_dom = $this->get_menu_template( $this->generated_menu );
+		}
+	}
 
-        return $templated_menu;
 
-    }
+	/**
+	 * Get menu
+	 *
+	 * Render custom set menu for page
+	 */
+	public function get_menu() {
+
+		if ( $this->has_menu ) {
+
+			echo $this->generated_menu_dom;
+		}
+	}
+
+	/**
+	 * Get menu template
+	 *
+	 * @param  array $menu_object [description]
+	 * @return [string]            [description]
+	 */
+	private function get_menu_template( $menu_object = array() ) {
+
+		$templated_menu;
+		$menu = $menu_object;
+		$active_url = (isset( $_SERVER['HTTPS'] ) ? 'https' : 'http') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+		ob_start();
+		require_once( __DIR__ . '/view/template-page-custom-menu.php' );
+		$templated_menu = ob_get_contents();
+		ob_end_clean();
+
+		return $templated_menu;
+
+	}
 
 }

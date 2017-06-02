@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Single php
+ *
+ * @package FitRazDva Theme
+ */
+
+get_header(); ?>
 <div class="row">
 	<div class="small-12 large-8 columns" role="main">
 
@@ -16,7 +23,7 @@
 			<?php if ( has_post_thumbnail() ) : ?>
 				<div class="row">
 					<div class="column">
-						<?php the_post_thumbnail( '', array('class' => 'th') ); ?>
+						<?php the_post_thumbnail( '', array( 'class' => 'th' ) ); ?>
 					</div>
 				</div>
 			<?php endif; ?>

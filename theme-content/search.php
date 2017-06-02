@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Search php
+ *
+ * @package FitRazDva Theme
+ */
+
+get_header(); ?>
 <div class="row">
 	<div class="small-12 large-8 columns" role="main">
 
@@ -30,6 +37,7 @@
 	<?php do_action( 'foundationpress_after_content' ); ?>
 
 	</div>
-	<?php get_sidebar(); ?>
+<?php
+get_sidebar();
 
-<?php get_footer(); ?>
+get_footer();

@@ -1,0 +1,12 @@
+{
+    "require": {
+        "squizlabs/php_codesniffer": "*",
+        "wp-coding-standards/wpcs": "*",
+        "codegyre/robo": "*"
+    },
+    "config": {
+        "bin-dir": "bin",
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "stable"
+}
