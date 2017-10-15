@@ -136,14 +136,7 @@
 						<span>&copy; <time datetime="<?php echo date( 'Y' );?>" itemprop="copyrightYear"><?php echo date( 'Y' );?></time>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<?php echo get_home_url(); ?>" ><?php echo get_bloginfo('name'); ?></a></span>
 					</div>
 					<div class="small-float-center medium-float-right text-center medium-text-right small-text-small">
-						<span class="align-right" itemprop="creator" itemscope itemtype="http://schema.org/Person">
-							<?php echo __('Design &amp; Code by', 'fitrazdvathemetrans'); ?>
-							<span itemprop="contactPoint">
-							<span itemprop="name"><?php __('Daniel Sitek', 'fitrazdvathemetrans'); ?></span>
-							|
-							<a href="http://danielsitek.cz" title="<?php echo __('Tvořím moderní Webové stránky | UI design | Grafika | Vizitky | Logo Design', 'fitrazdvathemetrans'); ?>" itemprop="url"><?php echo __('danielsitek.cz', 'fitrazdvathemetrans'); ?></a>
-							</span>
-						</span>
+						<?php get_template_part( 'parts/signature' ); ?>
 					</div>
 				</div>
 			</div>
@@ -163,6 +156,7 @@ do_action( 'foundationpress_before_closing_body' );
 
 ?>
 
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 <script>
 	WebFont.load({
 		google: {
