@@ -30,6 +30,9 @@ while ( have_posts() ) : the_post(); ?>
 			<div class="page-main-section-content">
 				<?php get_template_part( 'parts/section-coupons-grid' ); ?>
 			</div>
+			<div class="page-main-section-content">
+				<?php get_template_part( 'parts/fb/like-button' ); ?>
+			</div>
 		</div>
 	</article>
 <?php endwhile;
