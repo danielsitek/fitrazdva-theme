@@ -21,5 +21,8 @@
 		<exclude name="WordPress.XSS.EscapeOutput" />
 		<exclude name="WordPress.WhiteSpace.ScopeIndent.Incorrect" />
 		<exclude name="WordPress.Variables.GlobalVariables" />
+
+		<exclude name="WordPress.WP.I18n.NonSingularStringLiteralDomain" />
+		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
 	</rule>
 </ruleset>

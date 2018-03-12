@@ -1,0 +1,7 @@
+{
+    "phpcs.standard": "codesniffer.ruleset.xml",
+    "phpcs.enable": true,
+    "php.suggest.basic": true,
+    "php.validate.enable": true,
+    "editor.insertSpaces": false
+}

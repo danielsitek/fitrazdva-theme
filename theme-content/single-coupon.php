@@ -32,10 +32,14 @@ while ( have_posts() ) : the_post();
 				<div class="row">
 					<div class="column small-12 medium-4 medium-push-8">
 						<?php get_template_part( 'parts/coupons/item/block-summary' ); ?>
+						<?php get_template_part( 'parts/fb/page-plugin' ); ?>
 					</div>
 					<div class="column small-12 medium-8 medium-pull-4">
 						<?php the_content(); ?>
 					</div>
+				</div>
+				<div style="margin: 3rem 0;">
+					<?php get_template_part( 'parts/fb/like-button' ); ?>
 				</div>
 			</div>
 		</div>

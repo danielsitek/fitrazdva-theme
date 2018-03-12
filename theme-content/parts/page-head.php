@@ -14,7 +14,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <!-- <meta name="author" content="Daniel Sitek | danielsitek.cz | @danielsitek"> -->
-<meta name="author" content="Studio Fit Raz Dva">
+<meta name="author" content="Estetické centrum Fit Raz Dva">
 <meta name="copyright" content="<?php echo date( 'Y' );?>, I&amp;K FIT RAZ DVA s.r.o. | fitrazdva.cz">
 <title><?php
 if ( is_category() ) {

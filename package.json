@@ -33,7 +33,9 @@
   "dependencies": {},
   "scripts": {
     "test": "grunt --verbose",
-    "postinstall": "./node_modules/.bin/bower --allow-root install && grunt init"
+    "postinstall": "./node_modules/.bin/bower --allow-root install && grunt init",
+    "build": "grunt init",
+    "zip": "grunt theme-build"
   },
   "bugs": {
     "url": "https://github.com/danielsitek/fitrazdva-theme/issues"
