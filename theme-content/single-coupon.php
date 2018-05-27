@@ -52,10 +52,10 @@ while ( have_posts() ) : the_post();
 		</div>
 
 		<?php
-		$today = date( 'yymmdd' );
-		$offer_from = date( 'yymmdd', $coupon_item->get_offer_from( true ) );
-		$offer_to = date( 'yymmdd', $coupon_item->get_offer_to( true ) );
-		if ( $coupon_item->is_active() && ( $offer_from <= $today && $offer_to >= $today ) ) { ?>
+		$today = time();
+		$offer_from = $coupon_item->get_offer_from( true );
+		$offer_to = $coupon_item->get_offer_to( true );
+		if ( $coupon_item->is_active() && ( $offer_from <= $today && $today <= $offer_to ) ) { ?>
 		<div class="page-main-section" id="koupit">
 			<div class="page-main-section-content">
 				<?php get_template_part( 'parts/coupons/item/coupon-item-form-dispenzer' ); ?>
