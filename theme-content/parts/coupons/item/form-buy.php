@@ -64,7 +64,7 @@ $coupon_item = new CouponItem;
 					<label>
 						<input type="checkbox" name="coupon_checkout[agreement]" id="coupon_checkout_agreement" tabindex="1" required="required">
 						<div class="input-label">
-							Souhlasím s&nbsp;<a href="/obchodni-podminky">obchodními podmínkami</a>
+							Souhlasím s&nbsp;<a href="/obchodni-podminky/" target="_blank">obchodními podmínkami</a> a&nbsp;se <a href="/zasady-nakladani-osobni-udaje/" title="Dúvod souhlasu: Zpracování emailové adresy pro účely založení objednávky." target="_blank">zpracováním osobních údajů</a>.
 						</div>
 					</label>
 					<?php
@@ -93,12 +93,17 @@ $coupon_item = new CouponItem;
 					<button type="submit" id="coupon_checkout_submit" name="coupon_checkout[submit]" class="button button-primary button-large js-form-buyout-submit" tabindex="1">Koupit za <strong><span class="js-return-counted-prize"><?php echo $coupon_item->get_price_after_discount(); ?></span>&nbsp;Kč</strong></button>
 				</div>
 
+				<div class="form-actions" style="opacity: .75;">
+					<p>* Odesláním formuláře nedáváte automaticky souhlas k zasílání obchodních sdělení.</p>
+				</div>
+
 			</fieldset>
 		</form>
 
 	</div>
 </div>
 
+<script type="text/javascript" src="https://gate.gopay.cz/gp-gw/js/embed.js"></script>
 <script>
 
 	( function ( $, dataLayer ){
@@ -110,16 +115,17 @@ $coupon_item = new CouponItem;
 		$form.on( 'submit', function ( event ) {
 
 			event.preventDefault();
+
 			formData = $(this).serialize();
 
 			initPayment( formData );
 
 			dataLayer.push({
 				'conversionValue': $('.js-return-counted-prize').text().replace(' ', ''),
-				'event': 'coupon_checkout_form_submit'
+				'event': 'campaign_checkout_form_submit'
 			});
 
-			return false;
+			return;
 
 		} );
 
@@ -136,13 +142,13 @@ $coupon_item = new CouponItem;
 
 		function onInitPaymentDone ( res ) {
 
-			console.log( res );
+			// console.log( res );
 
 			_gopay.checkout( { gatewayUrl: res.data.gwUrl }, initCheckout );
 		}
 
 		function initCheckout ( res ) {
-			console.log( res );
+			// console.log( res );
 
 			if ( res.url !== undefined ) {
 				window.location.href = res.url;
