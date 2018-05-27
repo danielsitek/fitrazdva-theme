@@ -8,84 +8,12 @@
 ?>
 </div></div></div></section>
 <footer class="page-footer">
+	<?php do_action( 'foundationpress_before_footer' ); ?>
 	<div class="page-footer-main color-white">
 		<div class="page-width-content">
 			<div class="row">
 				<div class="column small-12 medium-6 large-7 small-text-small">
-					<header class="footer-header">
-						<strong class="h4 text-shadow">Rychlé odkazy</strong>
-					</header>
-
-					<div class="row">
-						<div class="column small-12 medium-6">
-
-							<div id="foter_links" class="nav-footer-links">
-								<ul>
-									<li>
-										<a href="/" class="active">Úvod</a>
-									</li>
-									<li>
-										<a href="/sluzby">Služby</a>
-									</li>
-									<li>
-										<a href="/cenik">Ceník</a>
-									</li>
-									<li>
-										<a href="/kontakt/praha">Pobočka Praha</a>
-									</li>
-									<li>
-										<a href="/kontakt/ostrava">Pobočka Ostrava</a>
-									</li>
-									<li>
-										<a href="/kontakt/brno">Pobočka Brno</a>
-									</li>
-									<li>
-										<a href="/obchodni-podminky">Obchodní podmínky</a>
-									</li>
-									<li>
-										<a href="/obchodni-podminky#udaje-o-provozovateli">Údaje o provozovateli</a>
-									</li>
-									<li>
-										<a href="/sluzby/hubnuti-a-celulitida">Hubnutí a celulitida</a>
-									</li>
-								</ul>
-							</div>
-
-						</div>
-						<div class="column small-12 medium-6">
-
-							<div id="foter_links" class="nav-footer-links">
-								<ul>
-									<li>
-										<a href="/sluzby/plasmove-toky">Vrásky, jizvy, akné a&nbsp;strie</a>
-									</li>
-									<li>
-										<a href="/sluzby/facelifting-masky">Facelifting a&nbsp;masky</a>
-									</li>
-									<li>
-										<a href="/sluzby/zvetseni-zpevneni-poprsi">Zvětšení a&nbsp;zpevnění poprsí</a>
-									</li>
-									<li>
-										<a href="/sluzby/lymfodrenaz-s-infrasaunou">Lymfodrenáže s&nbsp;infrasaunou</a>
-									</li>
-									<li>
-										<a href="/sluzby/masaze">Masáže</a>
-									</li>
-									<li>
-										<a href="/sluzby/dentalni-sperk-swarovski">Dentální šperk SWAROVSKI</a>
-									</li>
-									<li>
-										<a href="/sluzby/vyhodne-balicky">Balíčky</a>
-									</li>
-								</ul>
-							</div>
-
-						</div>
-					</div>
-
-					<?php do_action( 'foundationpress_before_footer' ); ?>
 					<?php dynamic_sidebar( 'footer-widgets-left' ); ?>
-					<?php do_action( 'foundationpress_after_footer' ); ?>
 				</div>
 				<div class="column small-12 medium-6 large-5 small-text-small">
 
@@ -120,14 +48,13 @@
 						</p>
 					</address>
 
-					<?php do_action( 'foundationpress_before_footer' ); ?>
 					<?php dynamic_sidebar( 'footer-widgets-right' ); ?>
-					<?php do_action( 'foundationpress_after_footer' ); ?>
 
 				</div>
 			</div>
 		</div>
 	</div>
+	<?php do_action( 'foundationpress_after_footer' ); ?>
 	<div class="page-footer-signature">
 		<div class="page-width-content">
 			<div class="row">
