@@ -62,9 +62,15 @@ $coupon_item = new CouponItem;
 
 				<div class="form-group input-checkbox">
 					<label>
-						<input type="checkbox" name="coupon_checkout[agreement]" id="coupon_checkout_agreement" tabindex="1" required="required">
+						<input type="checkbox" name="coupon_checkout[agreement]" id="coupon_checkout_agreement" tabindex="1" required="required" value="yes">
 						<div class="input-label">
-							Souhlasím s&nbsp;<a href="/obchodni-podminky/" target="_blank">obchodními podmínkami</a> a&nbsp;se <a href="/zasady-nakladani-osobni-udaje/" title="Dúvod souhlasu: Zpracování emailové adresy pro účely založení objednávky." target="_blank">zpracováním osobních údajů</a>.
+							Souhlasím s&nbsp;<a href="/obchodni-podminky/" target="_blank">obchodními podmínkami</a>.
+						</div>
+					</label>
+					<label>
+						<input type="checkbox" name="coupon_checkout[agreement_ou]" id="coupon_checkout_agreement_ou" tabindex="1" required="required" value="yes">
+						<div class="input-label">
+							Souhlasím se <a href="/zasady-nakladani-osobni-udaje/" target="_blank">zásadami zpracování osobních údajů</a>. (Udělení tohoto souhlasu neznamená udělení souhlasu se zasíláním reklamních sdělení)
 						</div>
 					</label>
 					<?php
@@ -91,10 +97,6 @@ $coupon_item = new CouponItem;
 
 				<div class="form-actions text-right">
 					<button type="submit" id="coupon_checkout_submit" name="coupon_checkout[submit]" class="button button-primary button-large js-form-buyout-submit" tabindex="1">Koupit za <strong><span class="js-return-counted-prize"><?php echo $coupon_item->get_price_after_discount(); ?></span>&nbsp;Kč</strong></button>
-				</div>
-
-				<div class="form-actions" style="opacity: .75;">
-					<p>* Odesláním formuláře nedáváte automaticky souhlas k zasílání obchodních sdělení.</p>
 				</div>
 
 			</fieldset>
