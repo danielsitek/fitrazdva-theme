@@ -169,6 +169,28 @@
 
     .footer-header {
         margin-bottom: ($base-line-height-rem * 0.65);
+        @extend .text-shadow;
+    }
+
+    .menu {
+        color: #781036;
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        margin-left: 0;
+        list-style: none;
+    }
+
+    .menu-item {
+        position: relative;
+
+        &:before {
+            content: "•";
+            width: 1.1rem;
+            display: inline-block;
+            text-align: center;
+            padding-right: 0.3rem;
+        }
     }
 }
 

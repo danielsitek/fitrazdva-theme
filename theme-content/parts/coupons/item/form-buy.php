@@ -62,9 +62,15 @@ $coupon_item = new CouponItem;
 
 				<div class="form-group input-checkbox">
 					<label>
-						<input type="checkbox" name="coupon_checkout[agreement]" id="coupon_checkout_agreement" tabindex="1" required="required">
+						<input type="checkbox" name="coupon_checkout[agreement]" id="coupon_checkout_agreement" tabindex="1" required="required" value="yes">
 						<div class="input-label">
-							Souhlasím s&nbsp;<a href="/obchodni-podminky">obchodními podmínkami</a>
+							Souhlasím s&nbsp;<a href="/obchodni-podminky/" target="_blank">obchodními podmínkami</a>.
+						</div>
+					</label>
+					<label>
+						<input type="checkbox" name="coupon_checkout[agreement_ou]" id="coupon_checkout_agreement_ou" tabindex="1" required="required" value="yes">
+						<div class="input-label">
+							Souhlasím se <a href="/zasady-nakladani-osobni-udaje/" target="_blank">zásadami zpracování osobních údajů</a>. (Udělení tohoto souhlasu neznamená udělení souhlasu se zasíláním reklamních sdělení)
 						</div>
 					</label>
 					<?php
@@ -99,6 +105,7 @@ $coupon_item = new CouponItem;
 	</div>
 </div>
 
+<script type="text/javascript" src="https://gate.gopay.cz/gp-gw/js/embed.js"></script>
 <script>
 
 	( function ( $, dataLayer ){
@@ -110,16 +117,17 @@ $coupon_item = new CouponItem;
 		$form.on( 'submit', function ( event ) {
 
 			event.preventDefault();
+
 			formData = $(this).serialize();
 
 			initPayment( formData );
 
 			dataLayer.push({
 				'conversionValue': $('.js-return-counted-prize').text().replace(' ', ''),
-				'event': 'coupon_checkout_form_submit'
+				'event': 'campaign_checkout_form_submit'
 			});
 
-			return false;
+			return;
 
 		} );
 
@@ -136,13 +144,13 @@ $coupon_item = new CouponItem;
 
 		function onInitPaymentDone ( res ) {
 
-			console.log( res );
+			// console.log( res );
 
 			_gopay.checkout( { gatewayUrl: res.data.gwUrl }, initCheckout );
 		}
 
 		function initCheckout ( res ) {
-			console.log( res );
+			// console.log( res );
 
 			if ( res.url !== undefined ) {
 				window.location.href = res.url;

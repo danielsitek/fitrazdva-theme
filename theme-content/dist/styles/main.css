@@ -3,7 +3,7 @@
  * This is WordPress theme for website FitRazDva.cz. It`s build on top of slightly modified FoundationPress starter theme, based on Foundation 5 framework by Zurb.
  * 
  * @version:       v0.3.0
- * @updated:       15-10-2017
+ * @updated:       27-05-2018
  * @license:       MIT
  */
  @charset "UTF-8";
@@ -4322,7 +4322,7 @@ img {
       margin-left: 1.5rem;
       float: right; } }
 
-.text-shadow {
+.text-shadow, .page-footer .footer-header {
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8); }
 
 .radius {
@@ -4373,12 +4373,12 @@ hr {
 .bg-light {
   background-color: #F5F5F5; }
 
-.nav-footer-links {
+.page-footer .menu-item {
   color: #781036; }
-  .nav-footer-links ul a {
+  .page-footer .menu-item a {
     text-decoration: none;
     color: #eaa6c1; }
-    .nav-footer-links ul a:hover {
+    .page-footer .menu-item a:hover {
       text-decoration: underline;
       color: #FFFFFF; }
 
@@ -4902,6 +4902,21 @@ a.color-white {
   background-repeat: no-repeat; }
   .page-footer .footer-header {
     margin-bottom: 0.975rem; }
+  .page-footer .menu {
+    color: #781036;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    margin-left: 0;
+    list-style: none; }
+  .page-footer .menu-item {
+    position: relative; }
+    .page-footer .menu-item:before {
+      content: "•";
+      width: 1.1rem;
+      display: inline-block;
+      text-align: center;
+      padding-right: 0.3rem; }
 
 @media only screen and (min-width: 40.0625em) {
   .page-footer {
